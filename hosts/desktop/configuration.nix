@@ -54,6 +54,8 @@ in
   environment.systemPackages = with pkgs; [
     gnumake
     gparted
+    wl-clipboard
+    xsel
   ];
 
   programs.zsh.enable = true;
