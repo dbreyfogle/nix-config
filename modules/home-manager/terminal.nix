@@ -6,15 +6,6 @@
 }:
 
 {
-  home.packages = with pkgs; [
-    asciinema
-    asciinema-agg
-    git-filter-repo
-    unstable.nerd-fonts.fira-code
-    tldr
-    vim
-  ];
-
   programs = {
     alacritty = {
       enable = true;
@@ -34,6 +25,10 @@
           dynamic_padding = true;
         };
       };
+    };
+
+    awscli = {
+      enable = true;
     };
 
     direnv = {
@@ -229,6 +224,18 @@
       syntaxHighlighting.enable = true;
     };
   };
+
+  home.packages = with pkgs; [
+    argocd
+    asciinema
+    asciinema-agg
+    git-filter-repo
+    kubectl
+    kubernetes-helm
+    unstable.nerd-fonts.fira-code
+    tldr
+    vim
+  ];
 
   home.sessionVariables = {
     MINIKUBE_IN_STYLE = "false";
