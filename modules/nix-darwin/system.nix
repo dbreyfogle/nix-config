@@ -1,9 +1,11 @@
 { ... }:
 
 {
-  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
+  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
   system.defaults.".GlobalPreferences"."com.apple.sound.beep.sound" =
     "/System/Library/Sounds/Pop.aiff";
+
+  system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = true;
 
   system.defaults.NSGlobalDomain.AppleEnableMouseSwipeNavigateWithScrolls = true;
   system.defaults.NSGlobalDomain.AppleEnableSwipeNavigateWithScrolls = true;
