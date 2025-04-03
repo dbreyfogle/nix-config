@@ -124,6 +124,9 @@ in
     extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia = {
+    open = true;
+    modesetting.enable = true;
+    powerManagement.enable = true;
+  };
 }
