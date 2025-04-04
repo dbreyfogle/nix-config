@@ -45,16 +45,16 @@ return {
 			on_init = function(client)
 				if client.workspace_folders then
 					local path = client.workspace_folders[1].name
-					if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
+					if
+						path ~= vim.fn.stdpath("config")
+						and (vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc"))
+					then
 						return
 					end
 				end
 				client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
 					runtime = { version = "LuaJIT" },
-					workspace = {
-						checkThirdParty = false,
-						library = { vim.env.VIMRUNTIME },
-					},
+					workspace = { checkThirdParty = false, library = { vim.env.VIMRUNTIME } },
 				})
 			end,
 			settings = { Lua = {} },
@@ -63,7 +63,11 @@ return {
 		require("lspconfig").pyright.setup({})
 		require("lspconfig").solargraph.setup({})
 		require("lspconfig").taplo.setup({})
-		require("lspconfig").terraformls.setup({})
+		require("lspconfig").terraformls.setup({
+			on_attach = function(client, bufnr)
+				vim.api.nvim_set_option_value("commentstring", "# %s", { buf = bufnr })
+			end,
+		})
 		require("lspconfig").yamlls.setup({
 			settings = {
 				yaml = {
