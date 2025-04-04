@@ -11,6 +11,7 @@ in
     ./disko.nix
     ./hardware-configuration.nix
     ../../modules/nixos/gnome.nix
+    ../../modules/nixos/inhibit-sleep-ssh.nix
   ];
 
   system.stateVersion = "24.11";
