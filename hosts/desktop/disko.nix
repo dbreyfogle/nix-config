@@ -46,15 +46,15 @@
                       "noatime"
                     ];
                   };
-                  "@docker" = {
-                    mountpoint = "/var/lib/docker";
+                  "@srv" = {
+                    mountpoint = "/srv";
                     mountOptions = [
                       "compress=zstd"
                       "noatime"
                     ];
                   };
-                  "@libvirt" = {
-                    mountpoint = "/var/lib/libvirt";
+                  "@var" = {
+                    mountpoint = "/var";
                     mountOptions = [
                       "compress=zstd"
                       "noatime"
