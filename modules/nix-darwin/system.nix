@@ -1,85 +1,100 @@
 { ... }:
 
 {
-  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
-  system.defaults.".GlobalPreferences"."com.apple.sound.beep.sound" =
-    "/System/Library/Sounds/Pop.aiff";
-
-  system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = true;
-
-  system.defaults.NSGlobalDomain.AppleEnableMouseSwipeNavigateWithScrolls = true;
-  system.defaults.NSGlobalDomain.AppleEnableSwipeNavigateWithScrolls = true;
-  system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
-  system.defaults.NSGlobalDomain.AppleScrollerPagingBehavior = true;
-  system.defaults.NSGlobalDomain.AppleShowScrollBars = "WhenScrolling";
-  system.defaults.NSGlobalDomain.AppleSpacesSwitchOnActivate = true;
-  system.defaults.NSGlobalDomain.AppleWindowTabbingMode = "always";
-  system.defaults.NSGlobalDomain.InitialKeyRepeat = 30;
-  system.defaults.NSGlobalDomain.KeyRepeat = 2;
-  system.defaults.NSGlobalDomain."com.apple.keyboard.fnState" = false;
-  system.defaults.NSGlobalDomain."com.apple.sound.beep.feedback" = 0;
-  system.defaults.NSGlobalDomain."com.apple.sound.beep.volume" = 0.6065307;
-  system.defaults.NSGlobalDomain."com.apple.trackpad.scaling" = 0.6875;
-
-  system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
-
-  system.defaults.WindowManager.AppWindowGroupingBehavior = true;
-  system.defaults.WindowManager.AutoHide = false;
-  system.defaults.WindowManager.EnableStandardClickToShowDesktop = false;
-  system.defaults.WindowManager.EnableTiledWindowMargins = false;
-  system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
-  system.defaults.WindowManager.EnableTilingOptionAccelerator = false;
-  system.defaults.WindowManager.EnableTopTilingByEdgeDrag = false;
-  system.defaults.WindowManager.GloballyEnabled = false;
-  system.defaults.WindowManager.HideDesktop = false;
-  system.defaults.WindowManager.StageManagerHideWidgets = false;
-  system.defaults.WindowManager.StandardHideDesktopIcons = false;
-  system.defaults.WindowManager.StandardHideWidgets = false;
-
-  system.defaults.controlcenter.BatteryShowPercentage = true;
-  system.defaults.controlcenter.Sound = false;
-
-  system.defaults.dock.autohide = true;
-  system.defaults.dock.launchanim = false;
-  system.defaults.dock.magnification = false;
-  system.defaults.dock.mineffect = "scale";
-  system.defaults.dock.minimize-to-application = true;
-  system.defaults.dock.mru-spaces = false;
-  system.defaults.dock.orientation = "bottom";
-  system.defaults.dock.show-process-indicators = true;
-  system.defaults.dock.show-recents = false;
-  system.defaults.dock.tilesize = 52;
-  system.defaults.dock.wvous-bl-corner = 1;
-  system.defaults.dock.wvous-br-corner = 1;
-  system.defaults.dock.wvous-tl-corner = 1;
-  system.defaults.dock.wvous-tr-corner = 1;
-
-  system.defaults.finder.AppleShowAllExtensions = true;
-  system.defaults.finder.FXDefaultSearchScope = "SCcf";
-  system.defaults.finder.FXEnableExtensionChangeWarning = false;
-  system.defaults.finder.FXPreferredViewStyle = "Nlsv";
-  system.defaults.finder.FXRemoveOldTrashItems = true;
-  system.defaults.finder.NewWindowTarget = "Other";
-  system.defaults.finder.NewWindowTargetPath = "file:///Applications/";
-  system.defaults.finder.ShowExternalHardDrivesOnDesktop = false;
-  system.defaults.finder.ShowHardDrivesOnDesktop = false;
-  system.defaults.finder.ShowMountedServersOnDesktop = false;
-  system.defaults.finder.ShowPathbar = true;
-  system.defaults.finder.ShowRemovableMediaOnDesktop = false;
-  system.defaults.finder.ShowStatusBar = false;
-  system.defaults.finder._FXSortFoldersFirst = true;
-  system.defaults.finder._FXSortFoldersFirstOnDesktop = true;
-
-  system.defaults.hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
-
-  system.defaults.menuExtraClock.ShowDate = 0;
-  system.defaults.menuExtraClock.ShowSeconds = true;
-
-  system.defaults.spaces.spans-displays = false;
-
-  system.defaults.trackpad.Clicking = true;
-  system.defaults.trackpad.TrackpadRightClick = true;
-  system.defaults.trackpad.TrackpadThreeFingerDrag = true;
-
   system.startup.chime = false;
+
+  system.defaults = {
+    ".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
+    ".GlobalPreferences"."com.apple.sound.beep.sound" = "/System/Library/Sounds/Pop.aiff";
+
+    CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = true;
+
+    NSGlobalDomain = {
+      AppleEnableMouseSwipeNavigateWithScrolls = true;
+      AppleEnableSwipeNavigateWithScrolls = true;
+      ApplePressAndHoldEnabled = false;
+      AppleScrollerPagingBehavior = true;
+      AppleShowScrollBars = "WhenScrolling";
+      AppleSpacesSwitchOnActivate = true;
+      AppleWindowTabbingMode = "always";
+      InitialKeyRepeat = 30;
+      KeyRepeat = 2;
+      "com.apple.keyboard.fnState" = false;
+      "com.apple.sound.beep.feedback" = 0;
+      "com.apple.sound.beep.volume" = 0.6065307;
+      "com.apple.trackpad.scaling" = 0.6875;
+    };
+
+    SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+
+    WindowManager = {
+      AppWindowGroupingBehavior = true;
+      AutoHide = false;
+      EnableStandardClickToShowDesktop = false;
+      EnableTiledWindowMargins = false;
+      EnableTilingByEdgeDrag = false;
+      EnableTilingOptionAccelerator = false;
+      EnableTopTilingByEdgeDrag = false;
+      GloballyEnabled = false;
+      HideDesktop = false;
+      StageManagerHideWidgets = false;
+      StandardHideDesktopIcons = false;
+      StandardHideWidgets = false;
+    };
+
+    controlcenter = {
+      BatteryShowPercentage = true;
+      Sound = false;
+    };
+
+    dock = {
+      autohide = true;
+      launchanim = false;
+      magnification = false;
+      mineffect = "scale";
+      minimize-to-application = true;
+      mru-spaces = false;
+      orientation = "bottom";
+      show-process-indicators = true;
+      show-recents = false;
+      tilesize = 52;
+      wvous-bl-corner = 1;
+      wvous-br-corner = 1;
+      wvous-tl-corner = 1;
+      wvous-tr-corner = 1;
+    };
+
+    finder = {
+      AppleShowAllExtensions = true;
+      FXDefaultSearchScope = "SCcf";
+      FXEnableExtensionChangeWarning = false;
+      FXPreferredViewStyle = "Nlsv";
+      FXRemoveOldTrashItems = true;
+      NewWindowTarget = "Other";
+      NewWindowTargetPath = "file:///Applications/";
+      ShowExternalHardDrivesOnDesktop = false;
+      ShowHardDrivesOnDesktop = false;
+      ShowMountedServersOnDesktop = false;
+      ShowPathbar = true;
+      ShowRemovableMediaOnDesktop = false;
+      ShowStatusBar = false;
+      _FXSortFoldersFirst = true;
+      _FXSortFoldersFirstOnDesktop = true;
+    };
+
+    hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
+
+    menuExtraClock = {
+      ShowDate = 0;
+      ShowSeconds = true;
+    };
+
+    spaces.spans-displays = false;
+
+    trackpad = {
+      Clicking = true;
+      TrackpadRightClick = true;
+      TrackpadThreeFingerDrag = true;
+    };
+  };
 }
