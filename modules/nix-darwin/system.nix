@@ -7,7 +7,10 @@
     ".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
     ".GlobalPreferences"."com.apple.sound.beep.sound" = "/System/Library/Sounds/Pop.aiff";
 
-    CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = true;
+    CustomUserPreferences = {
+      "com.apple.dock".no-bouncing = true;
+      NSGlobalDomain."com.apple.mouse.linear" = true;
+    };
 
     NSGlobalDomain = {
       AppleEnableMouseSwipeNavigateWithScrolls = true;
