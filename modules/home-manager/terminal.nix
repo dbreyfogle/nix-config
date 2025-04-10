@@ -81,6 +81,7 @@
         ansible-language-server
         ansible-lint
         bash-language-server
+        buf
         dockerfile-language-server-nodejs
         fd
         gcc

@@ -6,6 +6,7 @@ return {
 
 		lint.linters_by_ft = {
 			bash = { "shellcheck" },
+			proto = { "buf_lint" },
 			dockerfile = { "hadolint" },
 			go = { "golangcilint" },
 			markdown = { "markdownlint-cli2", "vale" },

@@ -30,6 +30,7 @@ return {
 
 		require("lspconfig").ansiblels.setup({})
 		require("lspconfig").bashls.setup({})
+		require("lspconfig").buf_ls.setup({})
 		require("lspconfig").dockerls.setup({})
 		require("lspconfig").gopls.setup({})
 		require("lspconfig").helm_ls.setup({})

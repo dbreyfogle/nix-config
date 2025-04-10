@@ -15,6 +15,7 @@ return {
 	opts = {
 		formatters_by_ft = {
 			bash = { "shfmt" },
+			proto = { "buf" },
 			go = { "gofmt" },
 			json = { "prettier" },
 			lua = { "stylua" },
