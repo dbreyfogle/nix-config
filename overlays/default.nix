@@ -1,5 +1,5 @@
 { inputs, ... }:
 
 final: prev: {
-  unstable = inputs.nixpkgs-unstable.legacyPackages.${final.system};
+  stable = inputs.nixpkgs-stable.legacyPackages.${final.system};
 }

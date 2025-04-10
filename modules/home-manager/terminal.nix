@@ -233,7 +233,7 @@
     git-filter-repo
     kubectl
     kubernetes-helm
-    unstable.nerd-fonts.fira-code
+    nerd-fonts.fira-code
     tldr
     vim
   ];
