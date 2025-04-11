@@ -6,10 +6,6 @@ inoremap <C-c> <Esc>
 " Set leader
 let mapleader=" "
 
-" Delete without affecting other registers
-noremap <Leader>d "_d
-noremap <Leader>D "_D
-
 " Paste the most recent yank
 noremap <Leader>p "0p
 noremap <Leader>P "0P

@@ -82,6 +82,7 @@
         ansible-lint
         bash-language-server
         buf
+        delve
         dockerfile-language-server-nodejs
         fd
         gcc
