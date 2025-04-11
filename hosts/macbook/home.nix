@@ -21,6 +21,7 @@
       size = 14.5;
     };
     window = {
+      option_as_alt = "Both";
       padding = {
         x = 10;
         y = 5;
