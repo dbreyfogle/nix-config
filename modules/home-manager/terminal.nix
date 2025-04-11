@@ -94,6 +94,7 @@
         markdownlint-cli2
         nixd
         nixfmt-rfc-style
+        nodejs
         nodePackages.prettier
         pyright
         ripgrep

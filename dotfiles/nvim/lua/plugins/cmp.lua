@@ -21,7 +21,6 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
-				-- { name = "copilot" },
 			},
 			performance = { max_view_entries = 12 },
 			experimental = { ghost_text = true },
@@ -34,31 +33,34 @@ return {
 				["<Tab>"] = cmp.mapping.confirm({ select = true }),
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
-				["<C-e>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.close()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				["<C-f>"] = cmp.mapping(function(fallback)
+				["<M-f>"] = cmp.mapping(function()
 					local luasnip = require("luasnip")
 					if luasnip.locally_jumpable(1) then
 						luasnip.jump(1)
-					else
-						fallback()
 					end
 				end, { "i", "s" }),
-				["<C-b>"] = cmp.mapping(function(fallback)
+				["<M-b>"] = cmp.mapping(function()
 					local luasnip = require("luasnip")
 					if luasnip.locally_jumpable(-1) then
 						luasnip.jump(-1)
-					else
-						fallback()
 					end
+				end, { "i", "s" }),
+				["<C-f>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.close()
+					end
+					fallback() -- copilot suggestion
 				end, { "i", "s" }),
 			}),
 		})
+
+		-- Hide copilot suggestions when menu is open
+		cmp.event:on("menu_opened", function()
+			vim.b.copilot_suggestion_hidden = true
+		end)
+		cmp.event:on("menu_closed", function()
+			vim.b.copilot_suggestion_hidden = false
+		end)
 
 		-- Disable completions for certain filetypes
 		cmp.setup.filetype({ "markdown", "txt" }, {
