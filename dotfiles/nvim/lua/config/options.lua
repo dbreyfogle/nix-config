@@ -44,3 +44,6 @@ vim.g.loaded_matchparen = 1
 
 -- Reserve a space for signs
 vim.opt.signcolumn = "yes"
+
+-- Inline diagnostic messages
+vim.diagnostic.config({ virtual_text = true })

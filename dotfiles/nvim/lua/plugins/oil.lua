@@ -4,8 +4,6 @@ return {
 	lazy = false,
 	priority = 1000,
 	keys = { { "-", "<CMD>Oil<CR>" } },
-	---@module "oil"
-	---@type oil.SetupOpts
 	opts = {
 		view_options = {
 			show_hidden = true,
