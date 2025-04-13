@@ -36,17 +36,15 @@ in
   nix-homebrew = {
     enable = true;
     user = "${username}";
-    taps = {
-      "homebrew/homebrew-core" = inputs.homebrew-core;
-      "homebrew/homebrew-cask" = inputs.homebrew-cask;
-    };
     autoMigrate = true;
-    mutableTaps = false;
   };
 
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+    };
     casks = [
       "alacritty"
       "brave-browser"
@@ -63,6 +61,10 @@ in
       "visual-studio-code"
       "zoom"
     ];
+  };
+
+  environment.variables = {
+    HOMEBREW_NO_ANALYTICS = "1";
   };
 
   environment.systemPackages = with pkgs; [
