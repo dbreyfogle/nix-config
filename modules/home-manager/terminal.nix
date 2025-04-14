@@ -48,6 +48,7 @@
         "*~"
         "*.swp"
         ".DS_Store"
+        ".aider*"
         ".direnv/"
         "Session.vim"
       ];
@@ -229,6 +230,7 @@
   };
 
   home.packages = with pkgs; [
+    aider-chat-full
     argocd
     asciinema
     asciinema-agg
@@ -250,6 +252,8 @@
   };
 
   home.file = {
+    ".aider.conf.yml".source =
+      config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/aider/.aider.conf.yml";
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/.vimrc";
   };
 

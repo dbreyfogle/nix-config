@@ -1,0 +1,12 @@
+model: openrouter/deepseek/deepseek-r1
+editor-model: openrouter/anthropic/claude-3.5-sonnet
+architect: true
+
+attribute-author: false
+attribute-committer: false
+attribute-commit-message-committer: true
+gitignore: false
+
+code-theme: one-dark
+check-update: false
+analytics: false
