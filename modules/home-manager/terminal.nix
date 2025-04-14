@@ -125,19 +125,24 @@
       extraConfig = ''
         # [[ Keymaps ]]
 
-        # Pane navigation
+        # Pane management
         bind j select-pane -D
         bind k select-pane -U
         bind h select-pane -L
         bind l select-pane -R
+        bind J select-pane -D\; swap-pane -t '{down-of}'
+        bind K select-pane -U\; swap-pane -t '{up-of}'
+        bind H select-pane -L\; swap-pane -t '{left-of}'
+        bind L select-pane -R\; swap-pane -t '{right-of}'
+        bind = select-layout -E
 
         # Use current path for new splits
         bind '"' split-window -v -c "#{pane_current_path}"
         bind % split-window -h -c "#{pane_current_path}"
 
         # Prompt navigation (OSC 133)
-        bind K copy-mode\; send-keys -X previous-prompt
-        bind J copy-mode\; send-keys -X next-prompt
+        bind M-k copy-mode\; send-keys -X previous-prompt
+        bind M-j copy-mode\; send-keys -X next-prompt
 
         # Convenience shortcuts
         bind -r "<" swap-window -d -t -1
@@ -172,6 +177,17 @@
         # Terminal colors
         set -g default-terminal "tmux-256color"
         set -ga terminal-overrides ",*256col*:Tc"
+
+        # vim-tmux-navigator
+        is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
+        bind -n C-Left if-shell "$is_vim" "send-keys C-Left" "select-pane -L"
+        bind -n C-Down if-shell "$is_vim" "send-keys C-Down" "select-pane -D"
+        bind -n C-Up if-shell "$is_vim" "send-keys C-Up" "select-pane -U"
+        bind -n C-Right if-shell "$is_vim" "send-keys C-Right" "select-pane -R"
+        bind -T copy-mode-vi C-Left select-pane -L
+        bind -T copy-mode-vi C-Down select-pane -D
+        bind -T copy-mode-vi C-Up select-pane -U
+        bind -T copy-mode-vi C-Right select-pane -R
       '';
       plugins = with pkgs.tmuxPlugins; [
         {
