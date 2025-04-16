@@ -16,12 +16,23 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, nix-darwin, ... }:
+    inputs@{
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+      ...
+    }:
     {
       nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [ ./hosts/desktop/configuration.nix ];
+      };
+
+      nixosConfigurations."proxmox" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/proxmox/configuration.nix ];
       };
 
       darwinConfigurations."macbook" = nix-darwin.lib.darwinSystem {
@@ -30,10 +41,9 @@
         modules = [ ./hosts/macbook/configuration.nix ];
       };
 
-      nixosConfigurations."proxmox" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [ ./hosts/proxmox/configuration.nix ];
+      homeConfigurations."adhoc" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [ ./hosts/adhoc/home.nix ];
       };
 
       templates = builtins.listToAttrs (
