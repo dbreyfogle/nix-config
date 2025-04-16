@@ -8,6 +8,7 @@ return {
 			bash = { "shellcheck" },
 			dockerfile = { "hadolint" },
 			go = { "golangcilint" },
+			make = { "checkmake" },
 			markdown = { "markdownlint-cli2", "vale" },
 			python = { "ruff" },
 			terraform = { "tflint" },
