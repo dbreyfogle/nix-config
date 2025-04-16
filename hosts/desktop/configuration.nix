@@ -18,7 +18,7 @@ in
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [ (import ../../overlays { inherit inputs; }) ];
+  nixpkgs.overlays = [ inputs.self.overlays.default ];
 
   home-manager = {
     useGlobalPkgs = true;

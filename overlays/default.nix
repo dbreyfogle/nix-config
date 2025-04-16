@@ -1,7 +1,10 @@
 { inputs, ... }:
 
 final: prev: {
-  stable = inputs.nixpkgs-stable.legacyPackages.${final.system};
+  stable = import inputs.nixpkgs-stable {
+    system = prev.system;
+    config.allowUnfree = prev.config.allowUnfree;
+  };
 
   etcd = prev.callPackage ../pkgs/etcd.nix { };
 }

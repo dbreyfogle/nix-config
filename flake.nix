@@ -17,6 +17,7 @@
 
   outputs =
     inputs@{
+      self,
       nixpkgs,
       nix-darwin,
       home-manager,
@@ -42,9 +43,15 @@
       };
 
       homeConfigurations."adhoc" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+          overlays = [ self.overlays.default ];
+        };
         modules = [ ./hosts/adhoc/home.nix ];
       };
+
+      overlays.default = import ./overlays { inherit inputs; };
 
       templates = builtins.listToAttrs (
         map (subdir: {
