@@ -18,13 +18,13 @@
   programs.alacritty.settings = {
     font = {
       offset.y = 1;
-      size = 14.5;
+      size = 15;
     };
     window = {
       option_as_alt = "Both";
       padding = {
-        x = 10;
-        y = 5;
+        x = 9;
+        y = 6;
       };
       startup_mode = "Maximized";
     };
