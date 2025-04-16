@@ -1,5 +1,8 @@
--- Remap to <Esc>
-vim.keymap.set({ "i", "s" }, "<C-c>", "<Esc>")
+-- Swap <Esc> and <C-c>
+vim.keymap.set({ "" }, "<Esc>", "<C-c>")
+vim.keymap.set({ "" }, "<C-c>", "<Esc>")
+vim.keymap.set({ "!" }, "<Esc>", "<C-c>")
+vim.keymap.set({ "!" }, "<C-c>", "<Esc>")
 
 -- Set leader
 vim.g.mapleader = " "

@@ -1,7 +1,10 @@
 " [[ Keymaps ]]
 
-" Remap to <Esc>
-inoremap <C-c> <Esc>
+" Swap <Esc> and <C-c>
+noremap <Esc> <C-c>
+noremap <C-c> <Esc>
+noremap! <Esc> <C-c>
+noremap! <C-c> <Esc>
 
 " Set leader
 let mapleader=" "
