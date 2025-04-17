@@ -69,7 +69,6 @@ in
 
   environment.systemPackages = with pkgs; [
     coreutils
-    gnumake
     gnused
   ];
 

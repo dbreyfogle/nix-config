@@ -31,10 +31,6 @@ in
     shell = pkgs.zsh;
   };
 
-  environment.systemPackages = with pkgs; [
-    gnumake
-  ];
-
   programs.zsh.enable = true;
 
   services.openssh.enable = true;
