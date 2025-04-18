@@ -71,29 +71,15 @@ return {
 			settings = {
 				yaml = {
 					schemaStore = { enable = false, url = "" },
-					schemas = require("schemastore").yaml.schemas({
-						extra = {
-							{
-								name = "kubernetes",
-								description = "Kubernetes JSON schema",
-								url = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-standalone-strict/all.json",
-								fileMatch = {
-									"**/k8s/**/*.yaml",
-									"**/k8s/**/*.yml",
-									"**/kubernetes/**/*.yaml",
-									"**/kubernetes/**/*.yml",
-									"**/manifests/**/*.yaml",
-									"**/manifests/**/*.yml",
-									"**/base/**/*.yaml",
-									"**/base/**/*.yml",
-									"**/overlays/**/*.yaml",
-									"**/overlays/**/*.yml",
-									"**/deployments/**/*.yaml",
-									"**/deployments/**/*.yml",
-									"**/services/**/*.yaml",
-									"**/services/**/*.yml",
-								},
-							},
+					schemas = vim.tbl_deep_extend("force", require("schemastore").yaml.schemas({}), {
+						kubernetes = {
+							"*/k8s/*",
+							"*/kubernetes/*",
+							"*/manifests/*",
+							"*/base/*",
+							"*/overlays/*",
+							"*/deployments/*",
+							"*/services/*",
 						},
 					}),
 				},
