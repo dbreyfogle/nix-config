@@ -123,74 +123,10 @@
     tmux = {
       enable = true;
       sensibleOnTop = false;
-      extraConfig = ''
-        # [[ Keymaps ]]
-
-        # Pane management
-        bind j select-pane -D
-        bind k select-pane -U
-        bind h select-pane -L
-        bind l select-pane -R
-        bind J select-pane -D\; swap-pane -t '{down-of}'
-        bind K select-pane -U\; swap-pane -t '{up-of}'
-        bind H select-pane -L\; swap-pane -t '{left-of}'
-        bind L select-pane -R\; swap-pane -t '{right-of}'
-        bind = select-layout -E
-
-        # Use current path for new splits
-        bind '"' split-window -v -c "#{pane_current_path}"
-        bind % split-window -h -c "#{pane_current_path}"
-
-        # Prompt navigation (OSC 133)
-        bind M-k copy-mode\; send-keys -X previous-prompt
-        bind M-j copy-mode\; send-keys -X next-prompt
-
-        # Convenience shortcuts
-        bind -r "<" swap-window -d -t -1
-        bind -r ">" swap-window -d -t +1
-        bind A setw synchronize-panes\; display-message "synchronize-panes: #{?pane_synchronized,on,off}"
-        bind S command-prompt -p "join-pane source:"  "join-pane -s :'%%'"
-        bind T command-prompt -p "join-pane target:"  "join-pane -t :'%%'"
-
-        # [[ Options ]]
-
-        # Window renaming
-        set -g allow-rename off
-        set -g renumber-windows on
-
-        # Display pane numbers until selected
-        bind -T prefix q display-panes -d 0
-
-        # Increase history limit
-        set -g history-limit 10000
-
-        # Vim compatibility
-        set -gs escape-time 10
-        set -g focus-events on
-
-        # Vim-style copy
-        setw -g mode-keys vi
-        bind -T copy-mode-vi v send -X begin-selection
-
-        # Enable mouse usage
-        set -g mouse on
-
-        # Terminal colors
-        set -g default-terminal "tmux-256color"
-        set -ga terminal-overrides ",*256col*:Tc"
-
-        # vim-tmux-navigator
-        is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
-        bind -n C-Left if-shell "$is_vim" "send-keys C-Left" "select-pane -L"
-        bind -n C-Down if-shell "$is_vim" "send-keys C-Down" "select-pane -D"
-        bind -n C-Up if-shell "$is_vim" "send-keys C-Up" "select-pane -U"
-        bind -n C-Right if-shell "$is_vim" "send-keys C-Right" "select-pane -R"
-        bind -T copy-mode-vi C-Left select-pane -L
-        bind -T copy-mode-vi C-Down select-pane -D
-        bind -T copy-mode-vi C-Up select-pane -U
-        bind -T copy-mode-vi C-Right select-pane -R
-      '';
+      extraConfig = builtins.readFile ../../dotfiles/tmux/tmux.conf;
       plugins = with pkgs.tmuxPlugins; [
+        logging
+        yank
         {
           plugin = continuum;
           extraConfig = ''
@@ -211,8 +147,6 @@
             set -g @resurrect-hook-post-save-all 'sed -i "/^pane\t.*\tnvim\t/ s#\(\tnvim\t\).*#\1:nvim#" ${config.home.homeDirectory}/.tmux/resurrect/last'
           '';
         }
-        logging
-        yank
       ];
     };
 
