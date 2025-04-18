@@ -1,0 +1,6 @@
+{
+  "keyMappings": "unmapAll\nmap j scrollDown\nmap k scrollUp\nmap <c-d> scrollPageDown\nmap <c-u> scrollPageUp\nmap i LinkHints.activateMode\nmap I LinkHints.activateModeToOpenInNewTab",
+  "smoothScroll": false,
+  "searchEngines": "",
+  "settingsVersion": "2.2.1"
+}

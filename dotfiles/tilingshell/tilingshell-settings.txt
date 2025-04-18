@@ -1,0 +1,12 @@
+[/]
+active-screen-edges=false
+enable-move-keybindings=false
+enable-snap-assist=false
+enable-span-multiple-tiles=false
+enable-wraparound-focus=false
+inner-gaps=uint32 0
+outer-gaps=uint32 0
+override-window-menu=false
+resize-complementing-windows=false
+selected-layouts=[['4403158'], ['4403158']]
+show-indicator=false
