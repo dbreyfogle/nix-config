@@ -2,9 +2,10 @@ model: openrouter/deepseek/deepseek-r1
 editor-model: openrouter/anthropic/claude-3.5-sonnet
 architect: true
 
+auto-commits: false
+dirty-commits: false
 attribute-author: false
 attribute-committer: false
-attribute-commit-message-committer: true
 gitignore: false
 
 dark-mode: true
