@@ -7,6 +7,7 @@ attribute-committer: false
 attribute-commit-message-committer: true
 gitignore: false
 
-code-theme: one-dark
+dark-mode: true
 check-update: false
+show-release-notes: false
 analytics: false
