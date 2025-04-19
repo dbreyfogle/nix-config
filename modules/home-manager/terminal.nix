@@ -35,6 +35,9 @@
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
+      config = {
+        global.hide_env_diff = true;
+      };
     };
 
     fzf = {
@@ -196,7 +199,6 @@
   home.sessionVariables = {
     MINIKUBE_IN_STYLE = "false";
     VALE_CONFIG_PATH = "$HOME/.config/vale/.vale.ini";
-    VIRTUAL_ENV_DISABLE_PROMPT = 1;
     ZSH_TMUX_AUTOSTART = "true";
     ZSH_TMUX_AUTOQUIT = "false";
     ZSH_TMUX_UNICODE = "true";

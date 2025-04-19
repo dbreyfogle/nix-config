@@ -1,9 +1,9 @@
 { lib, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.tiling-shell
+  home.packages = with pkgs.gnomeExtensions; [
+    alphabetical-app-grid
+    tiling-shell
   ];
 
   dconf = {
