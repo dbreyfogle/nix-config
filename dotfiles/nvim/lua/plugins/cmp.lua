@@ -45,7 +45,7 @@ return {
 						luasnip.jump(-1)
 					end
 				end, { "i", "s" }),
-				["<C-f>"] = cmp.mapping(function(fallback)
+				["<M-\\>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.close()
 					end
