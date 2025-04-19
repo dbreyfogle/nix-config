@@ -103,9 +103,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "notebook.diff.ignoreMetadata": true,
   "notebook.diff.ignoreOutputs": true,
-  "gitblame.statusBarMessageClickAction": "Open git show",
-  "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
-  "gitblame.inlineMessageFormat": "${author.name} (${time.ago})",
 
   "vim.handleKeys": {
     "<C-b>": false,
