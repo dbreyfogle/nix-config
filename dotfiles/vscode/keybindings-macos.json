@@ -23,5 +23,13 @@
     "key": "alt+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+\\",
+    "command": "runCommands",
+    "args": {
+      "commands": ["hideSuggestWidget", "editor.action.inlineSuggest.trigger"]
+    },
+    "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
   }
 ]
