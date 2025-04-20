@@ -57,6 +57,11 @@
       ];
       userEmail = "27653146+dbreyfogle@users.noreply.github.com";
       userName = "Danny Breyfogle";
+      signing = {
+        format = "ssh";
+        key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
+        signByDefault = true;
+      };
       extraConfig = {
         init.defaultBranch = "main";
         push.autoSetupRemote = "true";
