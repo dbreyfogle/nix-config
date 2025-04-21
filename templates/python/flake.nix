@@ -25,6 +25,7 @@
 
   outputs =
     {
+      self,
       flake-utils,
       nixpkgs,
       pyproject-nix,
@@ -54,6 +55,11 @@
       {
         packages.default = pythonSet.mkVirtualEnv "venv" workspace.deps.default;
 
+        apps.default = {
+          type = "app";
+          program = "${self.packages.${system}.default}/bin/python-template";
+        };
+
         devShells.default = pkgs.mkShell {
           packages = [
             python
@@ -64,7 +70,7 @@
               UV_PYTHON_DOWNLOADS = "never";
               UV_PYTHON = python.interpreter;
             }
-            // lib.optionalAttrs (system == "x86_64-linux") {
+            // lib.optionalAttrs (pkgs.stdenv.isLinux && builtins.pathExists "/etc/nixos") {
               LD_LIBRARY_PATH = lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1;
             };
           shellHook = ''
