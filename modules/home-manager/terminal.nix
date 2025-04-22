@@ -198,6 +198,9 @@
     kubectl
     kubernetes-helm
     nerd-fonts.fira-code
+    nixd
+    nixfmt-rfc-style
+    terraform
     tldr
     vim
   ];

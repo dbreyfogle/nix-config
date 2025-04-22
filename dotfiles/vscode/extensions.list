@@ -5,8 +5,11 @@ esbenp.prettier-vscode
 github.codespaces
 github.copilot
 github.copilot-chat
+github.remotehub
+github.vscode-pull-request-github
 golang.go
 hashicorp.terraform
+jnoortheen.nix-ide
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.debugpy
@@ -17,6 +20,7 @@ ms-toolsai.jupyter-renderers
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode.remote-explorer
+ms-vscode.remote-repositories
 pkief.material-icon-theme
 redhat.vscode-yaml
 usernamehw.errorlens
