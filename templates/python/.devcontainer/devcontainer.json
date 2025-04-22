@@ -1,0 +1,35 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "multiUser": false,
+      "extraNixConfig": "extra-experimental-features = nix-command flakes",
+      "useAttributePath": true,
+      "packages": "nixd,nixfmt-rfc-style,direnv"
+    }
+  },
+  "postCreateCommand": "echo 'eval \"$(direnv hook bash)\"' >> ~/.bashrc && direnv allow",
+  "containerEnv": { "DIRENV_WARN_TIMEOUT": "0" },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "nix.enableLanguageServer": true,
+        "nix.serverPath": "nixd",
+        "[nix]": { "editor.formatOnSave": true },
+        "[python]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+          }
+        }
+      },
+      "extensions": [
+        "jnoortheen.nix-ide",
+        "ms-python.python",
+        "charliermarsh.ruff"
+      ]
+    }
+  }
+}

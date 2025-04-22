@@ -1,6 +1,9 @@
 # Environment variables
 .env
 
+# Direnv
+.direnv/
+
 # Local .terraform directories
 **/.terraform/*
 

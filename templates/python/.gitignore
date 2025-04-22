@@ -1,6 +1,12 @@
 # Environment variables
 .env
 
+# Direnv
+.direnv/
+
+# Nix
+result
+
 # Python-generated files
 __pycache__/
 *.py[oc]

@@ -1,0 +1,33 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "multiUser": false,
+      "extraNixConfig": "extra-substituters = https://nixpkgs-terraform.cachix.org,extra-trusted-public-keys = nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw=",
+      "useAttributePath": true,
+      "packages": "nixd,nixfmt-rfc-style,direnv",
+      "flakeUri": "github:stackbuilders/nixpkgs-terraform#\\\"1.11\\\""
+    }
+  },
+  "postCreateCommand": "echo 'eval \"$(direnv hook bash)\"' >> ~/.bashrc && direnv allow",
+  "containerEnv": { "DIRENV_WARN_TIMEOUT": "0" },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "nix.enableLanguageServer": true,
+        "nix.serverPath": "nixd",
+        "[nix]": { "editor.formatOnSave": true },
+        "terraform.languageServer.ignoreSingleFileWarning": true,
+        "[terraform]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "hashicorp.terraform"
+        },
+        "[terraform-vars]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "hashicorp.terraform"
+        }
+      },
+      "extensions": ["jnoortheen.nix-ide", "hashicorp.terraform"]
+    }
+  }
+}
