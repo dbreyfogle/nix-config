@@ -8,13 +8,12 @@ in
   imports = [
     inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
+    ../../modules/shared/core.nix
     ../../modules/nix-darwin/system.nix
   ];
 
   system.stateVersion = 5;
-  nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.config.allowUnfree = true;
-
   nixpkgs.overlays = [ inputs.self.overlays.default ];
 
   home-manager = {

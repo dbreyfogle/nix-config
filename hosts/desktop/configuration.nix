@@ -10,14 +10,13 @@ in
     inputs.disko.nixosModules.disko
     ./disko.nix
     ./hardware-configuration.nix
+    ../../modules/shared/core.nix
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/inhibit-sleep-ssh.nix
   ];
 
   system.stateVersion = "24.11";
-  nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.config.allowUnfree = true;
-
   nixpkgs.overlays = [ inputs.self.overlays.default ];
 
   home-manager = {

@@ -200,7 +200,7 @@
     nerd-fonts.fira-code
     nixd
     nixfmt-rfc-style
-    terraform
+    terraform-versions."1.11"
     tldr
     vim
   ];

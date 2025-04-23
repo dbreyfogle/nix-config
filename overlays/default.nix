@@ -6,5 +6,7 @@ final: prev: {
     config.allowUnfree = prev.config.allowUnfree;
   };
 
+  terraform-versions = inputs.nixpkgs-terraform.packages.${prev.system};
+
   etcd = prev.callPackage ../pkgs/etcd.nix { };
 }
