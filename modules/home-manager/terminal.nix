@@ -140,9 +140,10 @@
           plugin = continuum;
           extraConfig = ''
             # Theme (must be set before tmux-continuum due to a bug)
-            set -g status-left ""
-            set -g status-right "#{?client_prefix,#[fg=green bold],#[fg=default]}[#S]#[fg=default nobold]  #(date '+%a %b %-d  %-I:%M %p')"
-            set -g status-style bg=default,fg=white
+            set -g status-left "#[fg=green,bold][#S] "
+            set -g status-left-length 50
+            set -g status-right ""
+            set -g status-style fg=gray60,bg=default
             setw -g window-status-current-style fg=green,bold
 
             # Faster save interval
