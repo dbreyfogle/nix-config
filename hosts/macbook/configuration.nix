@@ -25,7 +25,10 @@ in
     users.${username} = import ./home.nix;
   };
 
+  users.knownUsers = [ username ];
+
   users.users.${username} = {
+    uid = 501;
     name = "${username}";
     home = "/Users/${username}";
     isHidden = false;
@@ -70,6 +73,8 @@ in
     coreutils
     gnused
   ];
+
+  programs.zsh.enable = true;
 
   services.openssh.enable = true;
 
