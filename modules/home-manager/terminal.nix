@@ -86,8 +86,6 @@
       enable = true;
       defaultEditor = true;
       extraPackages = with pkgs; [
-        ansible-language-server
-        ansible-lint
         bash-language-server
         buf
         checkmake
@@ -107,8 +105,6 @@
         nodePackages.prettier
         pyright
         ripgrep
-        rubocop
-        rubyPackages.solargraph
         ruff
         shellcheck
         shfmt
@@ -189,7 +185,7 @@
   };
 
   home.packages = with pkgs; [
-    aider-chat-full
+    aider-chat
     argocd
     asciinema
     asciinema-agg

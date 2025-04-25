@@ -20,7 +20,6 @@ return {
       markdown = { "prettier" },
       nix = { "nixfmt" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-      ruby = { "rubocop" },
       terraform = { "terraform_fmt" },
       toml = { "taplo" },
       yaml = { "prettier" },

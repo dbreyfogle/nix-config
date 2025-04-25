@@ -23,7 +23,6 @@ return {
     lspconfig_defaults.capabilities =
       vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-    require("lspconfig").ansiblels.setup({})
     require("lspconfig").bashls.setup({})
     require("lspconfig").buf_ls.setup({})
     require("lspconfig").dockerls.setup({})
@@ -57,7 +56,6 @@ return {
     })
     require("lspconfig").nixd.setup({})
     require("lspconfig").pyright.setup({})
-    require("lspconfig").solargraph.setup({})
     require("lspconfig").taplo.setup({})
     require("lspconfig").terraformls.setup({
       on_attach = function(client, bufnr)
@@ -88,12 +86,6 @@ return {
         [".*/templates/.*%.ya?ml"] = { "helm", { priority = 10 } },
         [".*/Chart%.ya?ml"] = { "helm", { priority = 10 } },
         [".*/values%.ya?ml"] = { "helm", { priority = 10 } },
-
-        [".*/.*playbook.*%.ya?ml"] = "yaml.ansible",
-        [".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
-        [".*/roles/.*%.ya?ml"] = "yaml.ansible",
-        [".*/tasks/.*%.ya?ml"] = "yaml.ansible",
-        [".*/handlers/.*%.ya?ml"] = "yaml.ansible",
       },
     })
   end,
