@@ -9,6 +9,7 @@
   programs = {
     alacritty = {
       enable = true;
+      package = null;
       settings = {
         general.import = [ "~/.config/alacritty/themes/onehalfdark.toml" ];
         cursor = {
@@ -16,10 +17,7 @@
           style.blinking = "Always";
         };
         env.TERM = "xterm-256color";
-        font.normal = {
-          family = "FiraCode Nerd Font";
-          style = "Retina";
-        };
+        font.normal.family = "JetBrainsMonoNL Nerd Font";
         window = {
           decorations = "none";
           dynamic_padding = true;
@@ -198,7 +196,7 @@
     git-filter-repo
     kubectl
     kubernetes-helm
-    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
     nixd
     nixfmt-rfc-style
     terraform-versions."1.11"
