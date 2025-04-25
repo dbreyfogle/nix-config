@@ -48,7 +48,6 @@ in
       cleanup = "zap";
     };
     casks = [
-      "alacritty"
       "brave-browser"
       "discord"
       "docker"

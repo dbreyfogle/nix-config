@@ -7,24 +7,6 @@
 
 {
   programs = {
-    alacritty = {
-      enable = true;
-      package = null;
-      settings = {
-        general.import = [ "~/.config/alacritty/themes/onehalfdark.toml" ];
-        cursor = {
-          blink_timeout = 0;
-          style.blinking = "Always";
-        };
-        env.TERM = "xterm-256color";
-        font.normal.family = "JetBrainsMonoNL Nerd Font";
-        window = {
-          decorations = "none";
-          dynamic_padding = true;
-        };
-      };
-    };
-
     awscli = {
       enable = true;
     };
@@ -237,7 +219,6 @@
   };
 
   xdg.configFile = {
-    "alacritty/themes".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/alacritty";
     "ghostty/themes".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/ghostty";
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
     "starship.toml".source =

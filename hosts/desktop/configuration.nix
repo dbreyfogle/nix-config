@@ -39,7 +39,6 @@ in
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      alacritty
       brave
       discord
       ghostty
