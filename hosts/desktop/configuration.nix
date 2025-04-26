@@ -42,6 +42,7 @@ in
       alacritty
       brave
       discord
+      ghostty
       libreoffice
       obsidian
       pika-backup

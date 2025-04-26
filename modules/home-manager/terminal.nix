@@ -44,6 +44,24 @@
       enableZshIntegration = true;
     };
 
+    ghostty = {
+      enable = true;
+      package = null;
+      settings = {
+        theme = "dark:OneHalfDark,light:OneHalfLight";
+        font-family = "JetBrainsMonoNL Nerd Font";
+        title = "\" \"";
+        shell-integration-features = "no-cursor";
+        cursor-style = "block";
+        cursor-style-blink = true;
+        quit-after-last-window-closed = true;
+        confirm-close-surface = false;
+        window-save-state = "always";
+        macos-titlebar-proxy-icon = "hidden";
+        macos-option-as-alt = true;
+      };
+    };
+
     git = {
       enable = true;
       ignores = [
@@ -220,6 +238,7 @@
 
   xdg.configFile = {
     "alacritty/themes".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/alacritty";
+    "ghostty/themes".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/ghostty";
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
     "starship.toml".source =
       config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/starship/starship.toml";

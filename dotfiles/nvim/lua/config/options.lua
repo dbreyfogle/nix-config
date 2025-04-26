@@ -39,6 +39,9 @@ vim.opt.undofile = true
 -- Set terminal colors
 vim.opt.termguicolors = true
 
+-- Cursor blinking
+vim.opt.guicursor = vim.opt.guicursor + "a:blinkon500-blinkoff500"
+
 -- Disable highlighting matching parens
 vim.g.loaded_matchparen = 1
 

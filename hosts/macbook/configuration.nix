@@ -52,6 +52,7 @@ in
       "brave-browser"
       "discord"
       "docker"
+      "ghostty"
       "obsidian"
       "parsec"
       "protonvpn"

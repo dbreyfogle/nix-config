@@ -22,4 +22,10 @@
       startup_mode = "Maximized";
     };
   };
+
+  programs.ghostty.settings = {
+    font-size = 15;
+    window-padding-x = "6,0";
+    window-padding-y = "12,4";
+  };
 }
