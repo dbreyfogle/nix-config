@@ -1,5 +1,6 @@
 format = "${custom.osc133}$all"
 right_format = "$time"
+command_timeout = 1500
 
 [custom.osc133]
 command = "echo -e '\\033]133;A\\033\\\\'"
