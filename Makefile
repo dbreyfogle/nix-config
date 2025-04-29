@@ -1,12 +1,12 @@
-ifneq (,$(wildcard .env))
-	include .env
-	export
-endif
-
 OS := $(shell uname -v)
 IS_NIXOS := $(findstring NixOS,$(OS))
 IS_DARWIN := $(findstring Darwin,$(OS))
 GC_OLDER_THAN := 7d
+
+ifneq (,$(wildcard .env))
+	include .env
+	export
+endif
 
 .PHONY: all switch clean
 
