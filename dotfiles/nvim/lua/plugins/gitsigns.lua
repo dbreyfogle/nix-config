@@ -9,11 +9,11 @@ return {
         vim.keymap.set(mode, l, r, opts)
       end
 
-      map("n", "<Leader>gd", gitsigns.diffthis)
-      map("n", "<Leader>gD", function()
-        gitsigns.diffthis("~")
-      end)
+      map("n", "<Leader>gB", "<CMD>Gitsigns blame<CR>")
       map("n", "<Leader>gs", gitsigns.stage_buffer)
+      map("n", "<Leader>gtb", gitsigns.toggle_current_line_blame)
+      map("n", "<Leader>gtd", gitsigns.toggle_deleted)
+      map("n", "<Leader>gtw", gitsigns.toggle_word_diff)
       map("n", "<Leader>gu", gitsigns.reset_buffer_index)
       map("n", "<Leader>gX", gitsigns.reset_buffer)
       map("n", "<Leader>hb", function()
@@ -29,8 +29,6 @@ return {
       map("v", "<Leader>hX", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end)
-      map("n", "<Leader>tb", gitsigns.toggle_current_line_blame)
-      map("n", "<Leader>td", gitsigns.toggle_deleted)
       map("n", "]c", function()
         if vim.wo.diff then
           vim.cmd.normal({ "]c", bang = true })

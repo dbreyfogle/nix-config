@@ -10,11 +10,12 @@ return {
     sections = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = { "diagnostics", "diff", { "filename", path = 1 } },
+      lualine_c = { "diagnostics", "diff", "branch", { "filename", path = 1 } },
       lualine_x = {
         function()
-          return vim.fn.ObsessionStatus("Obsession", "")
+          return vim.fn.ObsessionStatus("session", "")
         end,
+        "filetype",
         "location",
         "progress",
       },

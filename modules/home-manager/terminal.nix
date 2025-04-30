@@ -26,6 +26,14 @@
       enableZshIntegration = true;
     };
 
+    gh = {
+      enable = true;
+      extensions = with pkgs; [
+        gh-copilot
+        gh-markdown-preview
+      ];
+    };
+
     ghostty = {
       enable = true;
       package = null;
@@ -65,10 +73,6 @@
         init.defaultBranch = "main";
         push.autoSetupRemote = "true";
       };
-    };
-
-    gh = {
-      enable = true;
     };
 
     k9s = {
@@ -162,6 +166,9 @@
       };
       enableCompletion = true;
       history.ignoreSpace = true;
+      initContent = ''
+        eval "$(gh copilot alias -- zsh)"
+      '';
       oh-my-zsh = {
         enable = true;
         plugins = [

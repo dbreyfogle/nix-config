@@ -22,9 +22,9 @@ return {
         ["ui-select"] = { require("telescope.themes").get_dropdown() },
       },
     })
-    pcall(require("telescope").load_extension, "fzf")
-    pcall(require("telescope").load_extension, "ui-select")
-    pcall(require("telescope").load_extension, "undo")
+    require("telescope").load_extension("fzf")
+    require("telescope").load_extension("ui-select")
+    require("telescope").load_extension("undo")
 
     local builtin = require("telescope.builtin")
     local map = function(keys, func, mode)
@@ -58,8 +58,6 @@ return {
 
     map("<Leader>gb", builtin.git_branches)
     map("<Leader>gg", builtin.git_status)
-    map("<Leader>gl", builtin.git_commits)
-    map("<Leader>gL", builtin.git_bcommits)
     map("<Leader>gz", builtin.git_stash)
   end,
 }
