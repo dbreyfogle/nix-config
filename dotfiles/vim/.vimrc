@@ -51,6 +51,9 @@ set splitbelow
 " Keep cursor above/below N lines
 set scrolloff=12
 
+" Hide tabline
+set showtabline=0
+
 " Use system clipboard
 set clipboard=unnamedplus
 

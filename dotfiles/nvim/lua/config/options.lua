@@ -24,6 +24,9 @@ vim.opt.splitbelow = true
 -- Keep cursor above/below N lines
 vim.opt.scrolloff = 12
 
+-- Hide tabline
+vim.opt.showtabline = 0
+
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
