@@ -44,6 +44,7 @@
         shell-integration-features = "no-cursor";
         cursor-style = "block";
         cursor-style-blink = true;
+        mouse-hide-while-typing = true;
         quit-after-last-window-closed = true;
         confirm-close-surface = false;
         window-save-state = "always";
