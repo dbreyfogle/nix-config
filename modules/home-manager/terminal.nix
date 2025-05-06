@@ -11,6 +11,10 @@
       enable = true;
     };
 
+    bat = {
+      enable = true;
+    };
+
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -159,6 +163,11 @@
       ];
     };
 
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     zsh = {
       enable = true;
       autosuggestion = {
@@ -168,25 +177,37 @@
       enableCompletion = true;
       history.ignoreSpace = true;
       initContent = ''
+        eval "$(${repodir}/scripts/detect-term-background)"
+        export BAT_THEME="OneHalf''${(C)TERM_BACKGROUND}"
+        export FZF_DEFAULT_OPTS="\
+        --bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up \
+        --border=none \
+        --color=$TERM_BACKGROUND \
+        --preview='bat --color=always --plain --line-range=:500 {}' \
+        --style=full \
+        --tmux=80%"
+        complete -C $(which aws_completer) aws
         eval "$(gh copilot alias -- zsh)"
       '';
       oh-my-zsh = {
         enable = true;
         plugins = [
-          "argocd"
-          "aws"
-          "docker"
-          "docker-compose"
           "git"
-          "helm"
-          "kubectl"
           "terraform"
           "tmux"
-          "z"
         ];
       };
+      sessionVariables = {
+        MINIKUBE_IN_STYLE = "false";
+        VALE_CONFIG_PATH = "$HOME/.config/vale/.vale.ini";
+        ZSH_TMUX_AUTOSTART = "true";
+        ZSH_TMUX_AUTOQUIT = "false";
+        ZSH_TMUX_UNICODE = "true";
+      };
       shellAliases = {
+        k = "kubectl";
         l = "ls -lFhAv --group-directories-first --color";
+        tf = "terraform";
       };
       syntaxHighlighting.enable = true;
     };
@@ -194,12 +215,10 @@
 
   home.packages = with pkgs; [
     aider-chat
-    argocd
     asciinema
     asciinema-agg
+    bc
     git-filter-repo
-    kubectl
-    kubernetes-helm
     nerd-fonts.jetbrains-mono
     nixd
     nixfmt-rfc-style
@@ -207,14 +226,6 @@
     tldr
     vim
   ];
-
-  home.sessionVariables = {
-    MINIKUBE_IN_STYLE = "false";
-    VALE_CONFIG_PATH = "$HOME/.config/vale/.vale.ini";
-    ZSH_TMUX_AUTOSTART = "true";
-    ZSH_TMUX_AUTOQUIT = "false";
-    ZSH_TMUX_UNICODE = "true";
-  };
 
   home.file = {
     ".aider.conf.yml".source =

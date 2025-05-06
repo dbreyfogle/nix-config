@@ -29,7 +29,7 @@ endif
 	nix-collect-garbage --delete-older-than $(GC_OLDER_THAN)
 
 update:
-	./scripts/update-flakes.sh
+	./scripts/update-flakes
 
 install_nix:
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install

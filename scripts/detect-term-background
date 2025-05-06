@@ -1,0 +1,45 @@
+#!/usr/bin/env zsh
+
+# Usage: eval "$(detect-term-background)"
+
+# Parses a hex color component to a 0.0-1.0 float
+parse_hex_color() {
+  local c=${(L)1//[^0-9a-f]}
+  (( ${#c} >= 1 && ${#c} <= 4 )) || return 1
+  # Normalize hex value based on its bit depth
+  bc -l <<< "scale=4; $((16#$c)) / $(( (1 << (4 * ${#c})) - 1 ))" 2>/dev/null
+}
+
+detect_term_background() {
+  local old_stty=$(stty -g 2>/dev/null)
+  stty -echo -icanon min 0 time 0 2>/dev/null
+  # OSC 11 query for terminal background color
+  print -n '\e]11;?\a' > /dev/tty
+  local resp
+  IFS= read -r -t 2 -s -d $'\a' resp < /dev/tty
+  stty "$old_stty" 2>/dev/null  # restore terminal settings
+
+  local r g b
+  case $resp in
+    $'\x1b]11;rgb:'*|$'\x1b]11;rgba:'*)
+      local -a components=(${(s:/:)${resp#*:}})
+      r=${components[1]} g=${components[2]} b=${components[3]}
+      ;;
+    *) echo "export TERM_BACKGROUND='dark'"; return 1 ;;  # fallback to dark
+  esac
+
+  local r_val g_val b_val
+  if ! { r_val=$(parse_hex_color $r) } ||
+     ! { g_val=$(parse_hex_color $g) } ||
+     ! { b_val=$(parse_hex_color $b) } {
+    echo "export TERM_BACKGROUND='dark'"
+    return 1
+  }
+
+  # Calculate relative luminance
+  local luminance=$(bc -l <<< "0.2126*$r_val + 0.7152*$g_val + 0.0722*$b_val")
+  # Light if luminance >= 0.5, else dark
+  [[ $(bc -l <<< "$luminance >= 0.5") -eq 1 ]] && echo "export TERM_BACKGROUND='light'" || echo "export TERM_BACKGROUND='dark'"
+}
+
+detect_term_background
