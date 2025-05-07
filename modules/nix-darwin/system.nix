@@ -22,6 +22,7 @@
       AppleWindowTabbingMode = "always";
       InitialKeyRepeat = 30;
       KeyRepeat = 2;
+      NSWindowShouldDragOnGesture = true;
       "com.apple.keyboard.fnState" = false;
       "com.apple.sound.beep.feedback" = 0;
       "com.apple.sound.beep.volume" = 0.6065307;
@@ -35,9 +36,9 @@
       AutoHide = false;
       EnableStandardClickToShowDesktop = false;
       EnableTiledWindowMargins = false;
-      EnableTilingByEdgeDrag = false;
+      EnableTilingByEdgeDrag = true;
       EnableTilingOptionAccelerator = false;
-      EnableTopTilingByEdgeDrag = false;
+      EnableTopTilingByEdgeDrag = true;
       GloballyEnabled = false;
       HideDesktop = false;
       StageManagerHideWidgets = false;

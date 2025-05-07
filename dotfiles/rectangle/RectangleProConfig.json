@@ -8,7 +8,7 @@
       "int" : 0
     },
     "adjacentResizing" : {
-      "int" : 1
+      "int" : 2
     },
     "allowAnyShortcut" : {
       "bool" : true
@@ -44,7 +44,7 @@
 
     },
     "applyGapToEdges" : {
-      "int" : 0
+      "int" : 2
     },
     "attemptMatchOnNextPrevDisplay" : {
       "int" : 0
@@ -101,7 +101,7 @@
       "double" : 0
     },
     "doubleClickTitleBar" : {
-      "int" : 3
+      "int" : 0
     },
     "doubleClickTitleBarIgnoredApps" : {
 
@@ -143,7 +143,7 @@
       "double" : 0
     },
     "gestures" : {
-      "string" : "[35,{\"trail\":0,\"flags\":0}]"
+      "string" : "[10,{\"flags\":0,\"trail\":2},35,{\"flags\":0,\"trail\":0},4,{\"flags\":0,\"trail\":3},11,{\"trail\":1,\"flags\":0},2,{\"trail\":1,\"flags\":0},0,{\"trail\":3,\"flags\":0},5,{\"trail\":4,\"flags\":0},19,{\"trail\":2,\"flags\":0},1,{\"trail\":4,\"flags\":0}]"
     },
     "hapticFeedbackOnSnap" : {
       "int" : 0
@@ -173,7 +173,7 @@
       "int" : 0
     },
     "landscapeSnapAreas" : {
-      "string" : "[4,{\"action\":0},5,{\"action\":1},2,{\"action\":2}]"
+      "string" : "[]"
     },
     "launchOnLogin" : {
       "bool" : true
@@ -197,13 +197,13 @@
       "int" : 0
     },
     "menuActionVisibility" : {
-      "string" : "{\"120\":{\"shown\":false},\"10\":{\"shown\":false},\"133\":{\"shown\":true},\"110\":{\"shown\":false},\"134\":{\"shown\":true},\"11\":{\"shown\":false},\"37\":{\"shown\":false},\"3\":{\"shown\":false}}"
+      "string" : "{\"110\":{\"shown\":false},\"10\":{\"shown\":false},\"134\":{\"shown\":true},\"120\":{\"shown\":false},\"11\":{\"shown\":false},\"108\":{\"shown\":false},\"12\":{\"shown\":false},\"1\":{\"shown\":true},\"0\":{\"shown\":true},\"133\":{\"shown\":true},\"2\":{\"shown\":false},\"37\":{\"shown\":false},\"107\":{\"shown\":false},\"3\":{\"shown\":false}}"
     },
     "menuAppSpecVisibility" : {
 
     },
     "menuCategoryVisibility" : {
-      "string" : "{\"19\":{\"shown\":false,\"shownAsSubmenu\":true},\"14\":{\"shownAsSubmenu\":true,\"shown\":false},\"5\":{\"shownAsSubmenu\":false,\"shown\":false},\"13\":{\"shownAsSubmenu\":true,\"shown\":false},\"6\":{\"shownAsSubmenu\":false,\"shown\":false},\"11\":{\"shownAsSubmenu\":true,\"shown\":false},\"9\":{\"shownAsSubmenu\":false,\"shown\":false},\"3\":{\"shownAsSubmenu\":true,\"shown\":false}}"
+      "string" : "{\"12\":{\"shown\":false,\"shownAsSubmenu\":false},\"9\":{\"shownAsSubmenu\":false,\"shown\":false},\"4\":{\"shownAsSubmenu\":false,\"shown\":false},\"14\":{\"shown\":false,\"shownAsSubmenu\":false},\"10\":{\"shown\":false,\"shownAsSubmenu\":false},\"19\":{\"shown\":false,\"shownAsSubmenu\":false},\"11\":{\"shownAsSubmenu\":false,\"shown\":false},\"3\":{\"shown\":false,\"shownAsSubmenu\":false},\"5\":{\"shownAsSubmenu\":false,\"shown\":false},\"6\":{\"shown\":false,\"shownAsSubmenu\":false},\"13\":{\"shownAsSubmenu\":false,\"shown\":false}}"
     },
     "menuCustomSpecVisibility" : {
 
@@ -290,7 +290,7 @@
       "int" : 2
     },
     "reticleColor" : {
-      "string" : "{\"green\":0.3,\"red\":0.8,\"blue\":0.2,\"alpha\":0.5}"
+      "string" : "{\"red\":0.8,\"alpha\":0.5,\"green\":0.3,\"blue\":0.2}"
     },
     "reticleDisplayMinDist" : {
       "float" : 0
@@ -371,7 +371,7 @@
       "int" : 0
     },
     "snapPanelActions" : {
-      "string" : "[{\"windowAction\":0},{\"windowAction\":2},{\"windowAction\":1}]"
+      "string" : "[]"
     },
     "specifiedHeight" : {
       "float" : 1050
@@ -507,44 +507,8 @@
     "almostMaximize" : {
       "keyCode" : 36,
       "modifierFlags" : 786432
-    },
-    "center" : {
-      "keyCode" : 8,
-      "modifierFlags" : 786432
-    },
-    "leftHalf" : {
-      "keyCode" : 123,
-      "modifierFlags" : 786432
-    },
-    "maximize" : {
-      "keyCode" : 126,
-      "modifierFlags" : 786432
-    },
-    "nextDisplayRatio" : {
-      "keyCode" : 124,
-      "modifierFlags" : 1835008
-    },
-    "nextSpace" : {
-      "keyCode" : 40,
-      "modifierFlags" : 786432
-    },
-    "prevDisplayRatio" : {
-      "keyCode" : 123,
-      "modifierFlags" : 1835008
-    },
-    "prevSpace" : {
-      "keyCode" : 38,
-      "modifierFlags" : 786432
-    },
-    "restore" : {
-      "keyCode" : 125,
-      "modifierFlags" : 786432
-    },
-    "rightHalf" : {
-      "keyCode" : 124,
-      "modifierFlags" : 786432
     }
   },
-  "timestamp" : 766726676.12744,
+  "timestamp" : 768343379.031047,
   "version" : "189"
 }
