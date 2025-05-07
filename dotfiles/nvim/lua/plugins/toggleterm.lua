@@ -3,7 +3,7 @@ return {
   opts = {
     open_mapping = [[<C-\>]],
     autochdir = true,
-    direction = "tab",
+    direction = "float",
     shade_terminals = false,
   },
 }
