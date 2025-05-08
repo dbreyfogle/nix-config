@@ -39,8 +39,16 @@
 
       "org/gnome/desktop/wm/keybindings" = {
         maximize = [ "<Super>Up" ];
-        move-to-workspace-left = [ "<Shift><Super>J" ];
-        move-to-workspace-right = [ "<Shift><Super>K" ];
+        move-to-workspace-1 = [ "<Shift><Super>1" ];
+        move-to-workspace-2 = [ "<Shift><Super>2" ];
+        move-to-workspace-3 = [ "<Shift><Super>3" ];
+        move-to-workspace-4 = [ "<Shift><Super>4" ];
+        move-to-workspace-5 = [ "<Shift><Super>5" ];
+        move-to-workspace-6 = [ "<Shift><Super>6" ];
+        move-to-workspace-7 = [ "<Shift><Super>7" ];
+        move-to-workspace-8 = [ "<Shift><Super>8" ];
+        move-to-workspace-9 = [ "<Shift><Super>9" ];
+        move-to-workspace-10 = [ "<Shift><Super>0" ];
         switch-applications = [ ];
         switch-to-workspace-1 = [ "<Super>1" ];
         switch-to-workspace-2 = [ "<Super>2" ];
@@ -51,17 +59,20 @@
         switch-to-workspace-7 = [ "<Super>7" ];
         switch-to-workspace-8 = [ "<Super>8" ];
         switch-to-workspace-9 = [ "<Super>9" ];
-        switch-to-workspace-left = [ "<Super>J" ];
-        switch-to-workspace-right = [ "<Super>K" ];
+        switch-to-workspace-10 = [ "<Super>0" ];
         switch-windows = [ "<Alt>Tab" ];
         unmaximize = [ "<Super>Down" ];
       };
 
+      "org/gnome/desktop/wm/preferences" = {
+        num-workspaces = 5;
+      };
+
       "org/gnome/mutter" = {
         center-new-windows = true;
-        dynamic-workspaces = true;
+        dynamic-workspaces = false;
         edge-tiling = true;
-        workspaces-only-on-primary = false;
+        workspaces-only-on-primary = true;
       };
 
       "org/gnome/mutter/keybindings" = {
@@ -110,6 +121,7 @@
         switch-to-application-7 = [ ];
         switch-to-application-8 = [ ];
         switch-to-application-9 = [ ];
+        switch-to-application-10 = [ ];
       };
 
       "org/gnome/shell/window-switcher" = {
