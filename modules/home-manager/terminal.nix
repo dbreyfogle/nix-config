@@ -100,7 +100,6 @@
         checkmake
         delve
         dockerfile-language-server-nodejs
-        fd
         gcc
         golangci-lint
         gopls
@@ -113,7 +112,6 @@
         nodejs
         nodePackages.prettier
         pyright
-        ripgrep
         ruff
         shellcheck
         shfmt
