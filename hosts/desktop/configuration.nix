@@ -82,7 +82,7 @@ in
     };
   };
 
-  networking.hostName = "${hostname}";
+  networking.hostName = hostname;
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Phoenix";

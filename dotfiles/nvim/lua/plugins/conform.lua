@@ -1,7 +1,7 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
-  cmd = { "ConformInfo" },
+  event = "BufWritePre",
+  cmd = "ConformInfo",
   keys = {
     {
       "<Leader>f",
@@ -10,6 +10,20 @@ return {
       end,
     },
   },
+  init = function()
+    -- Commands to enable/disable autoformatting
+    vim.api.nvim_create_user_command("FormatDisable", function(args)
+      if args.bang then -- FormatDisable! for just the current buffer
+        vim.b.disable_autoformat = true
+      else
+        vim.g.disable_autoformat = true
+      end
+    end, { bang = true })
+    vim.api.nvim_create_user_command("FormatEnable", function()
+      vim.b.disable_autoformat = false
+      vim.g.disable_autoformat = false
+    end, {})
+  end,
   opts = {
     formatters_by_ft = {
       bash = { "shfmt" },
@@ -24,6 +38,7 @@ return {
       toml = { "taplo" },
       yaml = { "prettier" },
     },
+
     format_on_save = function(bufnr)
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
         return
@@ -31,17 +46,4 @@ return {
       return { timeout_ms = 3000 }
     end,
   },
-  init = function()
-    vim.api.nvim_create_user_command("FormatDisable", function(args)
-      if args.bang then
-        vim.b.disable_autoformat = true
-      else
-        vim.g.disable_autoformat = true
-      end
-    end, { bang = true }) -- FormatDisable! for only the current buffer
-    vim.api.nvim_create_user_command("FormatEnable", function()
-      vim.b.disable_autoformat = false
-      vim.g.disable_autoformat = false
-    end, {})
-  end,
 }

@@ -3,40 +3,42 @@ return {
   opts = {
     on_attach = function(bufnr)
       local gitsigns = require("gitsigns")
-      local function map(mode, l, r, opts)
+      local map = function(keys, func, mode, opts)
+        mode = mode or "n"
         opts = opts or {}
         opts.buffer = bufnr
-        vim.keymap.set(mode, l, r, opts)
+        vim.keymap.set(mode, keys, func, opts)
       end
 
-      map("n", "<Leader>gB", "<CMD>Gitsigns blame<CR>")
-      map("n", "<Leader>gs", gitsigns.stage_buffer)
-      map("n", "<Leader>gtb", gitsigns.toggle_current_line_blame)
-      map("n", "<Leader>gtd", gitsigns.toggle_deleted)
-      map("n", "<Leader>gtw", gitsigns.toggle_word_diff)
-      map("n", "<Leader>gu", gitsigns.reset_buffer_index)
-      map("n", "<Leader>gX", gitsigns.reset_buffer)
-      map("n", "<Leader>hb", function()
+      map("<Leader>gB", "<CMD>Gitsigns blame<CR>")
+      map("<Leader>gs", gitsigns.stage_buffer)
+      map("<Leader>gtb", gitsigns.toggle_current_line_blame)
+      map("<Leader>gtd", gitsigns.toggle_deleted)
+      map("<Leader>gtw", gitsigns.toggle_word_diff)
+      map("<Leader>gu", gitsigns.reset_buffer_index)
+      map("<Leader>gX", gitsigns.reset_buffer)
+      map("<Leader>hb", function()
         gitsigns.blame_line({ full = true })
       end)
-      map("n", "<Leader>hp", gitsigns.preview_hunk)
-      map("n", "<Leader>hs", gitsigns.stage_hunk)
-      map("v", "<Leader>hs", function()
+      map("<Leader>hp", gitsigns.preview_hunk)
+      map("<Leader>hs", gitsigns.stage_hunk)
+      map("<Leader>hs", function()
         gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-      end)
-      map("n", "<Leader>hu", gitsigns.undo_stage_hunk)
-      map("n", "<Leader>hX", gitsigns.reset_hunk)
-      map("v", "<Leader>hX", function()
+      end, { "v" })
+      map("<Leader>hu", gitsigns.undo_stage_hunk)
+      map("<Leader>hX", gitsigns.reset_hunk)
+      map("<Leader>hX", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-      end)
-      map("n", "]c", function()
+      end, { "v" })
+
+      map("]c", function()
         if vim.wo.diff then
           vim.cmd.normal({ "]c", bang = true })
         else
           gitsigns.nav_hunk("next")
         end
       end)
-      map("n", "[c", function()
+      map("[c", function()
         if vim.wo.diff then
           vim.cmd.normal({ "[c", bang = true })
         else

@@ -1,8 +1,6 @@
 return {
   "sindrets/diffview.nvim",
-  dependencies = {
-    { "nvim-tree/nvim-web-devicons" },
-  },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     {
       "<Leader>gdd",
@@ -34,9 +32,7 @@ return {
     local actions = require("diffview.actions")
 
     require("diffview").setup({
-      default_args = {
-        DiffviewOpen = { "--imply-local" },
-      },
+      default_args = { DiffviewOpen = { "--imply-local" } },
       hooks = {
         view_leave = function()
           vim.cmd("DiffviewClose")

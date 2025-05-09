@@ -15,6 +15,6 @@ in
 
   home.stateVersion = "24.11";
 
-  home.username = "${username}";
-  home.homeDirectory = "${homeDirectory}";
+  home.username = username;
+  home.homeDirectory = homeDirectory;
 }

@@ -3,12 +3,8 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    require("onedark").setup({
-      style = "dark",
-      -- transparent = true,
-      -- lualine = { transparent = true },
-    })
+    require("onedark").setup({ style = "dark" })
     require("onedark").load()
-    vim.cmd("hi ModeMsg guifg=NONE") -- remove styling
+    vim.cmd("hi ModeMsg guifg=NONE")
   end,
 }

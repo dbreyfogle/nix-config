@@ -1,10 +1,10 @@
 return {
   "mfussenegger/nvim-dap",
   dependencies = {
-    { "rcarriga/nvim-dap-ui" },
-    { "nvim-neotest/nvim-nio" },
-    { "leoluz/nvim-dap-go" },
-    { "mfussenegger/nvim-dap-python" },
+    "rcarriga/nvim-dap-ui",
+    "nvim-neotest/nvim-nio",
+    "leoluz/nvim-dap-go",
+    "mfussenegger/nvim-dap-python",
   },
   config = function()
     require("dapui").setup()
@@ -14,9 +14,8 @@ return {
     local dap = require("dap")
     local dapui = require("dapui")
 
-    vim.keymap.set("n", "<Leader>dc", dap.continue)
     vim.keymap.set("n", "<Leader>ds", dap.continue)
-    vim.keymap.set("n", "<Leader>dd", function()
+    vim.keymap.set("n", "<Leader>dc", function()
       dap.terminate()
       dapui.close()
     end)

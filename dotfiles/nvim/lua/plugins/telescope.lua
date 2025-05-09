@@ -2,20 +2,14 @@ return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
   dependencies = {
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-tree/nvim-web-devicons" },
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      cond = function()
-        return vim.fn.executable("make") == 1
-      end,
-    },
-    { "nvim-telescope/telescope-ui-select.nvim" },
-    { "debugloop/telescope-undo.nvim" },
-    { "folke/todo-comments.nvim" },
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-telescope/telescope-ui-select.nvim",
+    "debugloop/telescope-undo.nvim",
+    "folke/todo-comments.nvim",
   },
-  event = { "VimEnter" },
+  event = "VimEnter",
   config = function()
     require("telescope").setup({
       extensions = {

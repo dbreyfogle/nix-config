@@ -13,6 +13,7 @@ return {
       python = { "ruff" },
       terraform = { "tflint" },
     }
+
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged" }, {
       callback = function()
         if vim.opt_local.modifiable:get() then

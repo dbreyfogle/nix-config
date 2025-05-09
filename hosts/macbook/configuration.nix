@@ -29,7 +29,7 @@ in
 
   users.users.${username} = {
     uid = 501;
-    name = "${username}";
+    name = username;
     home = "/Users/${username}";
     isHidden = false;
     shell = pkgs.zsh;
@@ -37,7 +37,7 @@ in
 
   nix-homebrew = {
     enable = true;
-    user = "${username}";
+    user = username;
     autoMigrate = true;
   };
 
@@ -78,5 +78,5 @@ in
 
   services.openssh.enable = true;
 
-  networking.localHostName = "${hostname}";
+  networking.localHostName = hostname;
 }
