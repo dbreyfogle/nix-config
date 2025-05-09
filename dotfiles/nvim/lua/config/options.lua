@@ -42,14 +42,11 @@ vim.opt.undofile = true
 -- Set terminal colors
 vim.opt.termguicolors = true
 
+-- Reserve a space for signs
+vim.opt.signcolumn = "yes"
+
 -- Cursor blinking
 vim.opt.guicursor = vim.opt.guicursor + "a:blinkon500-blinkoff500"
 
 -- Disable highlighting matching parens
 vim.g.loaded_matchparen = 1
-
--- Reserve a space for signs
-vim.opt.signcolumn = "yes"
-
--- Inline diagnostic messages
-vim.diagnostic.config({ virtual_text = true })

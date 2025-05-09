@@ -17,7 +17,7 @@ return {
         trigger_on_accept = false,
         keymap = {
           accept = "<Tab>",
-          dismiss = "<Esc>",
+          dismiss = "<C-e>",
         },
       },
     })
