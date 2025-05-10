@@ -105,8 +105,14 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+Plug 'justinmk/vim-sneak'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 call plug#end()
+
+" Disable sneak highlighting
+highlight! link Sneak None
+highlight! link SneakCurrent None
+autocmd User SneakLeave highlight clear Sneak | highlight clear SneakCurrent
 
 " Set colorscheme
 colorscheme onehalfdark
