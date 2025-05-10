@@ -129,6 +129,7 @@
   "vim.highlightedyank.enable": true,
   "vim.smartRelativeLine": true,
   "vim.useSystemClipboard": true,
+  "vim.sneak": true,
 
   "python.terminal.activateEnvironment": false,
   "jupyter.askForKernelRestart": false,
