@@ -52,6 +52,7 @@ in
       "discord"
       "docker"
       "ghostty"
+      "nikitabobko/tap/aerospace"
       "obsidian"
       "parsec"
       "protonvpn"

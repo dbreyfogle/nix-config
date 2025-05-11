@@ -53,6 +53,7 @@
 
     dock = {
       autohide = true;
+      expose-group-apps = true;
       launchanim = false;
       magnification = false;
       mineffect = "scale";

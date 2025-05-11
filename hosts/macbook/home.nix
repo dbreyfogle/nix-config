@@ -1,4 +1,4 @@
-{ ... }:
+{ config, repodir, ... }:
 
 {
   imports = [
@@ -11,6 +11,10 @@
   programs.ghostty.settings = {
     font-size = 15;
     window-padding-x = "6,0";
-    window-padding-y = "12,4";
+    window-padding-y = "10,5";
+  };
+
+  xdg.configFile = {
+    "aerospace".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/aerospace";
   };
 }
