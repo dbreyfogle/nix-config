@@ -3,6 +3,11 @@
 {
   home.packages = with pkgs.gnomeExtensions; [
     alphabetical-app-grid
+    blur-my-shell
+    dash-to-dock
+    disable-workspace-animation
+    just-perfection
+    space-bar
     tiling-shell
   ];
 
@@ -14,6 +19,7 @@
         clock-show-seconds = true;
         clock-show-weekday = true;
         color-scheme = "prefer-dark";
+        enable-hot-corners = false;
       };
 
       "org/gnome/desktop/peripherals/mouse" = {
@@ -38,7 +44,10 @@
       };
 
       "org/gnome/desktop/wm/keybindings" = {
+        close = [ "<Super>q" ];
         maximize = [ "<Super>Up" ];
+        minimize = [ "<Super>m" ];
+        move-to-center = [ "<Super>c" ];
         move-to-workspace-1 = [ "<Shift><Super>1" ];
         move-to-workspace-2 = [ "<Shift><Super>2" ];
         move-to-workspace-3 = [ "<Shift><Super>3" ];
@@ -49,7 +58,7 @@
         move-to-workspace-8 = [ "<Shift><Super>8" ];
         move-to-workspace-9 = [ "<Shift><Super>9" ];
         move-to-workspace-10 = [ "<Shift><Super>0" ];
-        switch-applications = [ ];
+        switch-applications = [ "<Super>Tab" ];
         switch-to-workspace-1 = [ "<Super>1" ];
         switch-to-workspace-2 = [ "<Super>2" ];
         switch-to-workspace-3 = [ "<Super>3" ];
@@ -107,8 +116,43 @@
         disable-user-extensions = false;
         enabled-extensions = with pkgs.gnomeExtensions; [
           alphabetical-app-grid.extensionUuid
+          blur-my-shell.extensionUuid
+          dash-to-dock.extensionUuid
+          disable-workspace-animation.extensionUuid
+          just-perfection.extensionUuid
+          space-bar.extensionUuid
           tiling-shell.extensionUuid
         ];
+      };
+
+      "org/gnome/shell/app-switcher" = {
+        current-workspace-only = false;
+      };
+
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        dance-urgent-applications = false;
+        dash-max-icon-size = 60;
+        disable-overview-on-startup = true;
+        hot-keys = false;
+        intellihide = false;
+        isolate-locations = false;
+        require-pressure-to-show = false;
+        scroll-to-focused-application = false;
+        show-dock-urgent-notify = false;
+        show-icons-emblems = false;
+        show-mounts = false;
+        show-trash = false;
+        workspace-agnostic-urgent-windows = false;
+      };
+
+      "org/gnome/shell/extensions/just-perfection" = {
+        startup-status = 0;
+        support-notifier-type = 0;
+        workspace-popup = false;
+      };
+
+      "org/gnome/shell/extensions/space-bar/behavior" = {
+        toggle-overview = false;
       };
 
       "org/gnome/shell/keybindings" = {
@@ -122,6 +166,7 @@
         switch-to-application-8 = [ ];
         switch-to-application-9 = [ ];
         switch-to-application-10 = [ ];
+        toggle-message-tray = [ "<Super>v" ];
       };
 
       "org/gnome/shell/window-switcher" = {
