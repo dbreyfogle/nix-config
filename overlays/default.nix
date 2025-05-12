@@ -7,6 +7,4 @@ final: prev: {
   };
 
   terraform-versions = inputs.nixpkgs-terraform.packages.${prev.system};
-
-  etcd = prev.callPackage ../pkgs/etcd.nix { };
 }
