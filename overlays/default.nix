@@ -7,4 +7,6 @@ final: prev: {
   };
 
   terraform-versions = inputs.nixpkgs-terraform.packages.${prev.system};
+
+  detect-term-background = prev.callPackage ../pkgs/detect-term-background.nix { };
 }

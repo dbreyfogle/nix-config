@@ -175,7 +175,7 @@
       enableCompletion = true;
       history.ignoreSpace = true;
       initContent = ''
-        eval "$(${repodir}/scripts/detect-term-background)"
+        eval "$(detect-term-background)"
         export BAT_THEME="OneHalf''${(C)TERM_BACKGROUND}"
         export FZF_DEFAULT_OPTS="\
         --bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up \
@@ -215,7 +215,7 @@
     aider-chat
     asciinema
     asciinema-agg
-    bc
+    detect-term-background
     git-filter-repo
     nerd-fonts.jetbrains-mono
     nixd
