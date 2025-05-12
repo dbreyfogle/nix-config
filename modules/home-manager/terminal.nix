@@ -186,6 +186,7 @@
         --tmux=80%"
         complete -C $(which aws_completer) aws
         eval "$(gh copilot alias -- zsh)"
+        fastfetch
       '';
       oh-my-zsh = {
         enable = true;
@@ -216,6 +217,7 @@
     asciinema
     asciinema-agg
     detect-term-background
+    fastfetch
     git-filter-repo
     nerd-fonts.jetbrains-mono
     nixd
