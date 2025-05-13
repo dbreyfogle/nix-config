@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -8,6 +8,20 @@
   ];
 
   home.stateVersion = "24.11";
+
+  home.packages = with pkgs; [
+    brave
+    discord
+    ghostty
+    libreoffice
+    obsidian
+    pika-backup
+    slack
+    vscode
+    zoom-us
+  ];
+
+  programs.firefox.enable = true;
 
   programs.ghostty.settings = {
     font-size = 12;

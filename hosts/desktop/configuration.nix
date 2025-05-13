@@ -38,17 +38,6 @@ in
       "libvirtd"
     ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      brave
-      discord
-      ghostty
-      libreoffice
-      obsidian
-      pika-backup
-      slack
-      vscode
-      zoom-us
-    ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -58,7 +47,6 @@ in
   ];
 
   programs.zsh.enable = true;
-  programs.firefox.enable = true;
 
   services.openssh.enable = true;
 
