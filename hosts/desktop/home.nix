@@ -17,11 +17,13 @@
     obsidian
     pika-backup
     slack
+    vlc
     vscode
     zoom-us
   ];
 
   programs.firefox.enable = true;
+  programs.obs-studio.enable = true;
 
   programs.ghostty.settings = {
     font-size = 12;

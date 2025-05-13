@@ -53,6 +53,7 @@ in
       "docker"
       "ghostty"
       "nikitabobko/tap/aerospace"
+      "obs"
       "obsidian"
       "parsec"
       "protonvpn"
@@ -62,6 +63,7 @@ in
       "tailscale"
       "virtualbuddy"
       "visual-studio-code"
+      "vlc"
       "zoom"
     ];
   };
