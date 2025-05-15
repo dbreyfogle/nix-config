@@ -15,7 +15,8 @@ return {
     local dapui = require("dapui")
 
     vim.keymap.set("n", "<Leader>ds", dap.continue)
-    vim.keymap.set("n", "<Leader>dc", function()
+    vim.keymap.set("n", "<Leader>dc", dap.continue)
+    vim.keymap.set("n", "<Leader>dt", function()
       dap.terminate()
       dapui.close()
     end)
