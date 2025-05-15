@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
   callback = function()
     vim.defer_fn(function()
       vim.cmd("echon ''")
-    end, 4000)
+    end, 3000)
   end,
 })
 

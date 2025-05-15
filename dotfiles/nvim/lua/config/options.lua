@@ -45,6 +45,9 @@ vim.opt.termguicolors = true
 -- Reserve a space for signs
 vim.opt.signcolumn = "yes"
 
+-- Hide mode indicator
+vim.opt.showmode = false
+
 -- Cursor blinking
 vim.opt.guicursor = vim.opt.guicursor + "a:blinkon500-blinkoff500"
 
