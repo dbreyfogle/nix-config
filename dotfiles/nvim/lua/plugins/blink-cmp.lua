@@ -2,21 +2,29 @@ return {
   "saghen/blink.cmp",
   version = "1.*",
   dependencies = { "rafamadriz/friendly-snippets" },
-  init = function()
-    -- Hide copilot suggestions when menu is open
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "BlinkCmpMenuOpen",
-      callback = function()
-        vim.b.copilot_suggestion_hidden = true
+  event = { "InsertEnter", "CmdlineEnter" },
+  keys = {
+    -- Additional snippet keymaps
+    {
+      "<C-f>",
+      function()
+        require("blink.cmp").snippet_forward()
       end,
-    })
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "BlinkCmpMenuClose",
-      callback = function()
-        vim.b.copilot_suggestion_hidden = false
+    },
+    {
+      "<C-b>",
+      function()
+        require("blink.cmp").snippet_backward()
       end,
-    })
-  end,
+    },
+    {
+      "<C-h>",
+      function()
+        vim.snippet.stop()
+      end,
+      mode = { "i", "n", "s" },
+    },
+  },
   opts = {
     -- Disable completions for certain filetypes
     enabled = function()
@@ -45,9 +53,8 @@ return {
       ["<Tab>"] = { "accept", "fallback" },
       ["<C-d>"] = { "scroll_documentation_down", "fallback" },
       ["<C-u>"] = { "scroll_documentation_up", "fallback" },
-      ["<C-f>"] = { "snippet_forward", "fallback" },
-      ["<S-Tab>"] = { "snippet_backward", "fallback" },
-      ["<M-\\>"] = { "hide", "fallback" }, -- copilot suggestion
+      ["<C-f>"] = { "snippet_forward" },
+      ["<C-b>"] = { "snippet_backward" },
     },
 
     signature = { enabled = true },

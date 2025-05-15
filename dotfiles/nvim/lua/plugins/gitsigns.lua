@@ -10,7 +10,8 @@ return {
         vim.keymap.set(mode, keys, func, opts)
       end
 
-      map("<Leader>gB", "<CMD>Gitsigns blame<CR>")
+      map("<Leader>gdD", gitsigns.diffthis)
+      map("<Leader>gl", gitsigns.blame)
       map("<Leader>gs", gitsigns.stage_buffer)
       map("<Leader>gtb", gitsigns.toggle_current_line_blame)
       map("<Leader>gtd", gitsigns.toggle_deleted)

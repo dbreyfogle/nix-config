@@ -15,7 +15,6 @@ return {
     { "<Leader>gdm", "<CMD>DiffviewOpen origin/HEAD...HEAD<CR>" },
     { "<Leader>gdo", ":DiffviewOpen " },
     { "<Leader>gdu", "<CMD>DiffviewOpen upstream/HEAD...HEAD<CR>" },
-    { "<Leader>glf", "<CMD>DiffviewFileHistory %<CR>" },
     {
       "<Leader>gll",
       function()
@@ -26,6 +25,7 @@ return {
         end
       end,
     },
+    { "<Leader>glL", "<CMD>DiffviewFileHistory %<CR>" },
     { "<Leader>glo", ":DiffviewFileHistory " },
   },
   config = function()

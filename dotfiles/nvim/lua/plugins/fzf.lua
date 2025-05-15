@@ -32,8 +32,8 @@ return {
 
     { "<Leader>gb", "<CMD>FzfLua git_branches<CR>" },
     { "<Leader>gg", "<CMD>FzfLua git_status<CR>" },
-    { "<Leader>gT", "<CMD>FzfLua git_tags<CR>" },
     { "<Leader>gz", "<CMD>FzfLua git_stash<CR>" },
+    { "<Leader>g'", "<CMD>FzfLua git_tags<CR>" },
 
     { "ga", "<CMD>FzfLua lsp_code_actions<CR>" },
     { "gd", "<CMD>FzfLua lsp_definitions<CR>" },
