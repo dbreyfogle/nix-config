@@ -5,6 +5,5 @@ return {
   config = function()
     require("onedark").setup({ style = "dark" })
     require("onedark").load()
-    vim.cmd("hi ModeMsg guifg=NONE")
   end,
 }
