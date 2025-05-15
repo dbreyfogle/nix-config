@@ -28,7 +28,7 @@ return {
     formatters_by_ft = {
       bash = { "shfmt" },
       proto = { "buf" },
-      go = { "gofmt" },
+      go = { "goimports" },
       json = { "prettier" },
       lua = { "stylua" },
       markdown = { "prettier" },

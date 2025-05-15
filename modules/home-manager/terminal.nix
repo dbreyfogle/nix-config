@@ -103,6 +103,7 @@
         gcc
         golangci-lint
         gopls
+        gotools
         hadolint
         helm-ls
         lua-language-server
