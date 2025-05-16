@@ -1,0 +1,7 @@
+{
+  "array declaration": {
+    "prefix": "arr",
+    "body": ["var ${1:name} = [${2:length}]${3:type}{${4:values}}"],
+    "description": "Snippet for an array declaration"
+  }
+}
