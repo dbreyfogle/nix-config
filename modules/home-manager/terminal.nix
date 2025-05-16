@@ -155,8 +155,7 @@
         {
           plugin = resurrect;
           extraConfig = ''
-            # Fix parsing issue with nix paths
-            set -g @resurrect-hook-post-save-all 'sed -i "/^pane\t.*\tnvim\t/ s#\(\tnvim\t\).*#\1:nvim#" ${config.home.homeDirectory}/.tmux/resurrect/last'
+            set -g @resurrect-processes 'false'
           '';
         }
       ];
