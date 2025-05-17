@@ -5,10 +5,12 @@
     "ms-toolsai.vscode-jupyter-cell-tags": false,
     "ms-toolsai.vscode-jupyter-slideshow": false,
     "ms-vscode.azure-repos": false,
+    "ms-vscode-remote.remote-ssh-edit": false,
     "*": true
   },
 
   "update.showReleaseNotes": false,
+  "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
 
@@ -36,17 +38,19 @@
   },
 
   "security.workspace.trust.enabled": false,
-  "remote.autoForwardPortsSource": "hybrid",
   "remoteHub.commitDirectlyWarning": "off",
   "github.codespaces.showDisplayNameInRemoteIndicator": false,
   "breadcrumbs.enabled": false,
   "chat.commandCenter.enabled": false,
   "window.commandCenter": false,
+  "window.title": " ",
   "window.density.editorTabHeight": "compact",
   "window.newWindowDimensions": "inherit",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "hidden",
+  "workbench.activityBar.location": "top",
+  "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.editor.empty.hint": "hidden",
@@ -59,7 +63,6 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
 
-  "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
@@ -67,9 +70,10 @@
   "editor.selectionHighlight": false,
   "editor.stickyScroll.enabled": false,
   "editor.acceptSuggestionOnEnter": "off",
+  "editor.autoClosingDelete": "always",
   "editor.autoClosingOvertype": "always",
   "editor.cursorSurroundingLines": 12,
-  "editor.lightbulb.enabled": "off",
+  "editor.folding": false,
   "editor.linkedEditing": true,
   "editor.inlineSuggest.enabled": false,
   "errorLens.delay": 750,
@@ -109,6 +113,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
+  "scm.countBadge": "off",
   "scm.defaultViewMode": "tree",
   "diffEditor.renderSideBySide": false,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -118,11 +123,7 @@
   "vim.handleKeys": {
     "<C-b>": false,
     "<C-j>": false,
-    "<C-n>": false,
-    "<C-p>": false,
-    "<C-s>": false,
-    "<C-w>": false,
-    "<C-z>": false
+    "<C-p>": false
   },
   "vim.vimrc.enable": true,
   "vim.leader": " ",
@@ -130,6 +131,8 @@
   "vim.smartRelativeLine": true,
   "vim.useSystemClipboard": true,
   "vim.sneak": true,
+
+  "dev.containers.optimisticallyLaunchDocker": false,
 
   "python.terminal.activateEnvironment": false,
   "jupyter.askForKernelRestart": false,
