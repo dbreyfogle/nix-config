@@ -1,9 +1,19 @@
 return {
-  "navarasu/onedark.nvim",
+  "olimorris/onedarkpro.nvim",
   lazy = false,
   priority = 1000,
-  config = function()
-    require("onedark").setup({ style = "dark" })
-    require("onedark").load()
+  init = function()
+    -- Dynamic colorscheme based on terminal background
+    vim.api.nvim_create_autocmd("OptionSet", {
+      pattern = "background",
+      callback = function()
+        vim.cmd.colorscheme(vim.o.background == "dark" and "onedark" or "onelight")
+      end,
+    })
   end,
+  opts = {
+    options = {
+      lualine_transparency = true,
+    },
+  },
 }
