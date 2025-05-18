@@ -25,11 +25,39 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "alt+\\",
+    "key": "ctrl+e",
+    "command": "runCommands",
+    "args": {
+      "commands": ["hideSuggestWidget", "editor.action.inlineSuggest.hide"]
+    },
+    "when": "(suggestWidgetVisible && textInputFocus) || (inlineEditIsVisible || inlineSuggestionVisible)"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "leaveSnippet",
+    "when": "inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
     "command": "runCommands",
     "args": {
       "commands": ["hideSuggestWidget", "editor.action.inlineSuggest.trigger"]
     },
     "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "cmd+\\",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]

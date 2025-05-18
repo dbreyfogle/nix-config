@@ -18,24 +18,34 @@
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
   {
-    "key": "alt+n",
+    "key": "ctrl+n",
     "command": "quickInput.next",
     "when": "inQuickInput && quickInputType == 'quickPick'"
   },
   {
-    "key": "alt+p",
+    "key": "ctrl+p",
     "command": "quickInput.previous",
     "when": "inQuickInput && quickInputType == 'quickPick'"
   },
   {
-    "key": "alt+n",
+    "key": "ctrl+n",
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
   },
   {
-    "key": "alt+p",
+    "key": "ctrl+p",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
   },
   {
     "key": "ctrl+n",
@@ -58,11 +68,39 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "alt+\\",
+    "key": "ctrl+e",
+    "command": "runCommands",
+    "args": {
+      "commands": ["hideSuggestWidget", "editor.action.inlineSuggest.hide"]
+    },
+    "when": "(suggestWidgetVisible && textInputFocus) || (inlineEditIsVisible || inlineSuggestionVisible)"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "leaveSnippet",
+    "when": "inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
     "command": "runCommands",
     "args": {
       "commands": ["hideSuggestWidget", "editor.action.inlineSuggest.trigger"]
     },
     "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]

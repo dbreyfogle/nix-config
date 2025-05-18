@@ -8,36 +8,42 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
   "github.codespaces.showDisplayNameInRemoteIndicator": false,
-  "remote.autoForwardPortsSource": "hybrid",
   "remoteHub.commitDirectlyWarning": "off",
   "security.workspace.trust.enabled": false,
   "window.commandCenter": false,
   "window.density.editorTabHeight": "compact",
   "window.newWindowDimensions": "inherit",
+  "window.restoreWindows": "none",
+  "window.title": " ",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.focusRecentEditorAfterClose": false,
   "workbench.editor.openPositioning": "last",
   "workbench.editor.untitled.labelFormat": "name",
+  "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": false,
   "update.showReleaseNotes": false,
 
+  "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
 
   // [[ Apperance ]]
 
-  "window.zoomLevel": 0.7,
+  "window.zoomLevel": 0.2,
   "editor.fontFamily": "JetBrainsMonoNL Nerd Font",
   "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font",
   "debug.console.fontFamily": "JetBrainsMonoNL Nerd Font",
   "editor.fontSize": 13,
   "terminal.integrated.fontSize": 13,
   "debug.console.fontSize": 13,
+  "editor.scrollbar.horizontalScrollbarSize": 7,
+  "editor.scrollbar.verticalScrollbarSize": 7,
   "workbench.iconTheme": "material-icon-theme",
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Atom One Dark",
@@ -57,12 +63,12 @@
   // [[ Editing ]]
 
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.accessibilitySupport": "off",
+  "editor.autoClosingDelete": "always",
   "editor.autoClosingOvertype": "always",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorSurroundingLines": 12,
+  "editor.folding": false,
   "editor.inlineSuggest.enabled": false,
-  "editor.lightbulb.enabled": "off",
   "editor.linkedEditing": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
@@ -104,6 +110,7 @@
   "terminal.integrated.env.osx": { "ZSH_TMUX_AUTOSTART": "false" },
   "terminal.integrated.env.windows": { "ZSH_TMUX_AUTOSTART": "false" },
   "terminal.integrated.macOptionIsMeta": true,
+  "terminal.integrated.scrollback": 10000,
   "terminal.integrated.tabs.enabled": false,
 
   // [[ Git ]]
@@ -115,18 +122,20 @@
   "diffEditor.renderSideBySide": false,
   "notebook.diff.ignoreMetadata": true,
   "notebook.diff.ignoreOutputs": true,
+  "scm.countBadge": "off",
   "scm.defaultViewMode": "tree",
 
   // [[ Vim ]]
 
   "vim.handleKeys": {
     "<C-b>": false,
+    "<C-e>": false,
+    "<C-f>": false,
+    "<C-h>": false,
     "<C-j>": false,
     "<C-n>": false,
     "<C-p>": false,
-    "<C-s>": false,
-    "<C-w>": false,
-    "<C-z>": false
+    "<C-\\>": false
   },
   "vim.highlightedyank.enable": true,
   "vim.leader": " ",
@@ -143,8 +152,11 @@
     "ms-toolsai.vscode-jupyter-cell-tags": false,
     "ms-toolsai.vscode-jupyter-slideshow": false,
     "ms-vscode.azure-repos": false,
+    "ms-vscode-remote.remote-ssh-edit": false,
     "*": true
   },
+
+  "dev.containers.optimisticallyLaunchDocker": false,
 
   "errorLens.delay": 750,
 

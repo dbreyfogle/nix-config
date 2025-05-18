@@ -222,7 +222,6 @@
     nerd-fonts.jetbrains-mono
     nixd
     nixfmt-rfc-style
-    terraform-versions."1.11"
     tldr
     vim
   ];
