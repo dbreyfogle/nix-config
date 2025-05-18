@@ -1,87 +1,80 @@
 {
-  "settingsSync.ignoredExtensions": ["ms-vscode-remote.remote-wsl"],
-  "extensions.allowed": {
-    "ms-python.vscode-pylance": false,
-    "ms-toolsai.vscode-jupyter-cell-tags": false,
-    "ms-toolsai.vscode-jupyter-slideshow": false,
-    "ms-vscode.azure-repos": false,
-    "*": true
-  },
+  // [[ General ]]
 
-  "update.showReleaseNotes": false,
-  "telemetry.telemetryLevel": "off",
-  "redhat.telemetry.enabled": false,
-
-  "window.zoomLevel": 0.7,
-  "editor.fontSize": 13,
-  "terminal.integrated.fontSize": 13,
-  "debug.console.fontSize": 13,
-  "editor.fontFamily": "JetBrainsMonoNL Nerd Font",
-  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font",
-  "debug.console.fontFamily": "JetBrainsMonoNL Nerd Font",
-  "workbench.iconTheme": "material-icon-theme",
-  "window.autoDetectColorScheme": true,
-  "workbench.preferredLightColorTheme": "Atom One Light",
-  "workbench.preferredDarkColorTheme": "Atom One Dark",
-  "workbench.colorTheme": "Atom One Dark",
-  "workbench.colorCustomizations": {
-    "[Atom One Light]": {
-      "activityBar.background": "#EAEAEB",
-      "sideBarSectionHeader.background": "#EAEAEB"
-    },
-    "[Atom One Dark]": {
-      "activityBar.background": "#21252B",
-      "sideBarSectionHeader.background": "#21252B"
-    }
-  },
-
-  "security.workspace.trust.enabled": false,
-  "remote.autoForwardPortsSource": "hybrid",
-  "remoteHub.commitDirectlyWarning": "off",
-  "github.codespaces.showDisplayNameInRemoteIndicator": false,
   "breadcrumbs.enabled": false,
   "chat.commandCenter.enabled": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "github.codespaces.showDisplayNameInRemoteIndicator": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  "remoteHub.commitDirectlyWarning": "off",
+  "security.workspace.trust.enabled": false,
   "window.commandCenter": false,
   "window.density.editorTabHeight": "compact",
   "window.newWindowDimensions": "inherit",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "hidden",
-  "workbench.startupEditor": "none",
-  "workbench.tips.enabled": false,
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.focusRecentEditorAfterClose": false,
   "workbench.editor.openPositioning": "last",
   "workbench.editor.untitled.labelFormat": "name",
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": false,
-  "explorer.compactFolders": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmPasteNative": false,
+  "update.showReleaseNotes": false,
 
+  "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
+
+  // [[ Apperance ]]
+
+  "window.zoomLevel": 0.7,
+  "editor.fontFamily": "JetBrainsMonoNL Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font",
+  "debug.console.fontFamily": "JetBrainsMonoNL Nerd Font",
+  "editor.fontSize": 13,
+  "terminal.integrated.fontSize": 13,
+  "debug.console.fontSize": 13,
+  "workbench.iconTheme": "material-icon-theme",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Atom One Dark",
+  "workbench.preferredLightColorTheme": "Atom One Light",
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorCustomizations": {
+    "[Atom One Dark]": {
+      "activityBar.background": "#21252B",
+      "sideBarSectionHeader.background": "#21252B"
+    },
+    "[Atom One Light]": {
+      "activityBar.background": "#EAEAEB",
+      "sideBarSectionHeader.background": "#EAEAEB"
+    }
+  },
+
+  // [[ Editing ]]
+
+  "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
+  "editor.autoClosingOvertype": "always",
   "editor.bracketPairColorization.enabled": true,
+  "editor.cursorSurroundingLines": 12,
+  "editor.inlineSuggest.enabled": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.linkedEditing": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
   "editor.stickyScroll.enabled": false,
-  "editor.acceptSuggestionOnEnter": "off",
-  "editor.autoClosingOvertype": "always",
-  "editor.cursorSurroundingLines": 12,
-  "editor.lightbulb.enabled": "off",
-  "editor.linkedEditing": true,
-  "editor.inlineSuggest.enabled": false,
-  "errorLens.delay": 750,
+
+  // [[ Formatting ]]
 
   "editor.formatOnSave": true,
   "files.trimTrailingWhitespace": true,
   "json.format.enable": false,
-  "notebook.formatOnSave.enabled": true,
-  "notebook.codeActionsOnSave": {
-    "notebook.source.fixAll": "explicit",
-    "notebook.source.organizeImports": "explicit"
-  },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
@@ -89,9 +82,16 @@
       "source.organizeImports": "explicit"
     }
   },
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[yaml]": { "editor.defaultFormatter": "redhat.vscode-yaml" },
+
+  // [[ Terminal ]]
 
   "terminal.integrated.commandsToSkipShell": [
     "-workbench.action.terminal.focusFind",
@@ -100,20 +100,24 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.macOptionIsMeta": true,
-  "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.env.linux": { "ZSH_TMUX_AUTOSTART": "false" },
   "terminal.integrated.env.osx": { "ZSH_TMUX_AUTOSTART": "false" },
   "terminal.integrated.env.windows": { "ZSH_TMUX_AUTOSTART": "false" },
+  "terminal.integrated.macOptionIsMeta": true,
+  "terminal.integrated.tabs.enabled": false,
+
+  // [[ Git ]]
 
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "scm.defaultViewMode": "tree",
-  "diffEditor.renderSideBySide": false,
   "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
   "notebook.diff.ignoreMetadata": true,
   "notebook.diff.ignoreOutputs": true,
+  "scm.defaultViewMode": "tree",
+
+  // [[ Vim ]]
 
   "vim.handleKeys": {
     "<C-b>": false,
@@ -124,12 +128,25 @@
     "<C-w>": false,
     "<C-z>": false
   },
-  "vim.vimrc.enable": true,
-  "vim.leader": " ",
   "vim.highlightedyank.enable": true,
+  "vim.leader": " ",
   "vim.smartRelativeLine": true,
-  "vim.useSystemClipboard": true,
   "vim.sneak": true,
+  "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
+
+  // [[ Extensions ]]
+
+  "settingsSync.ignoredExtensions": ["ms-vscode-remote.remote-wsl"],
+  "extensions.allowed": {
+    "ms-python.vscode-pylance": false,
+    "ms-toolsai.vscode-jupyter-cell-tags": false,
+    "ms-toolsai.vscode-jupyter-slideshow": false,
+    "ms-vscode.azure-repos": false,
+    "*": true
+  },
+
+  "errorLens.delay": 750,
 
   "python.terminal.activateEnvironment": false,
   "jupyter.askForKernelRestart": false,
