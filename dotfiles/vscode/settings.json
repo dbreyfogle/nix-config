@@ -139,7 +139,6 @@
   },
   "vim.highlightedyank.enable": true,
   "vim.leader": " ",
-  "vim.smartRelativeLine": true,
   "vim.sneak": true,
   "vim.useSystemClipboard": true,
   "vim.vimrc.enable": true,

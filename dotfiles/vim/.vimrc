@@ -25,10 +25,6 @@ nnoremap Y y$
 set number
 set relativenumber
 
-" Change line numbers depending on the mode
-autocmd InsertEnter * set norelativenumber
-autocmd InsertLeave * set relativenumber
-
 " Disable line wrapping
 set nowrap
 

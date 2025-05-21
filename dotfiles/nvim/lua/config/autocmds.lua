@@ -1,17 +1,3 @@
--- Use absolute line numbers in insert mode
-vim.api.nvim_create_autocmd("InsertEnter", {
-  callback = function()
-    vim.opt.relativenumber = false
-  end,
-})
-
--- Use relative line numbers in normal mode
-vim.api.nvim_create_autocmd("InsertLeave", {
-  callback = function()
-    vim.opt.relativenumber = true
-  end,
-})
-
 -- Clear messages after a few seconds
 vim.api.nvim_create_autocmd("CmdlineLeave", {
   callback = function()
