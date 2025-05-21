@@ -4,7 +4,11 @@ return {
   main = "nvim-treesitter.configs",
   opts = {
     auto_install = true,
-    ensure_installed = { "markdown", "markdown_inline" },
+    ensure_installed = {
+      "html",
+      "markdown",
+      "markdown_inline",
+    },
     highlight = { enable = true },
     indent = { enable = true },
   },
