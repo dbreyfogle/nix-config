@@ -112,6 +112,7 @@
         nodejs
         nodePackages.prettier
         pyright
+        ripgrep
         ruff
         shellcheck
         shfmt
