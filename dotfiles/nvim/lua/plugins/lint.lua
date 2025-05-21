@@ -1,6 +1,15 @@
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },
+  init = function()
+    vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged" }, {
+      callback = function()
+        if vim.opt_local.modifiable:get() then
+          require("lint").try_lint()
+        end
+      end,
+    })
+  end,
   config = function()
     local lint = require("lint")
 
@@ -14,12 +23,7 @@ return {
       terraform = { "tflint" },
     }
 
-    vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged" }, {
-      callback = function()
-        if vim.opt_local.modifiable:get() then
-          lint.try_lint()
-        end
-      end,
-    })
+    local golangcilint = require("lint").linters.golangcilint
+    golangcilint.ignore_exitcode = true
   end,
 }
