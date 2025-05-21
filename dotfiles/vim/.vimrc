@@ -96,7 +96,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin()
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'

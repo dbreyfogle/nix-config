@@ -19,9 +19,6 @@ return {
       lualine_b = { "diagnostics", "diff" },
       lualine_c = { "branch", { "filename", path = 1 } },
       lualine_x = {
-        function()
-          return vim.fn.ObsessionStatus("session", "")
-        end,
         "filetype",
         { "lsp_status", symbols = { done = "" }, ignore_lsp = { "copilot" } },
         "progress",
