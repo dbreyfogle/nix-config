@@ -20,6 +20,7 @@ return {
       make = { "checkmake" },
       markdown = { "markdownlint-cli2", "vale" },
       python = { "ruff" },
+      sql = { "sqlfluff" },
       terraform = { "tflint" },
     }
 

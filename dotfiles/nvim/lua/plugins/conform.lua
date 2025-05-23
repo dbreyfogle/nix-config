@@ -34,9 +34,14 @@ return {
       markdown = { "prettier" },
       nix = { "nixfmt" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+      sql = { "sqlfluff" },
       terraform = { "terraform_fmt" },
       toml = { "taplo" },
       yaml = { "prettier" },
+    },
+
+    formatters = {
+      sqlfluff = { args = { "format", "--dialect=ansi", "-" } },
     },
 
     format_on_save = function(bufnr)
