@@ -16,7 +16,7 @@ switch: check_flake_output
 ifdef IS_NIXOS
 	sudo nixos-rebuild switch --flake .#$(FLAKE_OUTPUT)
 else ifdef IS_DARWIN
-	darwin-rebuild switch --flake .#$(FLAKE_OUTPUT)
+	sudo darwin-rebuild switch --flake .#$(FLAKE_OUTPUT)
 else
 	home-manager switch -b bak --flake .#$(FLAKE_OUTPUT)
 endif
