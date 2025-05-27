@@ -13,6 +13,7 @@ in
   ];
 
   system.stateVersion = 5;
+  system.primaryUser = username;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ inputs.self.overlays.default ];
 
