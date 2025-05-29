@@ -10,7 +10,9 @@ github.vscode-pull-request-github
 golang.go
 hashicorp.terraform
 jnoortheen.nix-ide
-ms-azuretools.vscode-docker
+mechatroner.rainbow-csv
+mkhl.direnv
+ms-azuretools.vscode-containers
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.debugpy
 ms-python.python

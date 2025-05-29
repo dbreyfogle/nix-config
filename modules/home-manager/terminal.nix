@@ -65,6 +65,7 @@
         ".DS_Store"
         ".aider*"
         ".direnv/"
+        ".vscode/"
       ];
       userEmail = "27653146+dbreyfogle@users.noreply.github.com";
       userName = "Danny Breyfogle";

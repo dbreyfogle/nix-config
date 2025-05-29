@@ -13,7 +13,6 @@
   "window.commandCenter": false,
   "window.density.editorTabHeight": "compact",
   "window.newWindowDimensions": "inherit",
-  "window.restoreWindows": "none",
   "window.title": " ",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
@@ -69,6 +68,7 @@
   "editor.cursorSurroundingLines": 12,
   "editor.folding": false,
   "editor.inlineSuggest.enabled": false,
+  "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
@@ -122,7 +122,6 @@
   "diffEditor.renderSideBySide": false,
   "notebook.diff.ignoreMetadata": true,
   "notebook.diff.ignoreOutputs": true,
-  "scm.countBadge": "off",
   "scm.defaultViewMode": "tree",
 
   // [[ Vim ]]
@@ -154,6 +153,9 @@
     "ms-vscode-remote.remote-ssh-edit": false,
     "*": true
   },
+
+  "direnv.restart.automatic": true,
+  "direnv.status.showChangesCount": false,
 
   "dev.containers.optimisticallyLaunchDocker": false,
 
