@@ -49,6 +49,7 @@ in
     };
     casks = [
       "brave-browser"
+      "dbeaver-community"
       "discord"
       "docker"
       "ghostty"
