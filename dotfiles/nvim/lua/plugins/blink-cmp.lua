@@ -1,7 +1,10 @@
 return {
   "saghen/blink.cmp",
   version = "1.*",
-  dependencies = { "rafamadriz/friendly-snippets" },
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+    "kristijanhusak/vim-dadbod-completion",
+  },
   event = { "InsertEnter", "CmdlineEnter" },
   keys = {
     -- Additional snippet keymaps
@@ -55,6 +58,11 @@ return {
       ["<C-u>"] = { "scroll_documentation_up", "fallback" },
       ["<C-f>"] = { "snippet_forward" },
       ["<C-b>"] = { "snippet_backward" },
+    },
+
+    sources = {
+      per_filetype = { sql = { "dadbod", "snippets", "buffer" } },
+      providers = { dadbod = { module = "vim_dadbod_completion.blink" } },
     },
   },
 }

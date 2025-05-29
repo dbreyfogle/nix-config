@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     brave
+    dbeaver-bin
     discord
     ghostty
     libreoffice

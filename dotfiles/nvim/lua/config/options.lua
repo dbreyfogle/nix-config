@@ -53,3 +53,6 @@ vim.opt.guicursor = vim.opt.guicursor + "a:blinkon500-blinkoff500"
 
 -- Disable highlighting matching parens
 vim.g.loaded_matchparen = 1
+
+-- Disable SQL mappings
+vim.g.omni_sql_no_default_maps = 1

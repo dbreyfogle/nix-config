@@ -1,0 +1,12 @@
+[sqlfluff]
+dialect = ansi
+exclude_rules = layout.indent, layout.cte_bracket, layout.select_targets, layout.spacing, layout.end_of_file
+max_line_length = 88
+sql_file_exts = ,.sql,.sql.j2,.dml,.ddl
+
+[sqlfluff:rules]
+capitalisation_policy = lower
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:convention.terminator]
+multiline_newline = True

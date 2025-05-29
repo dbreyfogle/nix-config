@@ -79,6 +79,9 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+" Disable SQL mappings
+let g:omni_sql_no_default_maps = 1
+
 " [[ Plugins ]]
 
 " Install vim-plug if not found

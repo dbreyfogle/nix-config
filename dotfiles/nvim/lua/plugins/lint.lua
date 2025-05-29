@@ -20,10 +20,15 @@ return {
       make = { "checkmake" },
       markdown = { "markdownlint-cli2", "vale" },
       python = { "ruff" },
+      sql = { "sqlfluff" },
       terraform = { "tflint" },
     }
 
     local golangcilint = require("lint").linters.golangcilint
     golangcilint.ignore_exitcode = true
+
+    local sqlfluff = require("lint").linters.sqlfluff
+    sqlfluff.args = { "lint", "--format=json", "-" }
+    sqlfluff.stdin = true
   end,
 }

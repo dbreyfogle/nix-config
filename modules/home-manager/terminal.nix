@@ -113,10 +113,12 @@
         nodejs
         nodePackages.prettier
         pyright
+        python313Packages.sqlfmt
         ripgrep
         ruff
         shellcheck
         shfmt
+        sqlfluff
         stylua
         taplo
         terraform-ls
@@ -238,6 +240,8 @@
   xdg.configFile = {
     "ghostty/themes".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/ghostty";
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
+    "sqlfluff/.sqlfluff".source =
+      config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/sqlfluff/.sqlfluff";
     "starship.toml".source =
       config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/starship/starship.toml";
     "vale/.vale.ini".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vale/.vale.ini";

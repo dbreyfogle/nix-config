@@ -23,6 +23,7 @@ ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode.remote-explorer
 ms-vscode.remote-repositories
+mtxr.sqltools
 pkief.material-icon-theme
 redhat.vscode-yaml
 tamasfe.even-better-toml

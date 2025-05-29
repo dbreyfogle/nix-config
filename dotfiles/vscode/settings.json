@@ -169,5 +169,7 @@
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
 
-  "terraform.languageServer.ignoreSingleFileWarning": true
+  "terraform.languageServer.ignoreSingleFileWarning": true,
+
+  "sqltools.highlightQuery": false
 }
