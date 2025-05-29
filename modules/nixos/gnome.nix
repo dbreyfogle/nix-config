@@ -15,5 +15,8 @@
   environment.gnome.excludePackages = with pkgs; [
     epiphany
     geary
+    gnome-music
+    gnome-tour
+    yelp
   ];
 }
