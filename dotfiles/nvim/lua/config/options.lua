@@ -21,8 +21,9 @@ vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Keep cursor above/below N lines
+-- Keep cursor centered
 vim.opt.scrolloff = 12
+vim.opt.sidescroll = 0
 
 -- Hide tabline
 vim.opt.showtabline = 0
