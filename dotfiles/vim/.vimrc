@@ -44,8 +44,9 @@ set listchars=tab:\ \ ,trail:·,nbsp:␣
 set splitright
 set splitbelow
 
-" Keep cursor above/below N lines
+" Keep cursor centered
 set scrolloff=12
+set sidescroll=0
 
 " Hide tabline
 set showtabline=0
