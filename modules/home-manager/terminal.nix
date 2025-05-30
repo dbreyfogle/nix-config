@@ -230,6 +230,8 @@
   home.file = {
     ".aider.conf.yml".source =
       config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/aider/.aider.conf.yml";
+    ".ipython/profile_default/ipython_config.py".source =
+      config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/ipython/ipython_config.py";
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/.vimrc";
   };
 
