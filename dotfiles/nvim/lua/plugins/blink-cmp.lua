@@ -56,7 +56,5 @@ return {
       ["<C-f>"] = { "snippet_forward" },
       ["<C-b>"] = { "snippet_backward" },
     },
-
-    signature = { enabled = true },
   },
 }
