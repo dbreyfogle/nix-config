@@ -219,6 +219,7 @@
     aider-chat
     asciinema
     asciinema-agg
+    dbt-fusion
     detect-term-background
     fastfetch
     git-filter-repo

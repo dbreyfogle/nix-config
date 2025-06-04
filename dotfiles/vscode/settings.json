@@ -171,5 +171,8 @@
 
   "terraform.languageServer.ignoreSingleFileWarning": true,
 
-  "sqltools.highlightQuery": false
+  "sqltools.highlightQuery": false,
+
+  "dbt.dbtPath": "/etc/profiles/per-user/danny/bin/dbtf",
+  "dbt.lspPath": "/etc/profiles/per-user/danny/bin/dbt-lsp"
 }
