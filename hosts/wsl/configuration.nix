@@ -12,6 +12,7 @@ in
 
   wsl.enable = true;
   wsl.defaultUser = username;
+  programs.nix-ld.enable = true;
 
   system.stateVersion = "24.11";
   nixpkgs.config.allowUnfree = true;
