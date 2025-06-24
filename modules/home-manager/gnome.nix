@@ -59,6 +59,7 @@
         move-to-workspace-9 = [ "<Shift><Super>9" ];
         move-to-workspace-10 = [ "<Shift><Super>0" ];
         switch-applications = [ "<Super>Tab" ];
+        switch-applications-backward = [ "<Shift><Super>Tab" ];
         switch-to-workspace-1 = [ "<Super>1" ];
         switch-to-workspace-2 = [ "<Super>2" ];
         switch-to-workspace-3 = [ "<Super>3" ];
@@ -70,6 +71,7 @@
         switch-to-workspace-9 = [ "<Super>9" ];
         switch-to-workspace-10 = [ "<Super>0" ];
         switch-windows = [ "<Alt>Tab" ];
+        switch-windows-backward = [ "<Shift><Alt>Tab" ];
         unmaximize = [ "<Super>Down" ];
       };
 
