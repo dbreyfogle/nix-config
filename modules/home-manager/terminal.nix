@@ -113,12 +113,10 @@
         nodejs
         nodePackages.prettier
         pyright
-        python313Packages.sqlfmt
         ripgrep
         ruff
         shellcheck
         shfmt
-        sqlfluff
         stylua
         taplo
         terraform-ls
@@ -226,6 +224,8 @@
     nerd-fonts.jetbrains-mono
     nixd
     nixfmt-rfc-style
+    python313Packages.sqlfmt
+    sqlfluff
     tldr
     vim
   ];

@@ -2,6 +2,7 @@ akamud.vscode-theme-onedark
 akamud.vscode-theme-onelight
 charliermarsh.ruff
 dbtlabsinc.dbt
+dorzey.vscode-sqlfluff
 esbenp.prettier-vscode
 github.codespaces
 github.copilot
@@ -24,9 +25,10 @@ ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode.remote-explorer
 ms-vscode.remote-repositories
-mtxr.sqltools
 pkief.material-icon-theme
 redhat.vscode-yaml
+samuelcolvin.jinjahtml
 tamasfe.even-better-toml
 usernamehw.errorlens
 vscodevim.vim
+yassun7010.vscode-shandy-sqlfmt
