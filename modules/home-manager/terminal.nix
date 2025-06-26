@@ -13,6 +13,9 @@
 
     bat = {
       enable = true;
+      config = {
+        theme = "OneHalfDark";
+      };
     };
 
     direnv = {
@@ -28,6 +31,14 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
+      defaultOptions = [
+        "--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up"
+        "--border=none"
+        "--color=dark"
+        "--preview='bat --color=always --plain --line-range=:500 {}'"
+        "--style=full"
+        "--tmux=80%"
+      ];
     };
 
     gh = {
@@ -42,7 +53,7 @@
       enable = true;
       package = null;
       settings = {
-        theme = "dark:OneHalfDark,light:OneHalfLight";
+        theme = "OneHalfDark";
         font-family = "JetBrainsMonoNL Nerd Font";
         title = "\" \"";
         shell-integration-features = "no-cursor";
@@ -176,15 +187,6 @@
       enableCompletion = true;
       history.ignoreSpace = true;
       initContent = ''
-        eval "$(detect-term-background)"
-        export BAT_THEME="OneHalf''${(C)TERM_BACKGROUND}"
-        export FZF_DEFAULT_OPTS="\
-        --bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up \
-        --border=none \
-        --color=$TERM_BACKGROUND \
-        --preview='bat --color=always --plain --line-range=:500 {}' \
-        --style=full \
-        --tmux=80%"
         complete -C $(which aws_completer) aws
         eval "$(gh copilot alias -- zsh)"
         fastfetch
@@ -218,7 +220,6 @@
     asciinema
     asciinema-agg
     dbt-fusion
-    detect-term-background
     fastfetch
     git-filter-repo
     nerd-fonts.jetbrains-mono

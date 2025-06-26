@@ -44,18 +44,11 @@
   "editor.scrollbar.horizontalScrollbarSize": 7,
   "editor.scrollbar.verticalScrollbarSize": 7,
   "workbench.iconTheme": "material-icon-theme",
-  "window.autoDetectColorScheme": true,
-  "workbench.preferredDarkColorTheme": "Atom One Dark",
-  "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.colorTheme": "Atom One Dark",
   "workbench.colorCustomizations": {
     "[Atom One Dark]": {
       "activityBar.background": "#21252B",
       "sideBarSectionHeader.background": "#21252B"
-    },
-    "[Atom One Light]": {
-      "activityBar.background": "#EAEAEB",
-      "sideBarSectionHeader.background": "#EAEAEB"
     }
   },
 
