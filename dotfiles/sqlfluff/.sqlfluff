@@ -1,7 +1,7 @@
 [sqlfluff]
 dialect = ansi
 templater = jinja
-exclude_rules = layout.indent, layout.cte_bracket, layout.keyword_newline, layout.cte_newline, layout.select_targets, layout.spacing, layout.end_of_file
+exclude_rules = layout.indent, layout.cte_bracket, layout.keyword_newline, layout.cte_newline, layout.select_targets, layout.spacing
 max_line_length = 88
 sql_file_exts = ,.sql,.sql.j2,.dml,.ddl
 

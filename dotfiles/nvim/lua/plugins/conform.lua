@@ -40,6 +40,17 @@ return {
       yaml = { "prettier" },
     },
 
+    -- Double newline fix
+    formatters = {
+      sqlfmt = {
+        command = "sh",
+        args = {
+          "-c",
+          "sqlfmt - | sed '$d'",
+        },
+      },
+    },
+
     format_on_save = function(bufnr)
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
         return
