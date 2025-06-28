@@ -26,6 +26,7 @@ return {
   end,
   opts = {
     formatters_by_ft = {
+      ["*"] = { "injected" },
       bash = { "shfmt" },
       proto = { "buf" },
       go = { "goimports" },
