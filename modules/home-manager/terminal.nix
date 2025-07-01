@@ -220,6 +220,7 @@
     claude-code
     dbt-fusion
     fastfetch
+    gemini-cli
     git-filter-repo
     nerd-fonts.jetbrains-mono
     nixd
