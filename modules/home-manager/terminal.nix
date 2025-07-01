@@ -188,7 +188,6 @@
       initContent = ''
         complete -C $(which aws_completer) aws
         eval "$(gh copilot alias -- zsh)"
-        fastfetch
       '';
       oh-my-zsh = {
         enable = true;
