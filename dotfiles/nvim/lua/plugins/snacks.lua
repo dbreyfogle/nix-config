@@ -6,13 +6,12 @@ return {
   },
   opts = {
     dashboard = {
-      preset = { header = "Menu" },
+      preset = { header = "Neovim" },
       sections = {
-        { section = "header", padding = 1 },
+        { section = "header", padding = 2 },
         { section = "keys", gap = 1, padding = 4 },
         { section = "startup" },
       },
-      width = 55,
     },
     indent = {
       animate = { enabled = false },
