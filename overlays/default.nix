@@ -8,5 +8,5 @@ final: prev: {
 
   terraform-versions = inputs.nixpkgs-terraform.packages.${prev.system};
 
-  dbt-fusion = prev.callPackage ../pkgs/dbt-fusion.nix { };
+  dbt-fusion = prev.callPackage ../pkgs/dbt-fusion/package.nix { };
 }

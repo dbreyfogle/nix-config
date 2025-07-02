@@ -12,30 +12,30 @@ let
   systemToPlatform = {
     "x86_64-linux" = {
       name = "x86_64-unknown-linux-gnu";
-      dbtHash = "sha256-aL4y+PssRm2e0v0LYKw2nh8zQpwEnKVB12ziqFC7O6A=";
-      lspHash = "sha256-MU4aK9oXU+MS6MFx0zbfsxVPV9lNmjAUqYf1plOgaN4=";
+      dbtHash = "sha256-5E7/XzLvEQBM9R/EaJm0KKIYL7JjjedLSDQAceGqzQs=";
+      lspHash = "sha256-86V9u4LM4hzHL+Kw+2FxFYIzfAtOqPdo0PimI/f0+s8=";
     };
     "aarch64-linux" = {
       name = "aarch64-unknown-linux-gnu";
-      dbtHash = "sha256-0SY0mMVZ2IdlJmvZXbSxl+YqFJWf8SeM5PP29urBx4I=";
-      lspHash = "sha256-oiKyVzaNLA/xxyNotvR4jC9V/f9ejSUHZA4zKn4N9Lk=";
+      dbtHash = "sha256-+3H4OUaOINnp8EqHtO1xp/jj0yxQx8wh0Pwhs7tEaOI=";
+      lspHash = "sha256-Dse1jxD+1zPFX/tvzv+C1+UuTycYcurpf7SRpv4NM/o=";
     };
     "x86_64-darwin" = {
       name = "x86_64-apple-darwin";
-      dbtHash = "sha256-Lo0K1yiQI3s8PLDvZDfmNtWqU1+GmqVAIuC30BkO5J4=";
-      lspHash = "sha256-2tLx76OqefHOW3qvAgqtqgRXaAVwTaDNYXFaaXKiMRw=";
+      dbtHash = "sha256-Nww2/Xhed7g+AEmHPkClsjZa+EPIltFl2grjx5DLSNo=";
+      lspHash = "sha256-Qq3Pgu6N8p33NQ6Do32SsJoK1uevLrBRDPwWkso6rB8=";
     };
     "aarch64-darwin" = {
       name = "aarch64-apple-darwin";
-      dbtHash = "sha256-c4fB1McmGytFQbPzGx1oL6glI7r+3EUNPxOmKcdRddw=";
-      lspHash = "sha256-vnQIe/8GqT1SSg9FSDyHoEEVGNZc3STPhH56AzKipHo=";
+      dbtHash = "sha256-Nj7SlbNsCNhfWCi/AEt+hNJrg6Gp1x+GD8cBrVWTgJs=";
+      lspHash = "sha256-RFPjAYvpAPtnbcMiXVETrvYjDkJ8kMFEatrxgRjqQQ0=";
     };
   };
   platform = systemToPlatform.${system} or throwSystem;
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "dbt-fusion";
-  version = "2.0.0-beta.22";
+  version = "2.0.0-beta.33";
 
   srcs = [
     (fetchurl {
@@ -61,7 +61,7 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
-  # passthru.updateScript = ./update.sh;
+  passthru.updateScript = ./update.sh;
 
   meta = {
     changelog = "https://github.com/dbt-labs/dbt-fusion/blob/main/CHANGELOG.md";
