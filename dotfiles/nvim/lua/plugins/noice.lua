@@ -2,6 +2,28 @@ return {
   "folke/noice.nvim",
   dependencies = { "MunifTanjim/nui.nvim" },
   event = "VeryLazy",
+  keys = {
+    {
+      "<C-d>",
+      function()
+        if not require("noice.lsp").scroll(4) then
+          return "<C-d>"
+        end
+      end,
+      mode = { "n", "i", "s" },
+      expr = true,
+    },
+    {
+      "<C-u>",
+      function()
+        if not require("noice.lsp").scroll(-4) then
+          return "<C-u>"
+        end
+      end,
+      mode = { "n", "i", "s" },
+      expr = true,
+    },
+  },
   opts = {
     -- Disable all except LSP markdown overrides
     cmdline = { enabled = false },
@@ -16,5 +38,9 @@ return {
         ["cmp.entry.get_documentation"] = true,
       },
     },
+    views = { hover = { size = {
+      max_width = 80,
+      max_height = 12,
+    } } },
   },
 }

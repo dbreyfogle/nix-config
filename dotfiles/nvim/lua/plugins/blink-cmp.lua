@@ -47,7 +47,13 @@ return {
 
     completion = {
       accept = { auto_brackets = { enabled = true } },
-      documentation = { auto_show = true },
+      documentation = {
+        auto_show = true,
+        window = {
+          max_width = 80,
+          max_height = 15,
+        },
+      },
       ghost_text = { enabled = true },
     },
 
