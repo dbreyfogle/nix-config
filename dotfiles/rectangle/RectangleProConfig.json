@@ -97,6 +97,9 @@
     "disabledApps" : {
 
     },
+    "dockDetection" : {
+      "int" : 0
+    },
     "dockSizePollSeconds" : {
       "double" : 0
     },
@@ -143,7 +146,7 @@
       "double" : 0
     },
     "gestures" : {
-      "string" : "[10,{\"flags\":0,\"trail\":2},35,{\"flags\":0,\"trail\":0},4,{\"flags\":0,\"trail\":3},11,{\"trail\":1,\"flags\":0},2,{\"trail\":1,\"flags\":0},0,{\"trail\":3,\"flags\":0},5,{\"trail\":4,\"flags\":0},19,{\"trail\":2,\"flags\":0},1,{\"trail\":4,\"flags\":0}]"
+      "string" : "[1,{\"flags\":0,\"trail\":4},5,{\"flags\":0,\"trail\":4},35,{\"flags\":0,\"trail\":0},2,{\"flags\":0,\"trail\":1},0,{\"flags\":0,\"trail\":3},4,{\"flags\":0,\"trail\":3},19,{\"flags\":0,\"trail\":2},11,{\"flags\":0,\"trail\":1},10,{\"flags\":0,\"trail\":2}]"
     },
     "hapticFeedbackOnSnap" : {
       "int" : 0
@@ -152,7 +155,7 @@
       "int" : 3
     },
     "hideMenubarIcon" : {
-      "bool" : false
+      "bool" : true
     },
     "hideReticleRectangles" : {
       "bool" : false
@@ -162,6 +165,9 @@
     },
     "iCloudSync" : {
       "int" : 1
+    },
+    "iconDrawing" : {
+      "int" : 2
     },
     "ignoreBehavior" : {
       "int" : 0
@@ -274,6 +280,9 @@
     "relaunchOpensMenu" : {
       "bool" : false
     },
+    "repeatedMaximizeMode" : {
+      "int" : 4
+    },
     "repeatedMaximizeRestores" : {
       "int" : 0
     },
@@ -290,7 +299,7 @@
       "int" : 2
     },
     "reticleColor" : {
-      "string" : "{\"red\":0.8,\"alpha\":0.5,\"green\":0.3,\"blue\":0.2}"
+      "string" : "{\"red\":0.8,\"blue\":0.2,\"green\":0.3,\"alpha\":0.5}"
     },
     "reticleDisplayMinDist" : {
       "float" : 0
@@ -327,6 +336,9 @@
     },
     "screenEdgeGapsOnMainScreenOnly" : {
       "bool" : false
+    },
+    "screensOrderedByX" : {
+      "int" : 0
     },
     "scrollEdgePauseDistance" : {
       "float" : 60
@@ -509,6 +521,6 @@
       "modifierFlags" : 786432
     }
   },
-  "timestamp" : 768343379.031047,
-  "version" : "189"
+  "timestamp" : 774476582.833236,
+  "version" : "197"
 }
