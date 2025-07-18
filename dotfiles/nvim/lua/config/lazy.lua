@@ -18,6 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = { { import = "plugins" } },
-  install = { colorscheme = { "onedark" } },
+  install = { colorscheme = { "kanagawa" } },
   checker = { enabled = true, frequency = 604800 },
 })

@@ -14,7 +14,12 @@
     bat = {
       enable = true;
       config = {
-        theme = "OneHalfDark";
+        theme = "kanagawa";
+      };
+      themes = {
+        kanagawa = {
+          src = ../../dotfiles/bat/kanagawa.tmTheme;
+        };
       };
     };
 
@@ -53,7 +58,7 @@
       enable = true;
       package = null;
       settings = {
-        theme = "OneHalfDark";
+        theme = "Kanagawa Wave";
         font-family = "JetBrainsMonoNL Nerd Font";
         title = "\" \"";
         shell-integration-features = "no-cursor";
@@ -153,11 +158,11 @@
           plugin = continuum;
           extraConfig = ''
             # Theme (must be set before tmux-continuum due to a bug)
-            set -g status-left "#[fg=green,bold][#S] "
+            set -g status-left "#[fg=#7E9CD8,bold][#S] "
             set -g status-left-length 50
             set -g status-right ""
-            set -g status-style fg=gray60,bg=default
-            setw -g window-status-current-style fg=green,bold
+            set -g status-style fg=gray45,bg=default
+            setw -g window-status-current-style fg=#7E9CD8,bold
 
             # Faster save interval
             set -g @continuum-save-interval '5'
@@ -237,7 +242,6 @@
   };
 
   xdg.configFile = {
-    "ghostty/themes".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/ghostty";
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
     "sqlfluff/.sqlfluff".source =
       config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/sqlfluff/.sqlfluff";
