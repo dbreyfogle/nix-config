@@ -49,6 +49,9 @@ vim.opt.signcolumn = "yes"
 -- Hide mode indicator
 vim.opt.showmode = false
 
+-- Disable ruler
+vim.opt.ruler = false
+
 -- Cursor blinking
 vim.opt.guicursor = vim.opt.guicursor + "a:blinkon500-blinkoff500"
 
