@@ -23,7 +23,7 @@ return {
       map("<Leader>ghX", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end, "v")
-      map("<Leader>gl", gitsigns.blame)
+      map("<Leader>gbl", gitsigns.blame)
       map("<Leader>gs", gitsigns.stage_buffer)
       map("<Leader>gtb", gitsigns.toggle_current_line_blame)
       map("<Leader>gtd", gitsigns.toggle_deleted)

@@ -30,7 +30,7 @@ return {
     { "<Leader>s.", "<CMD>FzfLua oldfiles<CR>" },
     { "<Leader>s/", "<CMD>FzfLua search_history<CR>" },
 
-    { "<Leader>gb", "<CMD>FzfLua git_branches<CR>" },
+    { "<Leader>gbr", "<CMD>FzfLua git_branches<CR>" },
     { "<Leader>gg", "<CMD>FzfLua git_status<CR>" },
     { "<Leader>gz", "<CMD>FzfLua git_stash<CR>" },
     { "<Leader>g'", "<CMD>FzfLua git_tags<CR>" },
@@ -40,7 +40,7 @@ return {
     { "gD", "<CMD>FzfLua lsp_declarations<CR>" },
     { "gi", "<CMD>FzfLua lsp_implementations<CR>" },
     { "grr", "<CMD>FzfLua lsp_references<CR>" },
-    { "gt", "<CMD>FzfLua lsp_typedefs<CR>" },
+    { "grt", "<CMD>FzfLua lsp_typedefs<CR>" },
   },
   init = function()
     require("fzf-lua").register_ui_select()
