@@ -48,9 +48,6 @@ set splitbelow
 set scrolloff=12
 set sidescroll=0
 
-" Hide tabline
-set showtabline=0
-
 " Use system clipboard
 set clipboard=unnamedplus
 

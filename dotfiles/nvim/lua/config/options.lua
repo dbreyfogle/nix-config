@@ -25,9 +25,6 @@ vim.opt.splitbelow = true
 vim.opt.scrolloff = 12
 vim.opt.sidescroll = 0
 
--- Hide tabline
-vim.opt.showtabline = 0
-
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
