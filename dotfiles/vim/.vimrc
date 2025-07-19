@@ -102,6 +102,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-sneak'
+Plug 'mbbill/undotree'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 call plug#end()
 
@@ -109,6 +110,13 @@ call plug#end()
 highlight! link Sneak None
 highlight! link SneakCurrent None
 autocmd User SneakLeave highlight clear Sneak | highlight clear SneakCurrent
+
+" Undotree options
+nnoremap <Leader>u <CMD>UndotreeToggle<CR>
+let g:undotree_WindowLayout = 2
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_SplitWidth = 40
+let g:undotree_DiffpanelHeight = 12
 
 " Set colorscheme
 colorscheme onehalfdark

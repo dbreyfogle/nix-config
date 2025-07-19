@@ -19,6 +19,7 @@ return {
           "help",
           "leetcode",
           "snacks_dashboard",
+          "undotree",
         },
       },
       icons_enabled = false,
