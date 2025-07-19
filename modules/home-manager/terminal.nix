@@ -196,11 +196,7 @@
       '';
       oh-my-zsh = {
         enable = true;
-        plugins = [
-          "git"
-          "terraform"
-          "tmux"
-        ];
+        plugins = [ "tmux" ];
       };
       sessionVariables = {
         MINIKUBE_IN_STYLE = "false";
@@ -210,9 +206,7 @@
         ZSH_TMUX_UNICODE = "true";
       };
       shellAliases = {
-        k = "kubectl";
         l = "ls -lFhAv --group-directories-first --color";
-        tf = "terraform";
       };
       syntaxHighlighting.enable = true;
     };
@@ -224,7 +218,6 @@
     claude-code
     dbt-fusion
     fastfetch
-    gemini-cli
     git-filter-repo
     nerd-fonts.jetbrains-mono
     nixd
