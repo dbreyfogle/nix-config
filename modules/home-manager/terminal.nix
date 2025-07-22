@@ -219,6 +219,7 @@
     dbt-fusion
     fastfetch
     git-filter-repo
+    jq
     nerd-fonts.jetbrains-mono
     nixd
     nixfmt-rfc-style
