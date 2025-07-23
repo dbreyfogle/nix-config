@@ -31,6 +31,7 @@
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
+  "rest-client.enableTelemetry": false,
 
   // [[ Apperance ]]
 
@@ -61,6 +62,7 @@
   "editor.cursorSurroundingLines": 12,
   "editor.folding": false,
   "editor.inlineSuggest.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.matchBrackets": "never",
@@ -143,6 +145,7 @@
 
   "settingsSync.ignoredExtensions": ["ms-vscode-remote.remote-wsl"],
   "extensions.allowed": {
+    "ms-python.vscode-python-envs": false,
     "ms-python.vscode-pylance": false,
     "ms-toolsai.vscode-jupyter-cell-tags": false,
     "ms-toolsai.vscode-jupyter-slideshow": false,
@@ -159,8 +162,8 @@
   "errorLens.delay": 750,
 
   "python.terminal.activateEnvironment": false,
+  "interactiveWindow.collapseCellInputCode": "never",
   "jupyter.askForKernelRestart": false,
-  "notebook.lineNumbers": "on",
   "notebook.output.scrolling": true,
 
   "nix.enableLanguageServer": true,
