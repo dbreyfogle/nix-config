@@ -35,7 +35,7 @@ install_nix:
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
 bootstrap_darwin: check_flake_output
-	nix run nix-darwin/nix-darwin-24.11#darwin-rebuild -- switch --flake .#$(FLAKE_OUTPUT)
+	sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$(FLAKE_OUTPUT)
 
 bootstrap_hm: check_flake_output
 	nix run home-manager/master -- init --switch
