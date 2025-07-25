@@ -23,7 +23,7 @@ return {
     { "<Leader>lcX", "<CMD>Leet reset<CR>", desc = "Leetcode: Reset editor" },
   },
   opts = {
-    lang = "golang",
+    lang = "python",
     injector = {
       ["golang"] = { before = "package main" },
     },
