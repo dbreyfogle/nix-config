@@ -7,6 +7,7 @@ return {
         require("grug-far").open()
       end,
       mode = { "n", "v" },
+      desc = "Find and replace in workspace",
     },
     {
       "<Leader>rR",
@@ -14,6 +15,7 @@ return {
         require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })
       end,
       mode = { "n", "v" },
+      desc = "Find and replace in buffer",
     },
     {
       "<Leader>rv",
@@ -21,6 +23,7 @@ return {
         require("grug-far").open({ visualSelectionUsage = "operate-within-range" })
       end,
       mode = "v",
+      desc = "Find and replace in selection",
     },
   },
   opts = {},

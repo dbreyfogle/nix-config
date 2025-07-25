@@ -3,7 +3,9 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
   priority = 1000,
-  keys = { { "-", "<CMD>Oil<CR>" } },
+  keys = {
+    { "-", "<CMD>Oil<CR>", desc = "Oil: Open file browser" },
+  },
   opts = {
     view_options = {
       show_hidden = true,

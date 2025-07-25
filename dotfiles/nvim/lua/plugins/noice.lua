@@ -12,6 +12,7 @@ return {
       end,
       mode = { "n", "i", "s" },
       expr = true,
+      desc = "Scroll LSP documentation down",
     },
     {
       "<C-u>",
@@ -22,6 +23,7 @@ return {
       end,
       mode = { "n", "i", "s" },
       expr = true,
+      desc = "Scroll LSP documentation up",
     },
   },
   opts = {

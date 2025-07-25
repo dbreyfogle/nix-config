@@ -5,20 +5,20 @@ return {
   cmd = "Copilot",
   keys = {
     {
-      -- Hide completion menu and trigger suggestions
       "<C-j>",
       function()
         require("blink.cmp").hide()
         require("copilot.suggestion").next()
       end,
       mode = "i",
+      desc = "Copilot: Generate suggestion",
     },
     {
-      -- Toggle auto trigger for the current buffer
       "<Leader>cp",
       function()
         require("copilot.suggestion").toggle_auto_trigger()
       end,
+      desc = "Copilot: Toggle auto trigger",
     },
   },
   init = function()

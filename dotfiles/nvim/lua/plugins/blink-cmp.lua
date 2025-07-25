@@ -7,18 +7,19 @@ return {
   },
   event = { "InsertEnter", "CmdlineEnter" },
   keys = {
-    -- Additional snippet keymaps
     {
       "<C-f>",
       function()
         require("blink.cmp").snippet_forward()
       end,
+      desc = "Jump to the next snippet placeholder",
     },
     {
       "<C-b>",
       function()
         require("blink.cmp").snippet_backward()
       end,
+      desc = "Jump to the previous snippet placeholder",
     },
     {
       "<C-h>",
@@ -26,6 +27,7 @@ return {
         vim.snippet.stop()
       end,
       mode = { "i", "n", "s" },
+      desc = "Exit snippet",
     },
   },
   opts = {

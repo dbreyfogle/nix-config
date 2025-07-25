@@ -5,7 +5,9 @@ return {
     "kristijanhusak/vim-dadbod-completion",
   },
   cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
-  keys = { { "<Leader>D", "<CMD>DBUIToggle<CR>" } },
+  keys = {
+    { "<Leader>D", "<CMD>DBUIToggle<CR>", desc = "Toggle DBUI" },
+  },
   init = function()
     local data_path = vim.fn.stdpath("data")
     vim.g.db_ui_save_location = data_path .. "/db_ui"

@@ -1,9 +1,9 @@
 return {
   "jpalardy/vim-slime",
   keys = {
-    { "<C-c>;", "<Plug>SlimeLineSend" },
-    { "<C-c>;", "<Plug>SlimeRegionSend", mode = "v" },
-    { "<C-c>'", "<Plug>SlimeSendCell" },
+    { "<C-c>;", "<Plug>SlimeLineSend", desc = "Slime: Send line" },
+    { "<C-c>;", "<Plug>SlimeRegionSend", mode = "v", desc = "Slime: Send selection" },
+    { "<C-c>'", "<Plug>SlimeSendCell", desc = "Slime: Send cell" },
   },
   init = function()
     vim.g.slime_no_mappings = 1

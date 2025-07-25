@@ -11,10 +11,15 @@ return {
           vim.cmd("DiffviewClose")
         end
       end,
+      desc = "Git: Toggle diffview",
     },
-    { "<Leader>gdm", "<CMD>DiffviewOpen origin/HEAD...HEAD<CR>" },
-    { "<Leader>gdo", ":DiffviewOpen " },
-    { "<Leader>gdu", "<CMD>DiffviewOpen upstream/HEAD...HEAD<CR>" },
+    { "<Leader>gdm", "<CMD>DiffviewOpen origin/HEAD...HEAD<CR>", desc = "Git: Open diffview against base branch" },
+    { "<Leader>gdo", ":DiffviewOpen ", desc = "Git: Open diffview prompt" },
+    {
+      "<Leader>gdu",
+      "<CMD>DiffviewOpen upstream/HEAD...HEAD<CR>",
+      desc = "Git: Open diffview against upstream branch",
+    },
     {
       "<Leader>gll",
       function()
@@ -24,9 +29,10 @@ return {
           vim.cmd("DiffviewClose")
         end
       end,
+      desc = "Git: Toggle commit history",
     },
-    { "<Leader>glL", "<CMD>DiffviewFileHistory %<CR>" },
-    { "<Leader>glo", ":DiffviewFileHistory " },
+    { "<Leader>glL", "<CMD>DiffviewFileHistory %<CR>", desc = "Git: Open commit history for current file" },
+    { "<Leader>glo", ":DiffviewFileHistory ", desc = "Git: Open commit history prompt" },
   },
   config = function()
     local actions = require("diffview.actions")
