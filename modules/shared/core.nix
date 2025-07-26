@@ -1,6 +1,8 @@
-{ ... }:
+{ inputs, ... }:
 
 {
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
   nix.settings = {
     extra-experimental-features = [
       "nix-command"

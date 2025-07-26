@@ -168,6 +168,24 @@
 
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
+  "nix.serverSettings": {
+    "nixd": {
+      "nixpkgs": {
+        "expr": "import (builtins.getFlake (\"git+file://\" + toString ./.)).inputs.nixpkgs { }"
+      },
+      "options": {
+        "nixos": {
+          "expr": "(builtins.getFlake (\"git+file://\" + toString ./.)).nixosConfigurations.desktop.options"
+        },
+        "nix-darwin": {
+          "expr": "(builtins.getFlake (\"git+file://\" + toString ./.)).darwinConfigurations.macbook.options"
+        },
+        "home-manager": {
+          "expr": "(builtins.getFlake (\"git+file://\" + toString ./.)).nixosConfigurations.desktop.options.home-manager.users.type.getSubOptions []"
+        }
+      }
+    }
+  },
 
   "terraform.languageServer.ignoreSingleFileWarning": true,
 

@@ -30,6 +30,24 @@ return {
       settings = { Lua = {} },
     })
     vim.lsp.enable("lua_ls")
+    vim.lsp.config("nixd", {
+      settings = {
+        nixd = {
+          nixpkgs = { expr = 'import (builtins.getFlake ("git+file://" + toString ./.)).inputs.nixpkgs { }' },
+          options = {
+            nixos = {
+              expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.desktop.options',
+            },
+            nix_darwin = {
+              expr = '(builtins.getFlake ("git+file://" + toString ./.)).darwinConfigurations.macbook.options',
+            },
+            home_manager = {
+              expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.desktop.options.home-manager.users.type.getSubOptions []',
+            },
+          },
+        },
+      },
+    })
     vim.lsp.enable("nixd")
     vim.lsp.enable("pyright")
     vim.lsp.enable("taplo")
