@@ -8,20 +8,6 @@ return {
   event = { "InsertEnter", "CmdlineEnter" },
   keys = {
     {
-      "<C-f>",
-      function()
-        require("blink.cmp").snippet_forward()
-      end,
-      desc = "Jump to the next snippet placeholder",
-    },
-    {
-      "<C-b>",
-      function()
-        require("blink.cmp").snippet_backward()
-      end,
-      desc = "Jump to the previous snippet placeholder",
-    },
-    {
       "<C-h>",
       function()
         vim.snippet.stop()
@@ -49,23 +35,42 @@ return {
 
     completion = {
       accept = { auto_brackets = { enabled = true } },
-      documentation = {
-        auto_show = true,
-        window = {
-          max_width = 80,
-          max_height = 15,
-        },
-      },
+      documentation = { auto_show = true },
       ghost_text = { enabled = true },
     },
 
     keymap = {
       preset = "default",
       ["<Tab>"] = { "accept", "fallback" },
-      ["<C-d>"] = { "scroll_documentation_down", "fallback" },
-      ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+      ["<C-d>"] = {
+        function()
+          local signature = require("blink.cmp.signature.window")
+          if signature.win:is_open() then
+            signature.scroll_down(4)
+            return true
+          end
+        end,
+        "scroll_documentation_down",
+        "fallback",
+      },
+      ["<C-u>"] = {
+        function()
+          local signature = require("blink.cmp.signature.window")
+          if signature.win:is_open() then
+            signature.scroll_up(4)
+            return true
+          end
+        end,
+        "scroll_documentation_up",
+        "fallback",
+      },
       ["<C-f>"] = { "snippet_forward" },
       ["<C-b>"] = { "snippet_backward" },
+    },
+
+    signature = {
+      enabled = true,
+      window = { show_documentation = true },
     },
 
     sources = {
