@@ -9,6 +9,13 @@ noremap! <C-c> <Esc>
 " Set leader
 let mapleader=" "
 
+" Tab management
+nnoremap <Leader>tc <CMD>tabclose<CR>
+nnoremap <Leader>tn <CMD>tabnew<CR>
+nnoremap <Leader>to <CMD>tabonly<CR>
+nnoremap <Leader>t> <CMD>+tabmove<CR>
+nnoremap <Leader>t< <CMD>-tabmove<CR>
+
 " Paste the most recent yank
 noremap <Leader>p "0p
 noremap <Leader>P "0P
