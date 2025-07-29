@@ -43,10 +43,6 @@ return {
         view_leave = function()
           vim.cmd("DiffviewClose")
         end,
-        -- Fix underline issue caused by cursorline
-        diff_buf_win_enter = function(bufnr, winid, ctx)
-          vim.wo[winid].culopt = "number"
-        end,
       },
       keymaps = {
         file_panel = {
