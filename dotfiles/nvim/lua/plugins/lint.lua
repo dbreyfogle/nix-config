@@ -2,7 +2,7 @@ return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },
   init = function()
-    vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged" }, {
+    vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "TextChanged" }, {
       callback = function()
         if vim.opt_local.modifiable:get() then
           require("lint").try_lint()

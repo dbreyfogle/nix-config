@@ -4,6 +4,7 @@ return {
     "nvim-tree/nvim-web-devicons",
     "folke/todo-comments.nvim",
   },
+  cmd = "FzfLua",
   keys = {
     { "<Leader>sb", "<CMD>FzfLua buffers<CR>", desc = "Search buffers" },
     { "<Leader>sc", "<CMD>FzfLua git_files<CR>", desc = "Search git files" },
