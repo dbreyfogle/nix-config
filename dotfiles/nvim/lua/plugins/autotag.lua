@@ -1,5 +1,5 @@
 return {
   "windwp/nvim-ts-autotag",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "InsertEnter",
   opts = {},
 }

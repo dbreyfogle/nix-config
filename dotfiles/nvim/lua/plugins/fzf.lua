@@ -1,9 +1,7 @@
 return {
   "ibhagwan/fzf-lua",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-    "folke/todo-comments.nvim",
-  },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  cmd = "FzfLua",
   keys = {
     { "<Leader>sb", "<CMD>FzfLua buffers<CR>", desc = "Search buffers" },
     { "<Leader>sc", "<CMD>FzfLua git_files<CR>", desc = "Search git files" },

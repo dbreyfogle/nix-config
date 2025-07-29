@@ -1,10 +1,7 @@
 return {
   "folke/snacks.nvim",
-  dependences = {
-    "ibhagwan/fzf-lua",
-    "sindrets/diffview.nvim",
-    "folke/persistence.nvim",
-  },
+  lazy = false,
+  priority = 1000,
   opts = {
     dashboard = {
       preset = {

@@ -1,6 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = { "b0o/schemastore.nvim" },
+  event = "VeryLazy",
   config = function()
     -- Diagnostic options
     vim.diagnostic.config({ severity_sort = true, virtual_text = true })
