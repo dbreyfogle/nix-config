@@ -40,11 +40,7 @@ return {
       },
       lualine_b = { "diagnostics", "diff" },
       lualine_c = { "branch", "%=", { "filename", path = 1 } },
-      lualine_x = {
-        "filetype",
-        { "lsp_status", symbols = { done = "" }, ignore_lsp = { "copilot" } },
-        "progress",
-      },
+      lualine_x = { "filetype", { "lsp_status", symbols = { done = "" } }, "progress" },
       lualine_y = {},
       lualine_z = {},
     },

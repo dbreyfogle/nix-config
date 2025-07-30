@@ -36,12 +36,10 @@ return {
     completion = {
       accept = { auto_brackets = { enabled = true } },
       documentation = { auto_show = true },
-      ghost_text = { enabled = true },
     },
 
     keymap = {
       preset = "default",
-      ["<Tab>"] = { "accept", "fallback" },
       ["<C-d>"] = {
         function()
           local signature = require("blink.cmp.signature.window")
