@@ -58,6 +58,11 @@
     "when": "filesExplorerFocus"
   },
   {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
     "key": "alt+j",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
@@ -66,14 +71,6 @@
     "key": "alt+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "runCommands",
-    "args": {
-      "commands": ["hideSuggestWidget", "editor.action.inlineSuggest.hide"]
-    },
-    "when": "(suggestWidgetVisible && textInputFocus) || (inlineEditIsVisible || inlineSuggestionVisible)"
   },
   {
     "key": "ctrl+b",
@@ -91,16 +88,23 @@
     "when": "inSnippetMode && textInputFocus"
   },
   {
-    "key": "ctrl+j",
-    "command": "runCommands",
-    "args": {
-      "commands": ["hideSuggestWidget", "editor.action.inlineSuggest.trigger"]
-    },
-    "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+    "key": "ctrl+e",
+    "command": "hideSuggestWidget",
+    "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "ctrl+\\",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly"
+  },
+  {
+    "key": "ctrl+]",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineEditIsVisible || inlineSuggestionVisible"
   }
 ]

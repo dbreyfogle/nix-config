@@ -61,7 +61,6 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorSurroundingLines": 12,
   "editor.folding": false,
-  "editor.inlineSuggest.enabled": false,
   "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
@@ -153,6 +152,8 @@
     "ms-vscode-remote.remote-ssh-edit": false,
     "*": true
   },
+
+  "github.copilot.nextEditSuggestions.enabled": true,
 
   "direnv.restart.automatic": true,
   "direnv.status.showChangesCount": false,
