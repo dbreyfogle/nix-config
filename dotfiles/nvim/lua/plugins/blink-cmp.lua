@@ -72,7 +72,7 @@ return {
     },
 
     sources = {
-      per_filetype = { sql = { "dadbod", "snippets", "buffer" } },
+      per_filetype = { sql = { "dadbod", "path", "snippets", "buffer" } },
       providers = { dadbod = { module = "vim_dadbod_completion.blink" } },
     },
   },
