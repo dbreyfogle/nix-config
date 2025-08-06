@@ -226,6 +226,7 @@
     python313Packages.sqlfmt
     sqlfluff
     tldr
+    tokei
     vim
   ];
 
