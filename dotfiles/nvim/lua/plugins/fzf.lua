@@ -55,6 +55,7 @@ return {
         true,
         ["ctrl-d"] = "preview-page-down",
         ["ctrl-u"] = "preview-page-up",
+        ["ctrl-q"] = "select-all+accept",
       },
     },
     winopts = { preview = { horizontal = "right:50%" } },
