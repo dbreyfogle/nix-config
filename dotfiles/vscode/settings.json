@@ -16,7 +16,6 @@
   "window.title": " ",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
-  "window.menuBarVisibility": "hidden",
   "workbench.activityBar.location": "top",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.focusRecentEditorAfterClose": false,
@@ -165,6 +164,7 @@
   "python.terminal.activateEnvironment": false,
   "interactiveWindow.collapseCellInputCode": "never",
   "jupyter.askForKernelRestart": false,
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "notebook.output.scrolling": true,
 
   "nix.enableLanguageServer": true,
