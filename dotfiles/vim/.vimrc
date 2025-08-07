@@ -7,7 +7,7 @@ noremap! <Esc> <C-c>
 noremap! <C-c> <Esc>
 
 " Set leader
-let mapleader=" "
+let mapleader=' '
 
 " Tab management
 nnoremap <Leader>tc <CMD>tabclose<CR>
@@ -46,6 +46,12 @@ set shiftwidth=0 " follow tabstop
 set softtabstop=-1 " follow shiftwidth
 set list
 set listchars=tab:\ \ ,trail:·,nbsp:␣
+
+" Folding settings
+set nofoldenable
+set foldmethod=indent
+set foldlevel=99
+set foldtext='""'
 
 " Automatically focus new splits
 set splitright

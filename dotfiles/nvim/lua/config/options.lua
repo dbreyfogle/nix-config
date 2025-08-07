@@ -17,6 +17,12 @@ vim.opt.softtabstop = -1 -- follow shiftwidth
 vim.opt.list = true
 vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 
+-- Folding settings
+vim.opt.foldenable = false
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
+vim.opt.foldtext = " "
+
 -- Automatically focus new splits
 vim.opt.splitright = true
 vim.opt.splitbelow = true

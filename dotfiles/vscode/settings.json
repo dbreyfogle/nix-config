@@ -60,7 +60,6 @@
   "editor.autoClosingOvertype": "always",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorSurroundingLines": 12,
-  "editor.folding": false,
   "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
@@ -68,6 +67,7 @@
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
+  "editor.showFoldingControls": "never",
   "editor.stickyScroll.enabled": false,
 
   // [[ Formatting ]]
