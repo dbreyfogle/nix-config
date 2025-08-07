@@ -17,7 +17,7 @@
       AppleEnableSwipeNavigateWithScrolls = true;
       ApplePressAndHoldEnabled = false;
       AppleScrollerPagingBehavior = true;
-      AppleShowScrollBars = "WhenScrolling";
+      AppleShowScrollBars = "Automatic";
       AppleSpacesSwitchOnActivate = true;
       AppleWindowTabbingMode = "always";
       InitialKeyRepeat = 30;
