@@ -11,6 +11,7 @@ return {
           "dapui_scopes",
           "dapui_stacks",
           "dapui_watches",
+          "dbout",
           "dbui",
           "DiffviewFiles",
           "DiffviewFileHistory",

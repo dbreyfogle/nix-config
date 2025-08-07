@@ -1,10 +1,7 @@
 return {
   "saghen/blink.cmp",
   version = "1.*",
-  dependencies = {
-    "rafamadriz/friendly-snippets",
-    "kristijanhusak/vim-dadbod-completion",
-  },
+  dependencies = { "rafamadriz/friendly-snippets" },
   event = { "InsertEnter", "CmdlineEnter" },
   keys = {
     {
@@ -20,6 +17,7 @@ return {
     -- Disable completions for certain filetypes
     enabled = function()
       return not vim.tbl_contains({
+        "dbout",
         "gitcommit",
         "gitrebase",
         "markdown",

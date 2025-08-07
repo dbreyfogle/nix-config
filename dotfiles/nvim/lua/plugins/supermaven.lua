@@ -12,5 +12,13 @@ return {
       accept_word = "<C-j>",
       clear_suggestion = "<C-]>",
     },
+    ignore_filetypes = {
+      "dbout",
+      "gitcommit",
+      "gitrebase",
+      "markdown",
+      "oil",
+      "txt",
+    },
   },
 }

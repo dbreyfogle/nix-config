@@ -6,7 +6,9 @@ return {
   },
   cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
   keys = {
-    { "<Leader>D", "<CMD>DBUIToggle<CR>", desc = "Toggle DBUI" },
+    { "<Leader>D", "<CMD>DBUIToggle<CR>", desc = "DB: Toggle UI" },
+    { "<Leader>S", mode = { "n", "v" }, desc = "DB: Execute query" },
+    { "<Leader>W", desc = "DB: Save query" },
   },
   init = function()
     local data_path = vim.fn.stdpath("data")
