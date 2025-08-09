@@ -194,5 +194,14 @@
   "sqlfluff.linter.run": "onSave",
 
   "dbt.dbtPath": "/etc/profiles/per-user/danny/bin/dbtf",
-  "dbt.lspPath": "/etc/profiles/per-user/danny/bin/dbt-lsp"
+  "dbt.lspPath": "/etc/profiles/per-user/danny/bin/dbt-lsp",
+
+  "altimate.disableMcpServer": true,
+  "altimate.enableDatamates": false,
+  "dbt.disableQueryHistory": true,
+  "dbt.enableCollaboration": false,
+  "dbt.enableNewLineagePanel": true,
+  "dbt.enableNotebooks": false,
+  "dbt.installDepsOnProjectInitialization": false,
+  "dbt.perspectiveTheme": "Pro Dark"
 }
