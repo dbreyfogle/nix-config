@@ -63,3 +63,6 @@ vim.g.loaded_matchparen = 1
 
 -- Disable SQL mappings
 vim.g.omni_sql_no_default_maps = 1
+
+-- Diagnostic options
+vim.diagnostic.config({ severity_sort = true, virtual_text = true })
