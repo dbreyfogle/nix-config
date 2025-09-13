@@ -12,30 +12,30 @@ let
   systemToPlatform = {
     "x86_64-linux" = {
       name = "x86_64-unknown-linux-gnu";
-      dbtHash = "sha256-Aa7GwsAXzJ1j4U1NEBocvezC/mfFICVr4ea/w9aXW4A=";
-      lspHash = "sha256-DBdzceEx0KpKaB0E+kvX7tcq1nsqnAOUgJHRJYtswjI=";
+      dbtHash = "sha256-c7Z9Iy5Cnvi4n2n01yHTsAmuGUfIrTeBck9/pAIq6MM=";
+      lspHash = "sha256-IL65bufefp5t89NoFoVNR4onF71FES+PRyuTd7JFQL0=";
     };
     "aarch64-linux" = {
       name = "aarch64-unknown-linux-gnu";
-      dbtHash = "sha256-27F3n9Y3d3L1K8/P1FGehi9CLZgvjuG2thyjvtRDir8=";
-      lspHash = "sha256-No8SpeyxjjEuh1t+YxudtwxhWNgNPUVaE+s+T1wjyss=";
+      dbtHash = "sha256-y7rw8UqcuBvo1tJriwyNkSAQjbRapaWVnrwnXxQD2bE=";
+      lspHash = "sha256-LlbP0S4XgMay/uAO0SQRZNuf4EVA6UnbpG8lSIOJzoA=";
     };
     "x86_64-darwin" = {
       name = "x86_64-apple-darwin";
-      dbtHash = "sha256-JU29zjSgDbg5dtC9WgGcMdxzQ7VSJbxJ6ZORos8G2gM=";
-      lspHash = "sha256-uVFK4ggllgSJrKHIYSCcY6rjPxe0sIxnoUEpnx38kRY=";
+      dbtHash = "sha256-w3dGPTAap5JZEZR7CxTYPa+MIkPJZp/DKKGrg5pkj7c=";
+      lspHash = "sha256-GB+AIrSV+AMu/SDN5J7KFRnhMqVDjwn5RW3eYrgVnOc=";
     };
     "aarch64-darwin" = {
       name = "aarch64-apple-darwin";
-      dbtHash = "sha256-FqpsfdCK72LdgBX4OltejfysU0FaFtDF178rCgesG4M=";
-      lspHash = "sha256-FOkW3jRv5+73ccmekkijzn0xFVDj8rG3KkLXEP/Yueo=";
+      dbtHash = "sha256-xYmdH2j/AHqB1YP/BByWRgbjAs5LTqYJCoLYZ8Tw7bo=";
+      lspHash = "sha256-rZ8jc63FdeswIdu6/0zaTl2JvonwegRHiViSXtARvck=";
     };
   };
   platform = systemToPlatform.${system} or throwSystem;
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "dbt-fusion";
-  version = "2.0.0-beta.64";
+  version = "2.0.0-preview.14";
 
   srcs = [
     (fetchurl {
