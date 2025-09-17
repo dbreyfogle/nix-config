@@ -231,8 +231,6 @@
   ];
 
   home.file = {
-    ".ipython/profile_default/ipython_config.py".source =
-      config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/ipython/ipython_config.py";
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/.vimrc";
   };
 

@@ -11,5 +11,11 @@ return {
     vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
     vim.g.slime_dont_ask_default = 1
     vim.g.slime_cell_delimiter = "# %%"
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "python",
+      callback = function()
+        vim.b.slime_bracketed_paste = 1
+      end,
+    })
   end,
 }
