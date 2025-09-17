@@ -58,6 +58,9 @@
     "cascadeWidth" : {
       "int" : 0
     },
+    "centerFixedDimensions" : {
+      "int" : 0
+    },
     "centerHalfCycles" : {
       "int" : 0
     },
@@ -146,13 +149,13 @@
       "double" : 0
     },
     "gestures" : {
-      "string" : "[1,{\"flags\":0,\"trail\":4},5,{\"flags\":0,\"trail\":4},35,{\"flags\":0,\"trail\":0},2,{\"flags\":0,\"trail\":1},0,{\"flags\":0,\"trail\":3},4,{\"flags\":0,\"trail\":3},19,{\"flags\":0,\"trail\":2},11,{\"flags\":0,\"trail\":1},10,{\"flags\":0,\"trail\":2}]"
+      "string" : "[11,{\"flags\":0,\"trail\":1},2,{\"flags\":0,\"trail\":1},1,{\"flags\":0,\"trail\":4},35,{\"flags\":0,\"trail\":0},19,{\"flags\":0,\"trail\":2},0,{\"flags\":0,\"trail\":3},4,{\"flags\":0,\"trail\":3},5,{\"flags\":0,\"trail\":4},10,{\"flags\":0,\"trail\":2}]"
     },
     "hapticFeedbackOnSnap" : {
       "int" : 0
     },
     "helperRelaunch" : {
-      "int" : 3
+      "int" : 1
     },
     "hideMenubarIcon" : {
       "bool" : true
@@ -184,6 +187,9 @@
     "launchOnLogin" : {
       "bool" : true
     },
+    "layoutSaveType" : {
+      "int" : 2
+    },
     "lockstepResizeOnScreenEdge" : {
       "int" : 0
     },
@@ -197,7 +203,7 @@
 
     },
     "manualSpecs" : {
-      "string" : "[{\"w\":\"1482\",\"h\":\"926\",\"name\":\"Minor\",\"isSnapTarget\":true,\"loc\":0,\"id\":14},{\"w\":\"2515\",\"h\":\"1415\",\"name\":\"Major\",\"isSnapTarget\":true,\"loc\":0,\"id\":7}]"
+      "string" : "[{\"loc\":0,\"w\":\"1482\",\"isSnapTarget\":true,\"otherAppOperation\":1,\"id\":14,\"h\":\"926\",\"name\":\"Minor\"},{\"loc\":0,\"w\":\"2505\",\"isSnapTarget\":true,\"otherAppOperation\":1,\"id\":7,\"h\":\"1409\",\"name\":\"Major\"}]"
     },
     "maximizeAcrossDisplays" : {
       "int" : 0
@@ -433,6 +439,9 @@
     "stashTabs" : {
       "int" : 0
     },
+    "stashToCorner" : {
+      "int" : 0
+    },
     "stashVisibleWidth" : {
       "float" : 1
     },
@@ -467,7 +476,7 @@
       "int" : 1
     },
     "todoSidebarWidth" : {
-      "float" : 400
+      "double" : 400
     },
     "togggleTodoShortcut" : {
 
@@ -521,6 +530,6 @@
       "modifierFlags" : 786432
     }
   },
-  "timestamp" : 774476582.833236,
-  "version" : "197"
+  "timestamp" : 779817215.314621,
+  "version" : "200"
 }
