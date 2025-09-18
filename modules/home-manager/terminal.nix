@@ -114,7 +114,7 @@
         buf
         checkmake
         delve
-        dockerfile-language-server-nodejs
+        dockerfile-language-server
         gcc
         golangci-lint
         gopls
