@@ -216,6 +216,7 @@
     dbt-fusion
     fastfetch
     git-filter-repo
+    github-copilot-cli
     jq
     nerd-fonts.jetbrains-mono
     nixd
