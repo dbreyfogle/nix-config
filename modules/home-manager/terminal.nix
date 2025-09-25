@@ -206,7 +206,7 @@
         ZSH_TMUX_UNICODE = "true";
       };
       shellAliases = {
-        l = "ls -lFhAv --group-directories-first --color";
+        ll = "ls -lFhAv --group-directories-first --color";
       };
       syntaxHighlighting.enable = true;
     };
