@@ -218,6 +218,7 @@
     claude-code
     dbt-fusion
     fastfetch
+    gh-copilot-cli
     git-filter-repo
     jq
     nerd-fonts.jetbrains-mono

@@ -9,4 +9,5 @@ final: prev: {
   terraform-versions = inputs.nixpkgs-terraform.packages.${prev.system};
 
   dbt-fusion = prev.callPackage ../pkgs/dbt-fusion/package.nix { };
+  gh-copilot-cli = prev.callPackage ../pkgs/gh-copilot-cli/package.nix { };
 }
