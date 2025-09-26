@@ -49,7 +49,6 @@
     gh = {
       enable = true;
       extensions = with pkgs; [
-        gh-copilot
         gh-markdown-preview
       ];
     };
@@ -192,7 +191,6 @@
       history.ignoreSpace = true;
       initContent = ''
         complete -C $(which aws_completer) aws
-        eval "$(gh copilot alias -- zsh)"
       '';
       oh-my-zsh = {
         enable = true;
