@@ -127,7 +127,6 @@
         nodejs
         nodePackages.prettier
         pyright
-        ripgrep
         ruff
         shellcheck
         shfmt
@@ -213,7 +212,6 @@
   home.packages = with pkgs; [
     asciinema
     asciinema-agg
-    claude-code
     dbt-fusion
     fastfetch
     gh-copilot-cli
@@ -222,7 +220,9 @@
     nerd-fonts.jetbrains-mono
     nixd
     nixfmt-rfc-style
+    opencode
     python313Packages.sqlfmt
+    ripgrep
     sqlfluff
     tldr
     tokei
@@ -235,6 +235,8 @@
 
   xdg.configFile = {
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
+    "opencode/opencode.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/opencode/opencode.json";
     "sqlfluff/.sqlfluff".source =
       config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/sqlfluff/.sqlfluff";
     "starship.toml".source =
