@@ -213,7 +213,6 @@
   home.packages = with pkgs; [
     asciinema
     asciinema-agg
-    claude-code
     dbt-fusion
     fastfetch
     git-filter-repo
