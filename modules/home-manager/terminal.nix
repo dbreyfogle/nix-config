@@ -203,6 +203,9 @@
         ZSH_TMUX_AUTOQUIT = "false";
         ZSH_TMUX_UNICODE = "true";
       };
+      envExtra = ''
+        [ -f ~/.env ] && source ~/.env
+      '';
       shellAliases = {
         ll = "ls -lFhAv --group-directories-first --color";
       };
