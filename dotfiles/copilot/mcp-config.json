@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "tools": [
+        "*"
+      ],
+      "type": "local",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--init",
+        "--pull=always",
+        "mcr.microsoft.com/playwright/mcp"
+      ]
+    },
+    "duckduckgo": {
+      "tools": [
+        "*"
+      ],
+      "type": "local",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--pull=always",
+        "mcp/duckduckgo"
+      ]
+    }
+  }
+}

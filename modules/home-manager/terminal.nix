@@ -233,6 +233,8 @@
 
   home.file = {
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/.vimrc";
+    ".copilot/mcp-config.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/copilot/mcp-config.json";
   };
 
   xdg.configFile = {
