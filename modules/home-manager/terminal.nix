@@ -81,16 +81,18 @@
         ".direnv/"
         ".vscode/"
       ];
-      userEmail = "27653146+dbreyfogle@users.noreply.github.com";
-      userName = "Danny Breyfogle";
+      settings = {
+        user = {
+          email = "27653146+dbreyfogle@users.noreply.github.com";
+          name = "Danny Breyfogle";
+        };
+        init.defaultBranch = "main";
+        push.autoSetupRemote = "true";
+      };
       signing = {
         format = "ssh";
         key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
         signByDefault = true;
-      };
-      extraConfig = {
-        init.defaultBranch = "main";
-        push.autoSetupRemote = "true";
       };
     };
 
