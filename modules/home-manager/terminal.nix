@@ -56,6 +56,7 @@
     ghostty = {
       enable = true;
       package = null;
+      systemd.enable = false;
       settings = {
         theme = "Kanagawa Wave";
         font-family = "JetBrainsMonoNL Nerd Font";
