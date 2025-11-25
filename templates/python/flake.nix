@@ -10,7 +10,7 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        python = pkgs.python312Full;
+        python = pkgs.python312;
       in
       {
         devShells.default = pkgs.mkShell {

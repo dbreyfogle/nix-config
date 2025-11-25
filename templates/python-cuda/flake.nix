@@ -13,7 +13,7 @@
           inherit system;
           config.allowUnfree = true;
         };
-        python = pkgs.python312Full;
+        python = pkgs.python312;
       in
       {
         devShells.default = pkgs.mkShell {
