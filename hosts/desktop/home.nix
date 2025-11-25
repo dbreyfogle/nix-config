@@ -24,7 +24,6 @@
   ];
 
   programs.firefox.enable = true;
-  programs.obs-studio.enable = true;
 
   programs.ghostty.settings = {
     font-size = 12;
@@ -32,5 +31,10 @@
     window-padding-y = "12,3";
     window-width = 249;
     window-height = 64;
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    package = pkgs.obs-studio.override { config.cudaSupport = true; };
   };
 }

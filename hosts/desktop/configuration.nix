@@ -17,7 +17,6 @@ in
 
   system.stateVersion = "24.11";
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.cudaSupport = true;
   nixpkgs.overlays = [ inputs.self.overlays.default ];
 
   home-manager = {
