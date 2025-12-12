@@ -8,5 +8,6 @@ final: prev: {
 
   terraform-versions = inputs.nixpkgs-terraform.packages.${prev.system};
 
+  astro-cli = prev.callPackage ../pkgs/astro-cli/package.nix { };
   dbt-fusion = prev.callPackage ../pkgs/dbt-fusion/package.nix { };
 }

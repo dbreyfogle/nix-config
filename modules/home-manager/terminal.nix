@@ -219,6 +219,7 @@
   home.packages = with pkgs; [
     asciinema
     asciinema-agg
+    astro-cli
     dbt-fusion
     fastfetch
     git-filter-repo
