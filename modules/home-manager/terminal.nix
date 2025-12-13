@@ -104,7 +104,11 @@
           noExitOnCtrlC = true;
           ui.logoless = true;
           ui.noIcons = true;
+          ui.skin = "transparent";
         };
+      };
+      skins = {
+        transparent = ../../dotfiles/k9s/transparent.yaml;
       };
     };
 
