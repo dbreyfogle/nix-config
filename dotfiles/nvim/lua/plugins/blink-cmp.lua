@@ -38,28 +38,8 @@ return {
 
     keymap = {
       preset = "default",
-      ["<C-d>"] = {
-        function()
-          local signature = require("blink.cmp.signature.window")
-          if signature.win:is_open() then
-            signature.scroll_down(4)
-            return true
-          end
-        end,
-        "scroll_documentation_down",
-        "fallback",
-      },
-      ["<C-u>"] = {
-        function()
-          local signature = require("blink.cmp.signature.window")
-          if signature.win:is_open() then
-            signature.scroll_up(4)
-            return true
-          end
-        end,
-        "scroll_documentation_up",
-        "fallback",
-      },
+      ["<C-d>"] = { "scroll_signature_down", "scroll_documentation_down", "fallback" },
+      ["<C-u>"] = { "scroll_signature_up", "scroll_documentation_up", "fallback" },
       ["<C-f>"] = { "snippet_forward" },
       ["<C-b>"] = { "snippet_backward" },
     },
