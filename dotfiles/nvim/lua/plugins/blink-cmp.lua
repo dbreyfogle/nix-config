@@ -34,6 +34,7 @@ return {
     completion = {
       accept = { auto_brackets = { enabled = true } },
       documentation = { auto_show = true },
+      trigger = { show_on_backspace_in_keyword = true },
     },
 
     keymap = {
