@@ -102,6 +102,7 @@
       settings = {
         k9s = {
           noExitOnCtrlC = true;
+          ui.crumbsless = true;
           ui.logoless = true;
           ui.noIcons = true;
           ui.skin = "transparent";
