@@ -1,32 +1,29 @@
 {
   inputs = {
-    flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-terraform.url = "github:stackbuilders/nixpkgs-terraform";
   };
 
   outputs =
+    { nixpkgs, nixpkgs-terraform, ... }:
+    let
+      inherit (nixpkgs) lib;
+      forAllSystems = lib.genAttrs lib.systems.flakeExposed;
+    in
     {
-      flake-utils,
-      nixpkgs,
-      nixpkgs-terraform,
-      ...
-    }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [ nixpkgs-terraform.overlays.default ];
-        };
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            hcp
-            terraform-versions."1.11"
-          ];
-        };
-      }
-    );
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          terraform = nixpkgs-terraform.packages.${system}."terraform-1.14";
+        in
+        {
+          default = pkgs.mkShell {
+            packages = [
+              terraform
+            ];
+          };
+        }
+      );
+    };
 }
