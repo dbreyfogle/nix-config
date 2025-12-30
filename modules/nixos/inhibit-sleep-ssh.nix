@@ -1,6 +1,13 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
+  cfg = config.myModules.nixos.inhibitSleepDuringSsh;
+
   inhibitScript = pkgs.writeShellScriptBin "inhibit-sleep-ssh" ''
     #!/bin/sh
     export PATH="${pkgs.procps}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin:$PATH"
@@ -33,14 +40,20 @@ let
   '';
 in
 {
-  systemd.services.inhibit-ssh-sleep = {
-    enable = true;
-    description = "Inhibit sleep while SSH sessions are active";
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${inhibitScript}/bin/inhibit-sleep-ssh";
-      Restart = "on-failure";
+  options.myModules.nixos.inhibitSleepDuringSsh = {
+    enable = lib.mkEnableOption "Inhibit sleep while SSH sessions are active";
+  };
+
+  config = lib.mkIf cfg.enable {
+    systemd.services.inhibit-ssh-sleep = {
+      enable = true;
+      description = "Inhibit sleep while SSH sessions are active";
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${inhibitScript}/bin/inhibit-sleep-ssh";
+        Restart = "on-failure";
+      };
+      wantedBy = [ "multi-user.target" ];
     };
-    wantedBy = [ "multi-user.target" ];
   };
 }

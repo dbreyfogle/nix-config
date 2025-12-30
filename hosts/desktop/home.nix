@@ -1,11 +1,12 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../../modules/home-manager/core.nix
-    ../../modules/home-manager/terminal.nix
-    ../../modules/home-manager/gnome.nix
-  ];
+  imports = [ ../../modules/home-manager ];
+
+  myModules.home-manager = {
+    gnome.enable = true;
+    terminal.enable = true;
+  };
 
   home.stateVersion = "24.11";
 

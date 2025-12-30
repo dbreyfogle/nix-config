@@ -7,7 +7,7 @@ in
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.nixos-wsl.nixosModules.default
-    ../../modules/shared/core.nix
+    ../../modules/nixos
   ];
 
   wsl.enable = true;

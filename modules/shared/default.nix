@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
@@ -17,4 +17,8 @@
       "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw="
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    gnumake
+  ];
 }

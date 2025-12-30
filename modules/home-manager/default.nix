@@ -1,6 +1,11 @@
-{ pkgs, repodir, ... }:
+{ repodir, ... }:
 
 {
+  imports = [
+    ./gnome.nix
+    ./terminal.nix
+  ];
+
   programs.home-manager.enable = true;
 
   nix.registry = {
@@ -11,8 +16,4 @@
       };
     };
   };
-
-  home.packages = with pkgs; [
-    gnumake
-  ];
 }

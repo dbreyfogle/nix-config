@@ -10,10 +10,13 @@ in
     inputs.disko.nixosModules.disko
     ./disko.nix
     ./hardware-configuration.nix
-    ../../modules/shared/core.nix
-    ../../modules/nixos/gnome.nix
-    ../../modules/nixos/inhibit-sleep-ssh.nix
+    ../../modules/nixos
   ];
+
+  myModules.nixos = {
+    gnome.enable = true;
+    inhibitSleepDuringSsh.enable = true;
+  };
 
   system.stateVersion = "24.11";
   nixpkgs.config.allowUnfree = true;

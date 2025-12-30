@@ -1,6 +1,17 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  imports = [
+    ../shared
+    ./firewall.nix
+    ./homebrew.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    coreutils
+    gnused
+  ];
+
   system.startup.chime = false;
 
   system.defaults = {

@@ -8,9 +8,13 @@ in
   imports = [
     inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
-    ../../modules/shared/core.nix
-    ../../modules/nix-darwin/system.nix
+    ../../modules/nix-darwin
   ];
+
+  myModules.nix-darwin = {
+    firewall.enable = true;
+    homebrew.enable = true;
+  };
 
   system.stateVersion = 5;
   system.primaryUser = username;
@@ -42,41 +46,25 @@ in
     autoMigrate = true;
   };
 
-  homebrew = {
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      cleanup = "zap";
-    };
-    casks = [
-      "brave-browser"
-      "dbeaver-community"
-      "discord"
-      "docker-desktop"
-      "ghostty"
-      "nikitabobko/tap/aerospace"
-      "obs"
-      "obsidian"
-      "parsec"
-      "protonvpn"
-      "rectangle-pro"
-      "scroll-reverser"
-      "slack"
-      "tailscale-app"
-      "virtualbuddy"
-      "visual-studio-code"
-      "vlc"
-      "zoom"
-    ];
-  };
-
-  environment.variables = {
-    HOMEBREW_NO_ANALYTICS = "1";
-  };
-
-  environment.systemPackages = with pkgs; [
-    coreutils
-    gnused
+  homebrew.casks = [
+    "brave-browser"
+    "dbeaver-community"
+    "discord"
+    "docker-desktop"
+    "ghostty"
+    "nikitabobko/tap/aerospace"
+    "obs"
+    "obsidian"
+    "parsec"
+    "protonvpn"
+    "rectangle-pro"
+    "scroll-reverser"
+    "slack"
+    "tailscale-app"
+    "virtualbuddy"
+    "visual-studio-code"
+    "vlc"
+    "zoom"
   ];
 
   programs.zsh.enable = true;
