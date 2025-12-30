@@ -242,7 +242,7 @@ in
       nerd-fonts.jetbrains-mono
       nixd
       nixfmt-rfc-style
-      python313Packages.sqlfmt
+      python3Packages.sqlfmt
       sqlfluff
       tldr
       tokei
