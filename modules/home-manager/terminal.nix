@@ -215,6 +215,7 @@ in
         };
         sessionVariables = {
           MINIKUBE_IN_STYLE = "false";
+          OPENCODE_DISABLE_LSP_DOWNLOAD = "true";
           VALE_CONFIG_PATH = "$HOME/.config/vale/.vale.ini";
           ZSH_TMUX_AUTOSTART = "true";
           ZSH_TMUX_AUTOQUIT = "false";
@@ -237,11 +238,11 @@ in
       dbt-fusion
       fastfetch
       git-filter-repo
-      github-copilot-cli
       jq
       nerd-fonts.jetbrains-mono
       nixd
       nixfmt-rfc-style
+      opencode
       python3Packages.sqlfmt
       sqlfluff
       tldr
@@ -251,12 +252,12 @@ in
 
     home.file = {
       ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/.vimrc";
-      ".copilot/mcp-config.json".source =
-        config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/copilot/mcp-config.json";
     };
 
     xdg.configFile = {
       "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
+      "opencode/opencode.json".source =
+        config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/opencode/opencode.json";
       "sqlfluff/.sqlfluff".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/sqlfluff/.sqlfluff";
       "starship.toml".source =
