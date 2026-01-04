@@ -12,7 +12,6 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs-terraform.url = "github:stackbuilders/nixpkgs-terraform";
   };
@@ -24,12 +23,6 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [ ./hosts/desktop/configuration.nix ];
-      };
-
-      nixosConfigurations."wsl" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [ ./hosts/wsl/configuration.nix ];
       };
 
       darwinConfigurations."macbook" = nix-darwin.lib.darwinSystem {
