@@ -5,7 +5,7 @@ return {
   config = function()
     vim.lsp.enable("bashls")
     vim.lsp.enable("buf_ls")
-    vim.lsp.enable("dockerls")
+    vim.lsp.enable("docker_language_server")
     vim.lsp.enable("gopls")
     vim.lsp.enable("helm_ls")
     vim.lsp.config("jsonls", {

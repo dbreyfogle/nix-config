@@ -213,7 +213,7 @@ in
       checkmake
       dbt-fusion
       delve
-      dockerfile-language-server
+      docker-language-server
       fastfetch
       fd
       git-filter-repo
