@@ -126,35 +126,8 @@ in
         enable = true;
         defaultEditor = true;
         extraPackages = with pkgs; [
-          bash-language-server
-          buf
-          checkmake
-          delve
-          dockerfile-language-server
           gcc
-          golangci-lint
-          gopls
-          gotools
-          hadolint
-          helm-ls
-          lua-language-server
-          markdownlint-cli2
-          nixd
-          nixfmt-rfc-style
           nodejs
-          nodePackages.prettier
-          pyright
-          ripgrep
-          ruff
-          shellcheck
-          shfmt
-          stylua
-          taplo
-          terraform-ls
-          tflint
-          vale
-          vscode-langservers-extracted
-          yaml-language-server
         ];
       };
 
@@ -235,19 +208,45 @@ in
       asciinema
       asciinema-agg
       astro-cli
+      bash-language-server
+      buf
+      checkmake
       dbt-fusion
+      delve
+      dockerfile-language-server
       fastfetch
+      fd
       git-filter-repo
+      golangci-lint
+      gopls
+      gotools
+      hadolint
+      helm-ls
       jq
+      lua-language-server
+      markdownlint-cli2
       nerd-fonts.jetbrains-mono
       nixd
       nixfmt-rfc-style
       opencode
+      prettier
+      pyright
       python3Packages.sqlfmt
+      ripgrep
+      ruff
+      shellcheck
+      shfmt
       sqlfluff
+      stylua
+      taplo
+      terraform-ls
+      tflint
       tldr
       tokei
+      vale
       vim
+      vscode-json-languageserver
+      yaml-language-server
     ];
 
     home.file = {
