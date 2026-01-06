@@ -7,8 +7,6 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-  "github.codespaces.showDisplayNameInRemoteIndicator": false,
-  "remoteHub.commitDirectlyWarning": "off",
   "security.workspace.trust.enabled": false,
   "window.commandCenter": false,
   "window.density.editorTabHeight": "compact",
@@ -26,11 +24,9 @@
   "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": false,
   "update.showReleaseNotes": false,
-
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
-  "rest-client.enableTelemetry": false,
 
   // [[ Apperance ]]
 
@@ -73,7 +69,7 @@
 
   "editor.formatOnSave": true,
   "files.trimTrailingWhitespace": true,
-  "json.format.enable": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
@@ -86,9 +82,6 @@
     "notebook.source.fixAll": "explicit",
     "notebook.source.organizeImports": "explicit"
   },
-  "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
-  "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
-  "[yaml]": { "editor.defaultFormatter": "redhat.vscode-yaml" },
 
   // [[ Terminal ]]
 
@@ -138,13 +131,12 @@
   // [[ Extensions ]]
 
   "settingsSync.ignoredExtensions": ["ms-vscode-remote.remote-wsl"],
+  "extensions.ignoreRecommendations": true,
   "extensions.allowed": {
-    "ms-python.vscode-python-envs": false,
     "ms-python.vscode-pylance": false,
+    "ms-python.vscode-python-envs": false,
     "ms-toolsai.vscode-jupyter-cell-tags": false,
     "ms-toolsai.vscode-jupyter-slideshow": false,
-    "ms-vscode.azure-repos": false,
-    "ms-vscode-remote.remote-ssh-edit": false,
     "*": true
   },
 
@@ -152,8 +144,6 @@
 
   "direnv.restart.automatic": true,
   "direnv.status.showChangesCount": false,
-
-  "dev.containers.optimisticallyLaunchDocker": false,
 
   "errorLens.delay": 750,
 
@@ -164,37 +154,5 @@
   "notebook.output.scrolling": true,
 
   "nix.enableLanguageServer": true,
-  "nix.serverPath": "nixd",
-  "nix.serverSettings": {
-    "nixd": {
-      "nixpkgs": {
-        "expr": "import (builtins.getFlake (\"git+file://\" + toString ./.)).inputs.nixpkgs { }"
-      },
-      "options": {
-        "nixos": {
-          "expr": "(builtins.getFlake (\"git+file://\" + toString ./.)).nixosConfigurations.desktop.options"
-        },
-        "nix-darwin": {
-          "expr": "(builtins.getFlake (\"git+file://\" + toString ./.)).darwinConfigurations.macbook.options"
-        },
-        "home-manager": {
-          "expr": "(builtins.getFlake (\"git+file://\" + toString ./.)).nixosConfigurations.desktop.options.home-manager.users.type.getSubOptions []"
-        }
-      }
-    }
-  },
-
-  "terraform.languageServer.ignoreSingleFileWarning": true,
-
-  "dbt.dbtPath": "/etc/profiles/per-user/danny/bin/dbtf",
-  "dbt.lspPath": "/etc/profiles/per-user/danny/bin/dbt-lsp",
-
-  "altimate.disableMcpServer": true,
-  "altimate.enableDatamates": false,
-  "dbt.disableQueryHistory": true,
-  "dbt.enableCollaboration": false,
-  "dbt.enableNewLineagePanel": true,
-  "dbt.enableNotebooks": false,
-  "dbt.installDepsOnProjectInitialization": false,
-  "dbt.perspectiveTheme": "Pro Dark"
+  "nix.serverPath": "nixd"
 }
