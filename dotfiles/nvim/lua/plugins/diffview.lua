@@ -10,6 +10,16 @@ return {
     { "<Leader>glL", "<CMD>DiffviewFileHistory %<CR>", desc = "Git: Open commit history for current file" },
   },
   init = function()
+    -- Refresh diffview when focus is gained
+    vim.api.nvim_create_autocmd("FocusGained", {
+      callback = function()
+        local view = require("diffview.lib").get_current_view()
+        if view then
+          vim.cmd("DiffviewRefresh")
+        end
+      end,
+    })
+
     -- Prevent certain LSPs from attaching to diffview buffers
     local override_filetypes = { "terraform" }
     vim.api.nvim_create_autocmd("FileType", {
