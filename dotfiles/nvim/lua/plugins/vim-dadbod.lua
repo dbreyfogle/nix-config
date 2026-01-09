@@ -4,6 +4,7 @@ return {
     "tpope/vim-dadbod",
     "kristijanhusak/vim-dadbod-completion",
   },
+  ft = { "sql", "mysql", "plsql" },
   cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
   keys = {
     { "<Leader>D", "<CMD>DBUIToggle<CR>", desc = "DB: Toggle UI" },
