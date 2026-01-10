@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i bash -p curl gnused nix-prefetch
+#!nix-shell -i bash -p curl gnused jq nix-prefetch
 
 set -euo pipefail
 
@@ -30,7 +30,7 @@ replace_lsp_hash() {
   sed -i "/\"$1\" = {/,/};/ s#lspHash = \"sha256-.\{44\}\"#lspHash = \"$2\"#" "$NIX_DRV"
 }
 
-FUSION_VER=$(curl -s "https://public.cdn.getdbt.com/fs/latest.json" | sed -n 's/.*"tag": *"v\([^"]*\)".*/\1/p')
+FUSION_VER=$(curl -s "https://public.cdn.getdbt.com/fs/versions.json" | jq -r ".latest.tag" | sed 's/^v//')
 
 sed -i "s/version = \".*\"/version = \"$FUSION_VER\"/" "$NIX_DRV"
 
