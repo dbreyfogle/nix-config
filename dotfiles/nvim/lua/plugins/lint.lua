@@ -27,9 +27,5 @@ return {
 
     local golangcilint = require("lint").linters.golangcilint
     golangcilint.ignore_exitcode = true
-
-    local sqlfluff = require("lint").linters.sqlfluff
-    sqlfluff.args = { "lint", "--format=json", "-" }
-    sqlfluff.stdin = true
   end,
 }
