@@ -22,6 +22,7 @@ return {
       python = { "ruff" },
       sql = { "sqlfluff" },
       terraform = { "tflint" },
+      yaml = { "yamllint" },
     }
 
     local golangcilint = require("lint").linters.golangcilint

@@ -247,6 +247,7 @@ in
       vim
       vscode-json-languageserver
       yaml-language-server
+      yamllint
     ];
 
     home.file = {
@@ -262,6 +263,8 @@ in
       "starship.toml".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/starship/starship.toml";
       "vale/.vale.ini".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vale/.vale.ini";
+      "yamllint/config".source =
+        config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/yamllint/config";
     };
   };
 }
