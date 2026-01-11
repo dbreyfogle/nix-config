@@ -227,7 +227,7 @@ in
       markdownlint-cli2
       nerd-fonts.jetbrains-mono
       nixd
-      nixfmt-rfc-style
+      nixfmt
       opencode
       prettier
       pyright
