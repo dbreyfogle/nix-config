@@ -1,16 +1,4 @@
 [sqlfluff]
 dialect = ansi
-templater = jinja
-exclude_rules = layout.indent, layout.cte_bracket, layout.keyword_newline, layout.cte_newline, layout.select_targets, layout.spacing
-max_line_length = 88
-sql_file_exts = ,.sql,.sql.j2,.dml,.ddl
-
-[sqlfluff:rules]
-capitalisation_policy = lower
-extended_capitalisation_policy = lower
-
-[sqlfluff:rules:convention.terminator]
-multiline_newline = True
-
-[sqlfluff:templater:jinja]
-apply_dbt_builtins = True
+exclude_rules = L044,ST06,RF02
+max_line_length = 0

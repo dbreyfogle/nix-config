@@ -86,10 +86,6 @@
     "notebook.source.fixAll": "explicit",
     "notebook.source.organizeImports": "explicit"
   },
-  "[sql]": { "editor.defaultFormatter": "yassun7010.vscode-shandy-sqlfmt" },
-  "[jinja-sql]": {
-    "editor.defaultFormatter": "yassun7010.vscode-shandy-sqlfmt"
-  },
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[yaml]": { "editor.defaultFormatter": "redhat.vscode-yaml" },
@@ -189,9 +185,6 @@
   },
 
   "terraform.languageServer.ignoreSingleFileWarning": true,
-
-  "sqlfluff.format.enabled": false,
-  "sqlfluff.linter.run": "onSave",
 
   "dbt.dbtPath": "/etc/profiles/per-user/danny/bin/dbtf",
   "dbt.lspPath": "/etc/profiles/per-user/danny/bin/dbt-lsp",

@@ -36,20 +36,16 @@ return {
       markdown = { "prettier" },
       nix = { "nixfmt" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-      sql = { "sqlfmt" },
+      sql = { "sqlfluff_format" },
       terraform = { "terraform_fmt" },
       toml = { "taplo" },
       yaml = { "prettier" },
     },
 
-    -- Double newline fix
     formatters = {
-      sqlfmt = {
-        command = "sh",
-        args = {
-          "-c",
-          "sqlfmt - | sed '$d'",
-        },
+      sqlfluff_format = {
+        inherit = "sqlfluff",
+        args = { "format", "-" },
       },
     },
 
