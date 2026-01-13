@@ -8,6 +8,7 @@ return {
     { "<Leader>gdu", "<CMD>DiffviewOpen upstream/HEAD...HEAD<CR>", desc = "Git: Open diffview against upstream" },
     { "<Leader>gll", "<CMD>DiffviewFileHistory<CR>", desc = "Git: Open commit history" },
     { "<Leader>glL", "<CMD>DiffviewFileHistory %<CR>", desc = "Git: Open commit history for current file" },
+    { "<Leader>gR", "<CMD>DiffviewRefresh<CR>", desc = "Git: Refresh diffview" },
   },
   init = function()
     -- Prevent certain LSPs from attaching to diffview buffers
