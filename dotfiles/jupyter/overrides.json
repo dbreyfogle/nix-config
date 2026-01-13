@@ -1,0 +1,46 @@
+{
+  "@jupyterlab/notebook-extension:tracker": {
+    "codeCellConfig": {
+      "lineNumbers": false,
+      "lineWrap": false,
+      "autoClosingBrackets": true
+    },
+    "markdownCellConfig": {
+      "lineNumbers": false,
+      "matchBrackets": false,
+      "autoClosingBrackets": true
+    },
+    "rawCellConfig": {
+      "lineNumbers": false,
+      "matchBrackets": false,
+      "autoClosingBrackets": true
+    }
+  },
+  "@jupyterlab/extensionmanager-extension:plugin": {
+    "disclaimed": true
+  },
+  "@jupyterlab/apputils-extension:themes": {
+    "adaptive-theme": true
+  },
+  "@jupyterlab/apputils-extension:notification": {
+    "fetchNews": "false",
+    "checkForUpdates": false,
+    "doNotDisturbMode": false
+  },
+  "@jupyterlab/fileeditor-extension:plugin": {
+    "editorConfig": {
+      "lineNumbers": true,
+      "autoClosingBrackets": true
+    }
+  },
+  "@jupyterlab/docmanager-extension:plugin": {
+    "autosave": false
+  },
+  "@jupyterlab/console-extension:tracker": {
+    "promptCellConfig": {
+      "codeFolding": false,
+      "lineNumbers": false,
+      "autoClosingBrackets": true
+    }
+  }
+}
