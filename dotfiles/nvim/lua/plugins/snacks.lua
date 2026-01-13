@@ -13,7 +13,6 @@ return {
           { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = " ", key = "d", desc = "Git Diff", action = ":execute 'DiffviewOpen' | tabonly" },
           { icon = " ", key = "l", desc = "Git Log", action = ":execute 'DiffviewFileHistory' | tabonly" },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },

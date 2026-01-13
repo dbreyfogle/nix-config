@@ -124,7 +124,6 @@
   },
   "vim.highlightedyank.enable": true,
   "vim.leader": " ",
-  "vim.sneak": true,
   "vim.useSystemClipboard": true,
   "vim.vimrc.enable": true,
 
