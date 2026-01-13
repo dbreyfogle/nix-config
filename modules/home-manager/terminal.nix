@@ -146,14 +146,7 @@ in
           {
             plugin = continuum;
             extraConfig = ''
-              # Theme (must be set before tmux-continuum due to a bug)
-              set -g status-left "#[fg=#7E9CD8,bold][#S] "
-              set -g status-left-length 50
-              set -g status-right ""
-              set -g status-style fg=gray45,bg=default
-              setw -g window-status-current-style fg=#7E9CD8,bold
-
-              # Faster save interval
+              set -g status-right "" # set early since continuum hooks into status-right
               set -g @continuum-save-interval '5'
             '';
           }
