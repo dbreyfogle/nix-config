@@ -18,6 +18,7 @@ in
 
   system.stateVersion = 5;
   system.primaryUser = username;
+  nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ inputs.self.overlays.default ];
 
