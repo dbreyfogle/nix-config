@@ -7,6 +7,23 @@
   ];
 
   nix = {
+    gc = {
+      automatic = true;
+      interval = {
+        Weekday = 1;
+        Hour = 0;
+        Minute = 0;
+      };
+      options = "--delete-older-than 14d";
+    };
+    optimise = {
+      automatic = true;
+      interval = {
+        Weekday = 1;
+        Hour = 0;
+        Minute = 0;
+      };
+    };
     settings.trusted-users = [ "@admin" ];
   };
 

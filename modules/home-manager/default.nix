@@ -14,6 +14,11 @@
   programs.home-manager.enable = true;
 
   nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     registry = {
       nix-config = {

@@ -55,13 +55,13 @@ make switch
 
 ### Cleaning Up Old Generations
 
-To clean up old Nix generations and free disk space, run:
+The included modules setup garbage collection and store optimization to run periodically. To manually clean up old Nix generations and free disk space, run:
 
 ```bash
 make clean
 ```
 
-This command will remove generations older than the configured threshold (`GC_OLDER_THAN`, defaulting to 7 days).
+This command removes all generations except for the current one.
 
 ### Updating Flakes
 

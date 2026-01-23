@@ -1,7 +1,6 @@
 OS := $(shell uname -v)
 IS_NIXOS := $(findstring NixOS,$(OS))
 IS_DARWIN := $(findstring Darwin,$(OS))
-GC_OLDER_THAN := 7d
 
 ifneq (,$(wildcard .env))
 	include .env
@@ -23,10 +22,9 @@ endif
 
 clean:
 ifneq (,$(IS_NIXOS)$(IS_DARWIN))
-	sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than $(GC_OLDER_THAN)
-	sudo nix-collect-garbage --delete-older-than $(GC_OLDER_THAN)
+	sudo nix-collect-garbage -d
 endif
-	nix-collect-garbage --delete-older-than $(GC_OLDER_THAN)
+	nix-collect-garbage -d
 
 update:
 	./scripts/update-flakes
