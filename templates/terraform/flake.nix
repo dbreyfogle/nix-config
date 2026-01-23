@@ -8,19 +8,27 @@
     { nixpkgs, nixpkgs-terraform, ... }:
     let
       inherit (nixpkgs) lib;
-      forAllSystems = lib.genAttrs lib.systems.flakeExposed;
+      supportedSystems = [
+        "x86_64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      forAllSystems = lib.genAttrs supportedSystems;
     in
     {
       devShells = forAllSystems (
         system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
-          terraform = nixpkgs-terraform.packages.${system}."terraform-1.14";
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+            overlays = [ nixpkgs-terraform.overlays.default ];
+          };
         in
         {
           default = pkgs.mkShell {
-            packages = [
-              terraform
+            packages = with pkgs; [
+              terraform-versions."terraform-1.14"
             ];
           };
         }
