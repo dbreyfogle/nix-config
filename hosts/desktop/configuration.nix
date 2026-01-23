@@ -99,6 +99,7 @@ in
   hardware.nvidia = {
     open = true;
     modesetting.enable = true;
+    powerManagement.enable = true;
   };
   hardware.nvidia-container-toolkit.enable = true;
 }
