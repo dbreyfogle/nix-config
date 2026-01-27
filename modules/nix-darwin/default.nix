@@ -2,10 +2,13 @@
 
 {
   imports = [
-    ../shared
     ./firewall.nix
     ./homebrew.nix
   ];
+
+  nix = {
+    settings.trusted-users = [ "@admin" ];
+  };
 
   environment.systemPackages = with pkgs; [
     coreutils
