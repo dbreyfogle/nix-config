@@ -63,6 +63,7 @@ in
     efi.canTouchEfiVariables = true;
     systemd-boot = {
       enable = true;
+      configurationLimit = 12;
       windows = {
         "windows" = {
           title = "Windows";
