@@ -46,5 +46,6 @@
 
   home.packages = with pkgs; [
     gnumake
+    nix-tree
   ];
 }
