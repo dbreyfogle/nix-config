@@ -16,11 +16,6 @@ in
   config = lib.mkIf cfg.enable {
     services.desktopManager.gnome.enable = true;
     services.displayManager.gdm.enable = true;
-
-    environment.systemPackages = with pkgs; [
-      gnome-boxes
-    ];
-
     environment.gnome.excludePackages = with pkgs; [
       epiphany
       geary

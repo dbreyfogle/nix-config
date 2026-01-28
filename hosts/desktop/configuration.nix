@@ -45,6 +45,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    gnome-boxes
     gparted
     sshfs
     wl-clipboard
