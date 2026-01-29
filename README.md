@@ -17,9 +17,9 @@ vim .env  # update FLAKE_OUTPUT accordingly
 
 The included `Makefile` simplifies common Nix operations. It automatically detects the system type and runs the appropriate command:
 
-- **NixOS**: `sudo nixos-rebuild switch --flake .#<FLAKE_OUTPUT>`
-- **macOS (nix-darwin)**: `darwin-rebuild switch --flake .#<FLAKE_OUTPUT>`
-- **Other (Home Manager)**: `home-manager switch -b bak --flake .#<FLAKE_OUTPUT>`
+- **NixOS**: `sudo nixos-rebuild switch --flake .#$(FLAKE_OUTPUT)`
+- **nix-darwin**: `sudo darwin-rebuild switch --flake .#$(FLAKE_OUTPUT)`
+- **Home Manager**: `home-manager switch -b bak --flake .#$(FLAKE_OUTPUT)`
 
 To apply the configuration, simply run:
 
@@ -31,7 +31,7 @@ make switch
 
 - **dotfiles/**: Contains configuration files unrelated directly to Nix. Many of these files are symlinked into place by the Nix configuration. Some files are stored purely for reference and may not be actively used.
 
-- **hosts/**: Each subdirectory corresponds to a physical machine or environment. Host-specific configurations such as `configuration.nix`, `hardware-configuration.nix`, and `home.nix` (for Home Manager) are stored here.
+- **hosts/**: Each subdirectory corresponds to a physical machine or environment. Host-specific configurations such as `configuration.nix`, `hardware-configuration.nix`, and `home.nix` are stored here.
 
 - **modules/**: Contains reusable Nix modules that are not specific to any single host. Modules are organized based on their intended use (NixOS, nix-darwin, or Home Manager).
 
@@ -65,7 +65,7 @@ This command removes all generations except for the current one.
 
 ### Updating Flakes
 
-To update all flake lock files, execute:
+To update all flakes, including any templates, run:
 
 ```bash
 make update
@@ -79,9 +79,9 @@ If Nix is not yet installed on the system, the [multi-user installation](https:/
 make install_nix
 ```
 
-### Bootstrapping macOS (nix-darwin)
+### Bootstrapping nix-darwin
 
-To bootstrap a new macOS system with nix-darwin, run:
+To bootstrap a macOS system with nix-darwin, run:
 
 ```bash
 make bootstrap_darwin
@@ -89,7 +89,7 @@ make bootstrap_darwin
 
 ### Bootstrapping Home Manager
 
-To bootstrap Home Manager on a non-NixOS, non-macOS system, run:
+To bootstrap a [standalone installation](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone) of Home Manager, run:
 
 ```bash
 make bootstrap_hm
@@ -97,5 +97,4 @@ make bootstrap_hm
 
 ## Notes
 
-- Ensure that the `.env` file is correctly configured before running any commands.
 - Regularly update the flake lock files to keep system configurations current and secure.
