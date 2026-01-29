@@ -73,7 +73,7 @@ make update
 
 ### Installing Nix
 
-If Nix is not yet installed on the system, the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer) can be invoked by running:
+If Nix is not yet installed on the system, the [multi-user installation](https://nixos.org/download/) can be executed with:
 
 ```bash
 make install_nix

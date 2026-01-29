@@ -30,7 +30,11 @@ update:
 	./scripts/update-flakes
 
 install_nix:
-	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+ifdef IS_DARWIN
+	sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+else
+	sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
+endif
 
 bootstrap_darwin: check_flake_output
 	sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$(FLAKE_OUTPUT)
