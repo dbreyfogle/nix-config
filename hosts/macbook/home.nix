@@ -9,10 +9,13 @@
 
   home.stateVersion = "24.11";
 
-  programs.ghostty.settings = {
-    font-size = 15;
-    window-padding-x = "5,0";
-    window-padding-y = "12,3";
+  programs.ghostty = {
+    package = null;
+    settings = {
+      font-size = 15;
+      window-padding-x = "5,0";
+      window-padding-y = "12,3";
+    };
   };
 
   xdg.configFile = {

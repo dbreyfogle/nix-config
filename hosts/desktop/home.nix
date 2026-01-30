@@ -14,7 +14,6 @@
     brave
     dbeaver-bin
     discord
-    ghostty
     libreoffice
     obsidian
     pika-backup
