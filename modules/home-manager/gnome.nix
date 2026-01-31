@@ -33,11 +33,16 @@ in
           clock-show-weekday = true;
           color-scheme = "prefer-dark";
           enable-hot-corners = false;
+          show-battery-percentage = true;
         };
 
         "org/gnome/desktop/peripherals/mouse" = {
           accel-profile = "flat";
           speed = 0.3;
+        };
+
+        "org/gnome/desktop/peripherals/touchpad" = {
+          speed = 0.0;
         };
 
         "org/gnome/desktop/privacy" = {
@@ -125,6 +130,7 @@ in
         "org/gnome/settings-daemon/plugins/power" = {
           sleep-inactive-ac-timeout = 7200;
           sleep-inactive-ac-type = "suspend";
+          sleep-inactive-battery-timeout = 1800;
         };
 
         "org/gnome/shell" = {
