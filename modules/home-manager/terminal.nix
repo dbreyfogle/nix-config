@@ -126,6 +126,7 @@ in
         extraPackages = with pkgs; [
           gcc
           nodejs
+          tree-sitter
         ];
       };
 
