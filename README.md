@@ -39,7 +39,7 @@ make switch
 
 - **pkgs/**: Custom Nix packages are defined here. These packages are typically added to overlays for easy reuse throughout the configuration.
 
-- **scripts/**: Helper scripts for common tasks. For instance, a script is included to update the `flake.lock` file in the root directory and within each template.
+- **scripts/**: Helper scripts for common tasks. For instance, a script is included to update all `flake.lock` files, custom packages, and other various lock files.
 
 - **templates/**: Contains Nix flake templates for quickly bootstrapping new development environments. Each template includes boilerplate files and a `.envrc` file for automatic environment initialization via direnv.
 
@@ -63,9 +63,9 @@ make clean
 
 This command removes all generations except for the current one.
 
-### Updating Flakes
+### Updating Dependencies
 
-To update all flakes, including any templates, run:
+A GitHub Actions workflow periodically submits pull requests with dependency updates. To manually update all `flake.lock` files, custom packages, and other various lock files, run:
 
 ```bash
 make update
@@ -94,7 +94,3 @@ To bootstrap a [standalone installation](https://nix-community.github.io/home-ma
 ```bash
 make bootstrap_hm
 ```
-
-## Notes
-
-- Regularly update the flake lock files to keep system configurations current and secure.
