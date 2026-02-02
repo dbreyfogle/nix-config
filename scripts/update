@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+if [ -f "flake.nix" ]; then
+  echo "Updating repository flake..."
+  nix flake update
+else
+  echo "Error: flake.nix not found in the repository root." >&2
+  exit 1
+fi
+
+if [ -d "templates" ]; then
+  for d in templates/*/; do
+    if [ -f "${d}flake.nix" ]; then
+      echo "Updating flake in ${d}..."
+      (cd "$d" && nix flake update)
+    fi
+  done
+fi
+
+for pkg in pkgs/*; do
+  if [ -d "$pkg" ] && [ -f "$pkg/update.sh" ]; then
+    if [ -x "$pkg/update.sh" ]; then
+      echo "Updating $(basename "$pkg") package..."
+      (cd "$pkg" && ./update.sh)
+    else
+      echo "Warning: $pkg/update.sh exists but is not executable. Skipping..." >&2
+    fi
+  fi
+done
+
+echo "Updating lazy-lock.json..."
+XDG_CONFIG_HOME="$REPO_ROOT/dotfiles" \
+  nix --extra-experimental-features "nix-command flakes" \
+  run nixpkgs#neovim -- --headless "+Lazy! update" +qa
+
+echo "Update complete!"

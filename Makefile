@@ -27,7 +27,7 @@ endif
 	nix-collect-garbage -d
 
 update:
-	./scripts/update-flakes
+	./scripts/update
 
 install_nix:
 ifdef IS_DARWIN
