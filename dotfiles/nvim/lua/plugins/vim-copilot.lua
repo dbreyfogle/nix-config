@@ -11,9 +11,7 @@ return {
       ["dbout"] = false,
       ["gitcommit"] = false,
       ["gitrebase"] = false,
-      ["markdown"] = false,
       ["oil"] = false,
-      ["txt"] = false,
     }
   end,
 }

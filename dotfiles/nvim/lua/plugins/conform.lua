@@ -33,7 +33,7 @@ return {
       go = { "goimports" },
       json = { "prettier" },
       lua = { "stylua" },
-      markdown = { "prettier" },
+      markdown = { "prettier", "markdownlint-cli2" },
       nix = { "nixfmt" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sql = { "sqlfluff_format" },
