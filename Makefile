@@ -37,11 +37,14 @@ else
 endif
 
 bootstrap_darwin: check_flake_output
-	sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$(FLAKE_OUTPUT)
+	sudo nix --extra-experimental-features "nix-command flakes" \
+	  run nix-darwin/master#darwin-rebuild -- switch --flake .#$(FLAKE_OUTPUT)
 
 bootstrap_hm: check_flake_output
-	nix run home-manager/master -- init --switch
-	home-manager switch -b bak --flake .#$(FLAKE_OUTPUT)
+	nix --extra-experimental-features "nix-command flakes" \
+	  run home-manager/master -- init --switch
+	home-manager --extra-experimental-features "nix-command flakes" \
+	  switch -b bak --flake .#$(FLAKE_OUTPUT)
 
 check_flake_output:
 ifndef FLAKE_OUTPUT
