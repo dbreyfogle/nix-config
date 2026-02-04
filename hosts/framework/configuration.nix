@@ -63,10 +63,7 @@ in
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 12;
-    };
+    systemd-boot.enable = true;
   };
 
   networking.hostName = hostname;
