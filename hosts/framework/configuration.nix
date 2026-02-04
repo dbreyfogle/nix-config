@@ -59,6 +59,12 @@ in
   virtualisation.docker.storageDriver = "overlay2";
   virtualisation.libvirtd.enable = true;
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
+  };
+
   services.fwupd.enable = true;
 
   boot.loader = {
