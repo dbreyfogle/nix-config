@@ -86,6 +86,7 @@ in
           "*~"
           "*.swp"
           ".DS_Store"
+          ".envrc"
           ".direnv/"
           ".vscode/"
         ];
@@ -207,14 +208,18 @@ in
       fastfetch
       fd
       git-filter-repo
+      go
       golangci-lint
       gopls
       gotools
       hadolint
       helm-ls
       jq
+      kubectl
+      kubernetes-helm
       lua-language-server
       markdownlint-cli2
+      minikube
       nerd-fonts.jetbrains-mono
       nixd
       nixfmt
@@ -229,9 +234,11 @@ in
       stylua
       taplo
       terraform-ls
+      terraform-versions."terraform-1.14"
       tflint
       tldr
       tokei
+      uv
       vale
       vim
       vscode-json-languageserver

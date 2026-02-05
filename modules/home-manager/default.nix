@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  repodir,
-  ...
-}:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -21,14 +16,6 @@
       options = "--delete-older-than 14d";
     };
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-    registry = {
-      nix-config = {
-        to = {
-          type = "path";
-          path = repodir;
-        };
-      };
-    };
     settings = {
       extra-experimental-features = [
         "nix-command"

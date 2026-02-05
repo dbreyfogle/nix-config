@@ -36,14 +36,5 @@
       };
 
       overlays.default = import ./overlays { inherit inputs; };
-
-      templates = builtins.listToAttrs (
-        map (subdir: {
-          name = subdir;
-          value = {
-            path = ./templates + "/${subdir}";
-          };
-        }) (builtins.attrNames (builtins.readDir ./templates))
-      );
     };
 }

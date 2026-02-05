@@ -53,21 +53,8 @@ make switch
   typically added to overlays for easy reuse throughout the configuration.
 
 - **scripts/** - Helper scripts for common tasks. For instance, a script is
-  included to update all `flake.lock` files, custom packages, and other various
+  included to update the `flake.lock` file, custom packages, and other various
   lock files.
-
-- **templates/** - Contains Nix flake templates for quickly bootstrapping new
-  development environments. Each template includes boilerplate files and a
-  `.envrc` file for automatic environment initialization via direnv.
-
-  To initialize a new project from a template, run:
-
-  ```bash
-  nix flake init -t nix-config#<template-name>
-  ```
-
-  A local nix registry entry for `nix-config` is configured to simplify
-  referencing these templates.
 
 ## Maintenance Commands
 
@@ -95,7 +82,6 @@ make update
 This command updates the following items:
 
 - The repository `flake.lock` file.
-- All `flake.lock` files within the `templates/` directory.
 - Custom Nix packages in `pkgs/` if they contain an `update.sh` script.
 - The lazy.nvim `lazy-lock.json` via a headless Neovim instance.
 

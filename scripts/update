@@ -5,20 +5,11 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
 if [ -f "flake.nix" ]; then
-  echo "Updating repository flake..."
+  echo "Updating flake..."
   nix flake update
 else
   echo "Error: flake.nix not found in the repository root." >&2
   exit 1
-fi
-
-if [ -d "templates" ]; then
-  for d in templates/*/; do
-    if [ -f "${d}flake.nix" ]; then
-      echo "Updating flake in ${d}..."
-      (cd "$d" && nix flake update)
-    fi
-  done
 fi
 
 for pkg in pkgs/*; do
