@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   username = "danny";
@@ -50,6 +55,13 @@ in
     sshfs
     wl-clipboard
   ];
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = [
+      config.hardware.nvidia.package # CUDA
+    ];
+  };
 
   programs.zsh.enable = true;
 
