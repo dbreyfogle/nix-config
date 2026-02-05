@@ -224,6 +224,7 @@ in
       nixd
       nixfmt
       opencode
+      opentofu
       prettier
       pyright
       ripgrep
@@ -233,10 +234,8 @@ in
       sqlfluff
       stylua
       taplo
-      terraform-ls
-      terraform-versions."terraform-1.14"
-      tflint
       tldr
+      tofu-ls
       tokei
       uv
       vale

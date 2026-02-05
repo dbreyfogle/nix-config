@@ -37,7 +37,7 @@ return {
       nix = { "nixfmt" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sql = { "sqlfluff_format" },
-      terraform = { "terraform_fmt" },
+      terraform = { "tofu_fmt" },
       toml = { "taplo" },
       yaml = { "prettier" },
     },

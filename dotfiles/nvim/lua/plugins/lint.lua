@@ -21,7 +21,7 @@ return {
       markdown = { "markdownlint-cli2", "vale" },
       python = { "ruff" },
       sql = { "sqlfluff" },
-      terraform = { "tflint" },
+      terraform = { "tofu" },
       yaml = { "yamllint" },
     }
 

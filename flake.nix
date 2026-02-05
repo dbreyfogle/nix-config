@@ -14,7 +14,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-    nixpkgs-terraform.url = "github:stackbuilders/nixpkgs-terraform";
   };
 
   outputs =

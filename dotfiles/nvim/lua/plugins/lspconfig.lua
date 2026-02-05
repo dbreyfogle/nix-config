@@ -48,7 +48,7 @@ return {
     vim.lsp.enable("nixd")
     vim.lsp.enable("pyright")
     vim.lsp.enable("taplo")
-    vim.lsp.enable("terraformls")
+    vim.lsp.enable("tofu_ls")
     vim.lsp.config("yamlls", {
       settings = {
         yaml = {
