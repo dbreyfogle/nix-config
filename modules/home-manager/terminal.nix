@@ -225,6 +225,7 @@ in
       nixfmt
       opencode
       opentofu
+      postgresql
       prettier
       pyright
       ripgrep
