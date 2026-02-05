@@ -20,7 +20,6 @@ return {
           "grug-far",
           "help",
           "kulala_ui",
-          "leetcode",
           "snacks_dashboard",
           "undotree",
         },

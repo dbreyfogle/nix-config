@@ -197,8 +197,6 @@ in
     };
 
     home.packages = with pkgs; [
-      asciinema
-      asciinema-agg
       astro-cli
       bash-language-server
       buf
@@ -223,7 +221,6 @@ in
       opencode
       prettier
       pyright
-      python3Packages.sqlfmt
       ripgrep
       ruff
       shellcheck
