@@ -32,6 +32,17 @@ in
         };
       };
 
+      btop = {
+        enable = true;
+        settings = {
+          color_theme = "kanagawa-wave";
+          theme_background = false;
+        };
+        themes = {
+          kanagawa-wave = builtins.readFile ../../dotfiles/btop/kanagawa-wave.theme;
+        };
+      };
+
       direnv = {
         enable = true;
         enableZshIntegration = true;
