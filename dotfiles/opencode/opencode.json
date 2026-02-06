@@ -8,6 +8,28 @@
     "messages_half_page_down": "ctrl+d",
     "messages_half_page_up": "ctrl+u"
   },
+  "permission": {
+    "external_directory": {
+      "~/.aws/**": "deny",
+      "~/.gnupg/**": "deny",
+      "~/.kube/**": "deny",
+      "~/.ssh/**": "deny",
+      "~/Documents/**": "deny"
+    },
+    "read": {
+      "*": "allow",
+      "**/secrets/**": "deny",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+      "*.envrc": "deny",
+      "*id_rsa": "deny",
+      "*id_ed25519": "deny",
+      "*.key": "deny",
+      "*.pem": "deny",
+      "*.tfvars": "deny"
+    }
+  },
   "share": "disabled",
   "theme": "system"
 }
