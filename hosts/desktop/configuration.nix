@@ -24,6 +24,7 @@ in
   };
 
   system.stateVersion = "24.11";
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ inputs.self.overlays.default ];
 
@@ -50,27 +51,59 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    gnome-boxes
     gparted
-    sshfs
-    wl-clipboard
   ];
 
-  programs.nix-ld = {
-    enable = true;
-    libraries = [
-      config.hardware.nvidia.package # CUDA
-    ];
+  programs = {
+    nix-ld = {
+      enable = true;
+      libraries = [
+        config.hardware.nvidia.package # CUDA
+      ];
+    };
+    zsh.enable = true;
   };
 
-  programs.zsh.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    docker.storageDriver = "btrfs";
+    libvirtd.enable = true;
+  };
 
-  services.openssh.enable = true;
-  services.openssh.openFirewall = true;
+  services = {
+    openssh.enable = true;
+    openssh.openFirewall = true;
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
-  virtualisation.libvirtd.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+
+    printing.enable = true;
+
+    xserver.videoDrivers = [ "nvidia" ]; # for nvidia-container-toolkit
+  };
+
+  networking = {
+    firewall.enable = true;
+    hostName = hostname;
+    networkmanager.enable = true;
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+    };
+    nvidia = {
+      open = true;
+      modesetting.enable = true;
+      powerManagement.enable = true;
+    };
+    nvidia-container-toolkit.enable = true;
+  };
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -88,34 +121,10 @@ in
     };
   };
 
-  networking.firewall.enable = true;
-  networking.hostName = hostname;
-  networking.networkmanager.enable = true;
+  security.rtkit.enable = true;
 
   time.timeZone = "America/Phoenix";
   time.hardwareClockInLocalTime = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
-
-  services.printing.enable = true;
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [ nvidia-vaapi-driver ];
-  };
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    open = true;
-    modesetting.enable = true;
-    powerManagement.enable = true;
-  };
-  hardware.nvidia-container-toolkit.enable = true;
 }

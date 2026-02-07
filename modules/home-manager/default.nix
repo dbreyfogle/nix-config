@@ -15,7 +15,9 @@
       dates = "weekly";
       options = "--delete-older-than 14d";
     };
+
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
     settings = {
       extra-experimental-features = [
         "nix-command"

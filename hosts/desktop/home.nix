@@ -14,31 +14,33 @@
     brave
     dbeaver-bin
     discord
+    gnome-boxes
     libreoffice
     obsidian
     pika-backup
     slack
+    sshfs
     vlc
     vscode
     zoom-us
   ];
 
-  programs.btop = {
-    package = pkgs.btop.override { cudaSupport = true; };
-  };
+  programs = {
+    btop.package = pkgs.btop.override { cudaSupport = true; };
 
-  programs.firefox.enable = true;
+    firefox.enable = true;
 
-  programs.ghostty.settings = {
-    font-size = 12;
-    window-padding-x = "5,6";
-    window-padding-y = "12,3";
-    window-width = 249;
-    window-height = 64;
-  };
+    ghostty.settings = {
+      font-size = 12;
+      window-padding-x = "5,6";
+      window-padding-y = "12,3";
+      window-width = 249;
+      window-height = 64;
+    };
 
-  programs.obs-studio = {
-    enable = true;
-    package = pkgs.obs-studio.override { cudaSupport = true; };
+    obs-studio = {
+      enable = true;
+      package = pkgs.obs-studio.override { cudaSupport = true; };
+    };
   };
 }

@@ -16,9 +16,7 @@ in
 
   config = lib.mkIf cfg.enable {
     programs = {
-      awscli = {
-        enable = true;
-      };
+      awscli.enable = true;
 
       bat = {
         enable = true;
@@ -46,11 +44,11 @@ in
       direnv = {
         enable = true;
         enableZshIntegration = true;
-        nix-direnv.enable = true;
         config = {
           global.hide_env_diff = true;
           global.warn_timeout = 0;
         };
+        nix-direnv.enable = true;
       };
 
       fzf = {
@@ -68,9 +66,7 @@ in
 
       gh = {
         enable = true;
-        extensions = with pkgs; [
-          gh-markdown-preview
-        ];
+        extensions = with pkgs; [ gh-markdown-preview ];
       };
 
       ghostty = {

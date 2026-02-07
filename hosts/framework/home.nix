@@ -14,30 +14,34 @@
     brave
     dbeaver-bin
     discord
+    gnome-boxes
     libreoffice
     obsidian
     pika-backup
     protonvpn-gui
     slack
+    sshfs
     vlc
     vscode
     zoom-us
   ];
 
-  programs.firefox.enable = true;
+  programs = {
+    firefox.enable = true;
 
-  programs.ghostty.settings = {
-    font-size = 12;
-    maximize = true;
-    window-padding-x = "4,0";
-    window-padding-y = "10,3";
-    window-width = 177;
-    window-height = 48;
-  };
+    ghostty.settings = {
+      font-size = 12;
+      maximize = true;
+      window-padding-x = "4,0";
+      window-padding-y = "10,3";
+      window-width = 177;
+      window-height = 48;
+    };
 
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [ obs-vaapi ];
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [ obs-vaapi ];
+    };
   };
 
   dconf.settings = {

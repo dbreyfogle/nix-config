@@ -19,6 +19,7 @@ in
   };
 
   system.stateVersion = "25.11";
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ inputs.self.overlays.default ];
 
@@ -45,60 +46,65 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    gnome-boxes
     gparted
-    sshfs
-    wl-clipboard
   ];
 
-  programs.nix-ld.enable = true;
-
-  programs.zsh.enable = true;
-
-  services.openssh.enable = true;
-  services.openssh.openFirewall = true;
-
-  services.tailscale = {
-    enable = true;
-    extraSetFlags = [ "--accept-routes" ];
-    openFirewall = true;
-    useRoutingFeatures = "client";
+  programs = {
+    nix-ld.enable = true;
+    zsh.enable = true;
   };
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "overlay2";
-  virtualisation.libvirtd.enable = true;
-
-  services.logind.settings.Login = {
-    HandleLidSwitch = "suspend";
-    HandleLidSwitchExternalPower = "lock";
-    HandleLidSwitchDocked = "ignore";
+  virtualisation = {
+    docker.enable = true;
+    docker.storageDriver = "overlay2";
+    libvirtd.enable = true;
   };
 
-  services.fwupd.enable = true;
+  services = {
+    fwupd.enable = true;
+
+    logind.settings.Login = {
+      HandleLidSwitch = "suspend";
+      HandleLidSwitchExternalPower = "lock";
+      HandleLidSwitchDocked = "ignore";
+    };
+
+    openssh.enable = true;
+    openssh.openFirewall = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+
+    printing.enable = true;
+
+    tailscale = {
+      enable = true;
+      extraSetFlags = [ "--accept-routes" ];
+      openFirewall = true;
+      useRoutingFeatures = "client";
+    };
+  };
+
+  networking = {
+    firewall.enable = true;
+    hostName = hostname;
+    networkmanager.enable = true;
+  };
+
+  hardware.graphics.enable = true;
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
   };
 
-  networking.firewall.enable = true;
-  networking.hostName = hostname;
-  networking.networkmanager.enable = true;
+  security.rtkit.enable = true;
 
   time.timeZone = "America/Phoenix";
 
   i18n.defaultLocale = "en_US.UTF-8";
-
-  services.printing.enable = true;
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  hardware.graphics.enable = true;
 }

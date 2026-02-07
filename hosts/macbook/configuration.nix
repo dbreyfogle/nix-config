@@ -18,6 +18,7 @@ in
 
   system.stateVersion = 5;
   system.primaryUser = username;
+
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ inputs.self.overlays.default ];
@@ -33,7 +34,6 @@ in
   };
 
   users.knownUsers = [ username ];
-
   users.users.${username} = {
     uid = 501;
     name = username;
