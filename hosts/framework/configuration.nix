@@ -57,6 +57,12 @@ in
 
   services.openssh.enable = true;
 
+  services.tailscale = {
+    enable = true;
+    extraSetFlags = [ "--accept-routes" ];
+    useRoutingFeatures = "client";
+  };
+
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "overlay2";
   virtualisation.libvirtd.enable = true;
