@@ -17,6 +17,7 @@
     libreoffice
     obsidian
     pika-backup
+    protonvpn-gui
     slack
     vlc
     vscode
