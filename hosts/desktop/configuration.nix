@@ -66,6 +66,7 @@ in
   programs.zsh.enable = true;
 
   services.openssh.enable = true;
+  services.openssh.openFirewall = true;
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
@@ -87,6 +88,7 @@ in
     };
   };
 
+  networking.firewall.enable = true;
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
 

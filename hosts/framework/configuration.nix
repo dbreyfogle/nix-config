@@ -56,10 +56,12 @@ in
   programs.zsh.enable = true;
 
   services.openssh.enable = true;
+  services.openssh.openFirewall = true;
 
   services.tailscale = {
     enable = true;
     extraSetFlags = [ "--accept-routes" ];
+    openFirewall = true;
     useRoutingFeatures = "client";
   };
 
@@ -80,6 +82,7 @@ in
     systemd-boot.enable = true;
   };
 
+  networking.firewall.enable = true;
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
 
