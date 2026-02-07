@@ -43,6 +43,8 @@ return {
       ["<C-u>"] = { "scroll_signature_up", "scroll_documentation_up", "fallback" },
       ["<C-f>"] = { "snippet_forward" },
       ["<C-b>"] = { "snippet_backward" },
+      ["<Tab>"] = { "fallback" },
+      ["<S-Tab>"] = { "fallback" },
     },
 
     signature = {
