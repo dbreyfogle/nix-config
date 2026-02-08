@@ -54,11 +54,9 @@ in
     "discord"
     "docker-desktop"
     "ghostty"
-    "macfuse"
     "nikitabobko/tap/aerospace"
     "obs"
     "obsidian"
-    "parsec"
     "protonvpn"
     "rectangle-pro"
     "scroll-reverser"
@@ -68,10 +66,6 @@ in
     "visual-studio-code"
     "vlc"
     "zoom"
-  ];
-
-  environment.systemPackages = with pkgs; [
-    sshfs
   ];
 
   programs.zsh.enable = true;
