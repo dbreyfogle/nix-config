@@ -204,54 +204,57 @@ in
       };
     };
 
-    home.packages = with pkgs; [
-      astro-cli
-      bash-language-server
-      buf
-      checkmake
-      dbt-fusion
-      delve
-      docker-language-server
-      fastfetch
-      fd
-      git-filter-repo
-      go
-      golangci-lint
-      gopls
-      gotools
-      hadolint
-      helm-ls
-      jq
-      kubectl
-      kubernetes-helm
-      lua-language-server
-      markdownlint-cli2
-      minikube
-      nerd-fonts.jetbrains-mono
-      nixd
-      nixfmt
-      opencode
-      opentofu
-      postgresql
-      prettier
-      pyright
-      ripgrep
-      ruff
-      shellcheck
-      shfmt
-      sqlfluff
-      stylua
-      taplo
-      tldr
-      tofu-ls
-      tokei
-      uv
-      vale
-      vim
-      vscode-json-languageserver
-      yaml-language-server
-      yamllint
-    ];
+    home.packages =
+      (with pkgs; [
+        astro-cli
+        bash-language-server
+        buf
+        checkmake
+        dbt-fusion
+        delve
+        docker-language-server
+        fastfetch
+        fd
+        git-filter-repo
+        go
+        golangci-lint
+        gopls
+        gotools
+        hadolint
+        helm-ls
+        jq
+        kubectl
+        kubernetes-helm
+        lua-language-server
+        markdownlint-cli2
+        minikube
+        nerd-fonts.jetbrains-mono
+        nixd
+        nixfmt
+        opentofu
+        postgresql
+        prettier
+        pyright
+        ripgrep
+        ruff
+        shellcheck
+        shfmt
+        sqlfluff
+        stylua
+        taplo
+        tldr
+        tofu-ls
+        tokei
+        uv
+        vale
+        vim
+        vscode-json-languageserver
+        yaml-language-server
+        yamllint
+      ])
+      ++ (with pkgs.master; [
+        opencode
+      ]);
 
     home.file = {
       ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/.vimrc";
