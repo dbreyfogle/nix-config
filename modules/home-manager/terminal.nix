@@ -253,6 +253,7 @@ in
         yamllint
       ])
       ++ (with pkgs.master; [
+        github-copilot-cli
         opencode
       ]);
 
