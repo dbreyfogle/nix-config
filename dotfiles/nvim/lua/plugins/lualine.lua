@@ -7,10 +7,8 @@ return {
         statusline = {
           "dbout",
           "dbui",
-          "DiffviewFiles",
-          "DiffviewFileHistory",
           "fugitive",
-          "gitsigns-blame",
+          "fugitiveblame",
           "help",
           "kulala_ui",
           "snacks_dashboard",
