@@ -211,7 +211,6 @@ in
         buf
         checkmake
         dbt-fusion
-        delve
         docker-language-server
         fastfetch
         fd

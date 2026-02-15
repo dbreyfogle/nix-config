@@ -5,19 +5,12 @@ return {
     options = {
       disabled_filetypes = {
         statusline = {
-          "dap-repl",
-          "dapui_breakpoints",
-          "dapui_console",
-          "dapui_scopes",
-          "dapui_stacks",
-          "dapui_watches",
           "dbout",
           "dbui",
           "DiffviewFiles",
           "DiffviewFileHistory",
           "fugitive",
           "gitsigns-blame",
-          "grug-far",
           "help",
           "kulala_ui",
           "snacks_dashboard",
