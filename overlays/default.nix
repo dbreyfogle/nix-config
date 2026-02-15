@@ -5,6 +5,10 @@ final: prev: {
     inherit (prev) system;
     config.allowUnfree = prev.config.allowUnfree;
   };
+  master = import inputs.nixpkgs-master {
+    inherit (prev) system;
+    config.allowUnfree = prev.config.allowUnfree;
+  };
 
   astro-cli = prev.callPackage ../pkgs/astro-cli/package.nix { };
   dbt-fusion = prev.callPackage ../pkgs/dbt-fusion/package.nix { };
