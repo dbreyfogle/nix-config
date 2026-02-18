@@ -27,6 +27,10 @@ in
     dconf = {
       enable = true;
       settings = {
+        "org/gnome/desktop/input-sources" = {
+          xkb-options = [ "ctrl:nocaps" ];
+        };
+
         "org/gnome/desktop/interface" = {
           clock-format = "12h";
           clock-show-seconds = true;

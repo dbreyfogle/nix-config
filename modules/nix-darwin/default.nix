@@ -32,6 +32,9 @@
     gnused
   ];
 
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToControl = true;
+
   system.startup.chime = false;
 
   system.defaults = {
