@@ -61,6 +61,7 @@ in
     "rectangle-pro"
     "scroll-reverser"
     "slack"
+    "syncthing-app"
     "tailscale-app"
     "virtualbuddy"
     "visual-studio-code"

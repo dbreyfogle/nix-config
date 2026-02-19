@@ -81,6 +81,14 @@ in
 
     printing.enable = true;
 
+    syncthing = {
+      enable = true;
+      openDefaultPorts = true;
+      user = username;
+      group = "users";
+      dataDir = "/home/${username}";
+    };
+
     tailscale = {
       enable = true;
       extraSetFlags = [ "--accept-routes" ];

@@ -83,6 +83,14 @@ in
 
     printing.enable = true;
 
+    syncthing = {
+      enable = true;
+      openDefaultPorts = true;
+      user = username;
+      group = "users";
+      dataDir = "/home/${username}";
+    };
+
     xserver.videoDrivers = [ "nvidia" ]; # for nvidia-container-toolkit
   };
 
