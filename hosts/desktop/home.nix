@@ -16,7 +16,6 @@
     discord
     gnome-boxes
     libreoffice
-    obsidian
     pika-backup
     slack
     sshfs
