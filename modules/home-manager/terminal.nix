@@ -57,7 +57,7 @@ in
         defaultOptions = [
           "--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up"
           "--border=none"
-          "--color=dark"
+          "--layout=reverse"
           "--preview='bat --color=always --plain --line-range=:500 {}'"
           "--style=full"
           "--tmux=80%"
