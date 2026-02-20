@@ -250,6 +250,7 @@ in
         vscode-json-languageserver
         yaml-language-server
         yamllint
+        zk
       ])
       ++ (with pkgs.master; [
         github-copilot-cli
@@ -271,6 +272,8 @@ in
       "vale/.vale.ini".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vale/.vale.ini";
       "yamllint/config".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/yamllint/config";
+      "zk/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/zk/config.toml";
+      "zk/templates".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/zk/templates";
     };
   };
 }

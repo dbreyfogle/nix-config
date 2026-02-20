@@ -56,7 +56,6 @@ in
     "ghostty"
     "nikitabobko/tap/aerospace"
     "obs"
-    "obsidian"
     "protonvpn"
     "rectangle-pro"
     "scroll-reverser"

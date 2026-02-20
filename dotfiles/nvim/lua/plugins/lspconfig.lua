@@ -68,6 +68,7 @@ return {
       },
     })
     vim.lsp.enable("yamlls")
+    vim.lsp.enable("zk")
 
     -- Assign filetypes by path
     vim.filetype.add({
