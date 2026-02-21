@@ -43,6 +43,9 @@ return {
     },
 
     formatters = {
+      prettier = {
+        append_args = { "--prose-wrap", "always" },
+      },
       sqlfluff_format = {
         inherit = "sqlfluff",
         args = { "format", "-" },
