@@ -13,8 +13,8 @@
     package = null;
     settings = {
       font-size = 15;
-      window-padding-x = "5,0";
-      window-padding-y = "12,3";
+      window-padding-x = "4,0";
+      window-padding-y = "12,4";
     };
   };
 

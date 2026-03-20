@@ -31,8 +31,8 @@
 
     ghostty.settings = {
       font-size = 12;
-      window-padding-x = "5,6";
-      window-padding-y = "12,3";
+      window-padding-x = "4,0";
+      window-padding-y = "11,3";
       window-width = 249;
       window-height = 64;
     };

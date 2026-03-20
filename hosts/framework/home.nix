@@ -32,7 +32,7 @@
       font-size = 12;
       maximize = true;
       window-padding-x = "4,0";
-      window-padding-y = "10,3";
+      window-padding-y = "12,4";
       window-width = 177;
       window-height = 48;
     };
