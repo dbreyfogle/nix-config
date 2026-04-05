@@ -17,6 +17,7 @@
     gnome-boxes
     libreoffice
     pika-backup
+    portfolio
     slack
     sshfs
     vlc
