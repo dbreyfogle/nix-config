@@ -2,11 +2,11 @@
 
 final: prev: {
   stable = import inputs.nixpkgs-stable {
-    inherit (prev) system;
+    system = prev.stdenv.hostPlatform.system;
     config.allowUnfree = prev.config.allowUnfree;
   };
   master = import inputs.nixpkgs-master {
-    inherit (prev) system;
+    system = prev.stdenv.hostPlatform.system;
     config.allowUnfree = prev.config.allowUnfree;
   };
 

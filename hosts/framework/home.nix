@@ -18,7 +18,7 @@
     libreoffice
     pika-backup
     portfolio
-    protonvpn-gui
+    proton-vpn
     slack
     sshfs
     vlc
