@@ -16,7 +16,7 @@ in
     homebrew.enable = true;
   };
 
-  system.stateVersion = 5;
+  system.stateVersion = 6;
   system.primaryUser = username;
 
   nixpkgs.hostPlatform = "aarch64-darwin";

@@ -8,7 +8,7 @@
     terminal.enable = true;
   };
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     brave

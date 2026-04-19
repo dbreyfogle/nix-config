@@ -18,7 +18,7 @@ in
     gnome.enable = true;
   };
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ inputs.self.overlays.default ];
