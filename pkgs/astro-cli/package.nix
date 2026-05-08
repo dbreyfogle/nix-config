@@ -10,26 +10,26 @@ let
   systemToPlatform = {
     "x86_64-linux" = {
       name = "linux_amd64";
-      hash = "sha256-kq2y0yNXlj9RwFd7yCECeRicPFkk+vhs52XDD970UVY=";
+      hash = "sha256-v0KinrJHm1+n3oVElTvchoVXlnZR8mpO1rZPm59xCow=";
     };
     "aarch64-linux" = {
       name = "linux_arm64";
-      hash = "sha256-4g1cMkSwB4OjpGIJxr9iH9+DmEUtW3LPp2CISkFmul8=";
+      hash = "sha256-qJHEhTwrRPlEVH5yoiPGCXjAeCXEPvPiSan7keJ3BoI=";
     };
     "x86_64-darwin" = {
       name = "darwin_amd64";
-      hash = "sha256-naC1U31Gzyzp5nh3BcABjA3XfyQR9ffEcdkqGTeq3/c=";
+      hash = "sha256-n5BmKbIqfRKILDRhofjGezwjjFHyUSaXB9a3cGRx7FI=";
     };
     "aarch64-darwin" = {
       name = "darwin_arm64";
-      hash = "sha256-eKhF/VAMNTpcqBG1fFtRhm2lBhEJwFvWWLPNKZki900=";
+      hash = "sha256-V9DZT0LIyLbOZZ3FCLZ6StKEoPWayAxFCPyllfcREx0=";
     };
   };
   platform = systemToPlatform.${system} or throwSystem;
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "astro-cli";
-  version = "1.40.1";
+  version = "1.42.0";
 
   src = fetchurl {
     url = "https://github.com/astronomer/astro-cli/releases/download/v${finalAttrs.version}/astro_${finalAttrs.version}_${platform.name}.tar.gz";
