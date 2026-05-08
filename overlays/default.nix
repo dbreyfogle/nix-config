@@ -26,4 +26,13 @@ final: prev: {
         rm -f $out/share/applications/com.brave.Browser.desktop
       '';
   });
+
+  # https://github.com/NixOS/nixpkgs/issues/509480
+  gotools = prev.symlinkJoin {
+    name = "gotools";
+    paths = [ prev.gotools ];
+    postBuild = ''
+      rm -f "$out/bin/modernize"
+    '';
+  };
 }

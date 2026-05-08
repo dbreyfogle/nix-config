@@ -131,6 +131,7 @@ in
       neovim = {
         enable = true;
         defaultEditor = true;
+        sideloadInitLua = true;
         extraPackages = with pkgs; [
           gcc
           nodejs
