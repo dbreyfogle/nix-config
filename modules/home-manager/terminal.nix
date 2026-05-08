@@ -210,7 +210,6 @@ in
         bash-language-server
         buf
         checkmake
-        dbt-fusion
         docker-language-server
         fastfetch
         fd
