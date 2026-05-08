@@ -1,13 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
-  "keybinds": {
-    "app_exit": "<leader>q",
-    "input_delete": "ctrl+alt+d,delete,shift+delete",
-    "input_delete_to_line_start": "ctrl+alt+u",
-    "messages_half_page_down": "ctrl+d",
-    "messages_half_page_up": "ctrl+u"
-  },
   "permission": {
     "external_directory": {
       "~/.aws/**": "deny",
@@ -30,6 +23,5 @@
       "*.tfvars": "deny"
     }
   },
-  "share": "disabled",
-  "theme": "system"
+  "share": "disabled"
 }
