@@ -18,9 +18,6 @@ in
       alphabetical-app-grid
       blur-my-shell
       dash-to-dock
-      disable-workspace-animation
-      just-perfection
-      space-bar
       tiling-shell
     ];
 
@@ -144,9 +141,6 @@ in
             alphabetical-app-grid.extensionUuid
             blur-my-shell.extensionUuid
             dash-to-dock.extensionUuid
-            disable-workspace-animation.extensionUuid
-            just-perfection.extensionUuid
-            space-bar.extensionUuid
             tiling-shell.extensionUuid
           ];
         };
@@ -169,16 +163,6 @@ in
           show-mounts = false;
           show-trash = false;
           workspace-agnostic-urgent-windows = false;
-        };
-
-        "org/gnome/shell/extensions/just-perfection" = {
-          startup-status = 0;
-          support-notifier-type = 0;
-          workspace-popup = false;
-        };
-
-        "org/gnome/shell/extensions/space-bar/behavior" = {
-          toggle-overview = false;
         };
 
         "org/gnome/shell/keybindings" = {
