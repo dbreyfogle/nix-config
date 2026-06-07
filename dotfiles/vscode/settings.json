@@ -120,7 +120,7 @@
     "<C-j>": false,
     "<C-n>": false,
     "<C-p>": false,
-    "<C-\\>": false
+    "<C-z>": false
   },
   "vim.highlightedyank.enable": true,
   "vim.leader": " ",

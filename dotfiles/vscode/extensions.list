@@ -1,8 +1,6 @@
 akamud.vscode-theme-onedark
 charliermarsh.ruff
 esbenp.prettier-vscode
-github.copilot
-github.copilot-chat
 jnoortheen.nix-ide
 mkhl.direnv
 ms-python.debugpy
@@ -10,7 +8,9 @@ ms-python.python
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
+opentofu.vscode-opentofu
 pkief.material-icon-theme
 redhat.vscode-yaml
+tamasfe.even-better-toml
 usernamehw.errorlens
 vscodevim.vim
