@@ -16,9 +16,7 @@ return {
       end
     end
     if #to_install > 0 then
-      vim.schedule(function()
-        vim.cmd("silent! TSInstall " .. table.concat(to_install, " "))
-      end)
+      require("nvim-treesitter").install(to_install):await()
     end
 
     vim.api.nvim_create_autocmd("FileType", {
@@ -39,10 +37,9 @@ return {
           ts_setup(args.buf)
         else
           if vim.tbl_contains(require("nvim-treesitter").get_available(), lang) then
-            vim.cmd("silent! TSInstall " .. lang)
-            vim.defer_fn(function()
-              pcall(ts_setup, args.buf)
-            end, 4000) -- wait a few seconds for install to complete
+            require("nvim-treesitter").install({ lang }):await(function()
+              ts_setup(args.buf)
+            end)
           end
         end
       end,
