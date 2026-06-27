@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+set -eu
+
+REPO_ROOT=$(cd "$(dirname "${0}")/.." && pwd)
+
+if [ -f "${REPO_ROOT}/.env" ]; then
+    . "${REPO_ROOT}/.env"
+    HOST="${FLAKE_OUTPUT}"
+fi
+
+if [ -z "${HOST:-}" ]; then
+    printf "Enter the host: "
+    read -r HOST
+fi
+
+printf "Enter the username: "
+read -r USERNAME
+
+if [ -z "${HOST}" ] || [ -z "${USERNAME}" ]; then
+    echo "Error: HOST and USERNAME cannot be empty."
+    exit 1
+fi
+
+sudo nix --experimental-features "nix-command flakes" \
+  run github:nix-community/disko/latest -- \
+  --mode destroy,format,mount \
+  "${REPO_ROOT}/hosts/${HOST}/disko.nix"
+
+nixos-generate-config --no-filesystems --root /mnt
+
+cp -f /mnt/etc/nixos/hardware-configuration.nix "${REPO_ROOT}/hosts/${HOST}/"
+
+git -C "${REPO_ROOT}" add "hosts/${HOST}/hardware-configuration.nix"
+
+nixos-install --flake "${REPO_ROOT}#${HOST}"
+
+nixos-enter --root /mnt -c "passwd ${USERNAME}"
+
+mv "${REPO_ROOT}" /mnt/etc/nixos/

@@ -26,6 +26,9 @@ ifneq (,$(IS_NIXOS)$(IS_DARWIN))
 endif
 	nix-collect-garbage -d
 
+install:
+	./scripts/install
+
 update:
 	./scripts/update
 
