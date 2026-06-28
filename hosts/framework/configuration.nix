@@ -105,6 +105,7 @@ in
     networkmanager.enable = true;
   };
 
+  hardware.bluetooth.enable = true;
   hardware.graphics.enable = true;
 
   boot.loader = {

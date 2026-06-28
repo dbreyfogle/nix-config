@@ -103,6 +103,7 @@ in
   };
 
   hardware = {
+    bluetooth.enable = true;
     graphics = {
       enable = true;
       extraPackages = with pkgs; [ nvidia-vaapi-driver ];
