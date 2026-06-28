@@ -61,6 +61,8 @@ in
   };
 
   services = {
+    displayManager.gdm.enable = true;
+
     fwupd.enable = true;
 
     logind.settings.Login = {

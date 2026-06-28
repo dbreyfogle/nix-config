@@ -71,6 +71,8 @@ in
   };
 
   services = {
+    displayManager.gdm.enable = true;
+
     openssh.enable = true;
     openssh.openFirewall = true;
 
