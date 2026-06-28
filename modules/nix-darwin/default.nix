@@ -14,7 +14,7 @@
         Hour = 0;
         Minute = 0;
       };
-      options = "--delete-older-than 14d";
+      options = "--delete-older-than 30d";
     };
     optimise = {
       automatic = true;
