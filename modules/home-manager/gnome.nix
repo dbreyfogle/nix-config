@@ -77,8 +77,6 @@ in
           move-to-workspace-8 = [ "<Shift><Super>8" ];
           move-to-workspace-9 = [ "<Shift><Super>9" ];
           move-to-workspace-10 = [ "<Shift><Super>0" ];
-          switch-applications = [ "<Super>Tab" ];
-          switch-applications-backward = [ "<Shift><Super>Tab" ];
           switch-to-workspace-1 = [ "<Super>1" ];
           switch-to-workspace-2 = [ "<Super>2" ];
           switch-to-workspace-3 = [ "<Super>3" ];
@@ -89,6 +87,8 @@ in
           switch-to-workspace-8 = [ "<Super>8" ];
           switch-to-workspace-9 = [ "<Super>9" ];
           switch-to-workspace-10 = [ "<Super>0" ];
+          switch-to-workspace-right = [ "<Super>Tab" ];
+          switch-to-workspace-left = [ "<Shift><Super>Tab" ];
           switch-windows = [ "<Alt>Tab" ];
           switch-windows-backward = [ "<Shift><Alt>Tab" ];
           unmaximize = [ "<Super>Down" ];
@@ -129,6 +129,7 @@ in
         };
 
         "org/gnome/settings-daemon/plugins/power" = {
+          ambient-enabled = false;
           power-button-action = "interactive";
           sleep-inactive-ac-timeout = 7200;
           sleep-inactive-ac-type = "suspend";
