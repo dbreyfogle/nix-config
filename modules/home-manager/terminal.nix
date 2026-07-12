@@ -253,7 +253,6 @@ in
         zk
       ])
       ++ (with pkgs.master; [
-        github-copilot-cli
         opencode
       ]);
 
