@@ -4,6 +4,7 @@
   imports = [
     ./gnome.nix
     ./inhibit-sleep-ssh.nix
+    ./nvidia.nix
   ];
 
   nix = {

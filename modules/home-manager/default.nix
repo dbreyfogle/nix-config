@@ -3,6 +3,7 @@
 {
   imports = [
     ./gnome.nix
+    ./nvidia.nix
     ./terminal.nix
   ];
 

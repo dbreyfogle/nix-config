@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 
 let
   username = "danny";
@@ -21,6 +16,7 @@ in
   myModules.nixos = {
     gnome.enable = true;
     inhibitSleepDuringSsh.enable = true;
+    nvidia.enable = true;
   };
 
   system.stateVersion = "26.05";
@@ -55,12 +51,7 @@ in
   ];
 
   programs = {
-    nix-ld = {
-      enable = true;
-      libraries = [
-        config.hardware.nvidia.package # CUDA
-      ];
-    };
+    nix-ld.enable = true;
     zsh.enable = true;
   };
 
@@ -92,8 +83,6 @@ in
       group = "users";
       dataDir = "/home/${username}";
     };
-
-    xserver.videoDrivers = [ "nvidia" ]; # for nvidia-container-toolkit
   };
 
   networking = {
@@ -102,19 +91,8 @@ in
     networkmanager.enable = true;
   };
 
-  hardware = {
-    bluetooth.enable = true;
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
-    };
-    nvidia = {
-      open = true;
-      modesetting.enable = true;
-      powerManagement.enable = true;
-    };
-    nvidia-container-toolkit.enable = true;
-  };
+  hardware.bluetooth.enable = true;
+  hardware.graphics.enable = true;
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
