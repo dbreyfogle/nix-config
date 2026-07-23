@@ -28,7 +28,7 @@ in
     useUserPackages = true;
     extraSpecialArgs = {
       inherit inputs;
-      repodir = "/Users/${username}/Code/nix-config";
+      repodir = "/Users/${username}/Projects/nix-config";
     };
     users.${username} = import ./home.nix;
   };
