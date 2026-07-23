@@ -5,10 +5,6 @@ final: prev: {
     system = prev.stdenv.hostPlatform.system;
     config.allowUnfree = prev.config.allowUnfree;
   };
-  master = import inputs.nixpkgs-master {
-    system = prev.stdenv.hostPlatform.system;
-    config.allowUnfree = prev.config.allowUnfree;
-  };
 
   astro-cli = prev.callPackage ../pkgs/astro-cli/package.nix { };
 
