@@ -5,6 +5,7 @@
 
   myModules.home-manager = {
     gnome.enable = true;
+    nvidia.enable = true;
     terminal.enable = true;
   };
 
@@ -26,8 +27,6 @@
   ];
 
   programs = {
-    btop.package = pkgs.btop.override { cudaSupport = true; };
-
     firefox.enable = true;
 
     ghostty.settings = {
@@ -38,9 +37,6 @@
       window-height = 64;
     };
 
-    obs-studio = {
-      enable = true;
-      package = pkgs.obs-studio.override { cudaSupport = true; };
-    };
+    obs-studio.enable = true;
   };
 }
