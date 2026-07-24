@@ -7,7 +7,7 @@ ifneq (,$(wildcard .env))
 	export
 endif
 
-.PHONY: all switch clean
+.PHONY: all switch clean install update install_nix bootstrap_darwin bootstrap_hm check_flake_output
 
 all: switch
 
@@ -22,9 +22,9 @@ endif
 
 clean:
 ifneq (,$(IS_NIXOS)$(IS_DARWIN))
-	sudo nix-collect-garbage -d
+	sudo nix-collect-garbage --delete-older-than 30d
 endif
-	nix-collect-garbage -d
+	nix-collect-garbage --delete-older-than 30d
 
 install:
 	./scripts/install
