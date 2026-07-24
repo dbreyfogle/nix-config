@@ -7,7 +7,8 @@
       "~/.gnupg/**": "deny",
       "~/.kube/**": "deny",
       "~/.ssh/**": "deny",
-      "~/Documents/**": "deny"
+      "~/Documents/**": "deny",
+      "~/Library/CloudStorage/**": "deny"
     },
     "read": {
       "*": "allow",
