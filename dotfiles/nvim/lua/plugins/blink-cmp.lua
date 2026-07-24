@@ -20,7 +20,6 @@ return {
         "dbout",
         "gitcommit",
         "gitrebase",
-        "markdown",
         "oil",
         "txt",
       }, vim.bo.filetype)
@@ -53,8 +52,13 @@ return {
     },
 
     sources = {
-      per_filetype = { sql = { "dadbod", "path", "snippets", "buffer" } },
-      providers = { dadbod = { module = "vim_dadbod_completion.blink" } },
+      per_filetype = {
+        markdown = { "lsp" },
+        sql = { "dadbod", "path", "snippets", "buffer" },
+      },
+      providers = {
+        dadbod = { module = "vim_dadbod_completion.blink" },
+      },
     },
   },
 }
