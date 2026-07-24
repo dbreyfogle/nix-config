@@ -68,7 +68,7 @@ run:
 make clean
 ```
 
-This command removes all generations except for the current one.
+This command removes all generations older than 30 days.
 
 ### Updating Dependencies
 
