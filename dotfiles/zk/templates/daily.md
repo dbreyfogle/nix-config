@@ -1,3 +1,1 @@
-# {{format-date now "long"}}
-
-{{content}}
+# {{format-date now "%Y%m%d"}}
