@@ -16,6 +16,11 @@ nnoremap <Leader>to <CMD>tabonly<CR>
 nnoremap <Leader>t> <CMD>+tabmove<CR>
 nnoremap <Leader>t< <CMD>-tabmove<CR>
 
+" Quickfix list management
+nnoremap <expr> <silent> <Leader>q getqflist({'winid': 0}).winid != 0 ? ':cclose<CR>' : ':copen<CR>'
+nnoremap ]Q <CMD>cnewer<CR>
+nnoremap [Q <CMD>colder<CR>
+
 " Paste the most recent yank
 noremap <Leader>p "0p
 noremap <Leader>P "0P

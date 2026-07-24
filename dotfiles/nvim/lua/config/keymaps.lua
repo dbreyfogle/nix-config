@@ -14,6 +14,17 @@ vim.keymap.set({ "n" }, "<Leader>to", "<CMD>tabonly<CR>", { desc = "Close all ot
 vim.keymap.set({ "n" }, "<Leader>t>", "<CMD>+tabmove<CR>", { desc = "Move tab to the right" })
 vim.keymap.set({ "n" }, "<Leader>t<", "<CMD>-tabmove<CR>", { desc = "Move tab to the left" })
 
+-- Quickfix list management
+vim.keymap.set("n", "<Leader>q", function()
+  if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
+    vim.cmd("cclose")
+  else
+    vim.cmd("copen")
+  end
+end, { desc = "Toggle quickfix list", silent = true })
+vim.keymap.set("n", "]Q", "<CMD>cnewer<CR>", { desc = "Go to newer quickfix list" })
+vim.keymap.set("n", "[Q", "<CMD>colder<CR>", { desc = "Go to older quickfix list" })
+
 -- Paste the most recent yank
 vim.keymap.set({ "n", "v" }, "<Leader>p", '"0p', { desc = "Paste most recent yank after cursor" })
 vim.keymap.set({ "n", "v" }, "<Leader>P", '"0P', { desc = "Paste most recent yank before cursor" })
