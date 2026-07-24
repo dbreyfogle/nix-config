@@ -23,6 +23,7 @@ return {
         home_dir .. "/.kube/*",
         home_dir .. "/.ssh/*",
         home_dir .. "/Documents/*",
+        home_dir .. "/Library/CloudStorage/*",
         "*/secrets/*",
         ".env",
         ".env.*",
