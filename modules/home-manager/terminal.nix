@@ -163,12 +163,9 @@ in
           enable = true;
           strategy = [ "match_prev_cmd" ];
         };
+        defaultKeymap = "emacs";
         enableCompletion = true;
         history.ignoreSpace = true;
-        oh-my-zsh = {
-          enable = true;
-          plugins = [ "tmux" ];
-        };
         sessionVariables = {
           MINIKUBE_IN_STYLE = "false";
           OPENCODE_DISABLE_LSP_DOWNLOAD = "true";
