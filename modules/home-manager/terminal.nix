@@ -149,23 +149,7 @@ in
         enable = true;
         sensibleOnTop = false;
         extraConfig = builtins.readFile ../../dotfiles/tmux/tmux.conf;
-        plugins = with pkgs.tmuxPlugins; [
-          yank
-          {
-            plugin = resurrect;
-            extraConfig = ''
-              set -g @resurrect-processes 'false'
-            '';
-          }
-          {
-            plugin = continuum; # must load after resurrect
-            extraConfig = ''
-              set -g status-right "" # set early since continuum hooks into status-right
-              set -g @continuum-save-interval '5'
-              set -g @continuum-restore 'on'
-            '';
-          }
-        ];
+        plugins = with pkgs.tmuxPlugins; [ yank ];
       };
 
       zoxide = {
