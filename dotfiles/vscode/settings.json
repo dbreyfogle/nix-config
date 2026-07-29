@@ -123,6 +123,7 @@
   "vim.leader": " ",
   "vim.useSystemClipboard": true,
   "vim.vimrc.enable": true,
+  "vim.vimrc.path": "$HOME/.config/vim/vimrc",
 
   // [[ Extensions ]]
 

@@ -227,10 +227,6 @@ in
         opencode
       ]);
 
-    home.file = {
-      ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/.vimrc";
-    };
-
     xdg.configFile = {
       "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
       "opencode/opencode.json".source =
@@ -242,6 +238,7 @@ in
       "starship.toml".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/starship/starship.toml";
       "vale/.vale.ini".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vale/.vale.ini";
+      "vim/vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/vimrc";
       "yamllint/config".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/yamllint/config";
       "zk/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/zk/config.toml";
