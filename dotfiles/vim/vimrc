@@ -26,7 +26,7 @@ noremap <Leader>p "0p
 noremap <Leader>P "0P
 
 " Open explorer
-nnoremap - :Ex<CR>
+nnoremap - <CMD>Ex<CR>
 
 " Buffer navigation
 nnoremap <Leader>sb :ls<CR>:b<Space>
