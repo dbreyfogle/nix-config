@@ -61,7 +61,7 @@ in
           "--layout=reverse"
           "--preview='bat --color=always --plain --line-range=:500 {}'"
           "--style=full"
-          "--tmux=80%"
+          "--popup=80%"
         ];
       };
 

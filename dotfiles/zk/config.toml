@@ -24,7 +24,7 @@ hashtags = false
 colon-tags = true
 
 [tool]
-fzf-options = "--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up --border=none --layout=reverse --style=full --tmux=80%"
+fzf-options = "--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up --border=none --layout=reverse --style=full --popup=80%"
 fzf-preview = "bat --color=always --plain --line-range=:500 {-1}"
 
 [alias]
