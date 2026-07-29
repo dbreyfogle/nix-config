@@ -32,6 +32,10 @@
     gnused
   ];
 
+  environment.variables = {
+    VALE_CONFIG_PATH = "$HOME/.config/vale/.vale.ini";
+  };
+
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
 

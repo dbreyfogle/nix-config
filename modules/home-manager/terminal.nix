@@ -165,15 +165,10 @@ in
         };
         defaultKeymap = "emacs";
         enableCompletion = true;
-        history.ignoreSpace = true;
-        sessionVariables = {
-          MINIKUBE_IN_STYLE = "false";
-          OPENCODE_DISABLE_LSP_DOWNLOAD = "true";
-          VALE_CONFIG_PATH = "$HOME/.config/vale/.vale.ini";
-        };
         envExtra = ''
           [ -f ~/.env ] && source ~/.env
         '';
+        history.ignoreSpace = true;
         shellAliases = {
           ll = "ls -lFhAv --group-directories-first --color";
         };
