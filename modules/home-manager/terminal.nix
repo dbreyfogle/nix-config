@@ -173,9 +173,6 @@ in
           MINIKUBE_IN_STYLE = "false";
           OPENCODE_DISABLE_LSP_DOWNLOAD = "true";
           VALE_CONFIG_PATH = "$HOME/.config/vale/.vale.ini";
-          ZSH_TMUX_AUTOSTART = "true";
-          ZSH_TMUX_AUTOQUIT = "false";
-          ZSH_TMUX_UNICODE = "true";
         };
         envExtra = ''
           [ -f ~/.env ] && source ~/.env
