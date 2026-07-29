@@ -1,15 +1,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 continuation_prompt = "[.](bright-black) "
-
-format = "${custom.osc133}$all"
 right_format = "$time"
 command_timeout = 1500
-
-[custom.osc133]
-command = "echo -e '\\033]133;A\\033\\\\'"
-when = "true"
-format = "$output"
 
 [time]
 disabled = false
