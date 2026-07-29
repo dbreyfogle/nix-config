@@ -181,9 +181,6 @@ in
         };
         enableCompletion = true;
         history.ignoreSpace = true;
-        initContent = ''
-          complete -C $(which aws_completer) aws
-        '';
         oh-my-zsh = {
           enable = true;
           plugins = [ "tmux" ];
