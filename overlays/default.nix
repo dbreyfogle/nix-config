@@ -14,23 +14,7 @@ final: prev: {
         # Enable swipe gestures for page navigation
         [ "--enable-features=" ] [ "--enable-features=TouchpadOverscrollHistoryNavigation," ]
         (oldAttrs.preFixup or "");
-
-    postInstall =
-      (oldAttrs.postInstall or "")
-      # Remove duplicate desktop item
-      + prev.lib.optionalString prev.stdenv.hostPlatform.isLinux ''
-        rm -f $out/share/applications/com.brave.Browser.desktop
-      '';
   });
-
-  # https://github.com/NixOS/nixpkgs/issues/509480
-  gotools = prev.symlinkJoin {
-    name = "gotools";
-    paths = [ prev.gotools ];
-    postBuild = ''
-      rm -f "$out/bin/modernize"
-    '';
-  };
 
   minikube = prev.minikube.overrideAttrs (oldAttrs: {
     postInstall = (oldAttrs.postInstall or "") + ''
