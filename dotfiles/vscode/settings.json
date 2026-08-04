@@ -3,6 +3,7 @@
 
   "breadcrumbs.enabled": false,
   "chat.commandCenter.enabled": false,
+  "chat.titleBar.openInAgentsWindow.enabled": false,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -15,6 +16,7 @@
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
   "workbench.activityBar.location": "top",
+  "workbench.browser.showInTitleBar": false,
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.focusRecentEditorAfterClose": false,
   "workbench.editor.openPositioning": "last",
