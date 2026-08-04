@@ -31,4 +31,10 @@ final: prev: {
       rm -f "$out/bin/modernize"
     '';
   };
+
+  minikube = prev.minikube.overrideAttrs (oldAttrs: {
+    postInstall = (oldAttrs.postInstall or "") + ''
+      rm -f $out/bin/kubectl
+    '';
+  });
 }
