@@ -112,7 +112,7 @@ in
 
   security.rtkit.enable = true;
 
-  time.timeZone = "America/Phoenix";
+  time.timeZone = "America/Los_Angeles";
   time.hardwareClockInLocalTime = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
