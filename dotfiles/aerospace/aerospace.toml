@@ -16,3 +16,5 @@ alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
 alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
 alt-tab = 'workspace next'
 alt-shift-tab = 'workspace prev'
+alt-shift-ctrl-left = 'move-node-to-monitor left'
+alt-shift-ctrl-right = 'move-node-to-monitor right'
