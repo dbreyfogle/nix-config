@@ -148,8 +148,22 @@ in
       tmux = {
         enable = true;
         sensibleOnTop = false;
-        extraConfig = builtins.readFile ../../dotfiles/tmux/tmux.conf;
-        plugins = with pkgs.tmuxPlugins; [ yank ];
+        plugins = with pkgs.tmuxPlugins; [
+          {
+            plugin = resurrect;
+            extraConfig = ''
+              set -g @resurrect-processes 'false'
+            '';
+          }
+          {
+            plugin = continuum; # must load after resurrect
+            extraConfig = ''
+              set -g @continuum-save-interval '1'
+              set -g @continuum-restore 'on'
+            '';
+          }
+          yank
+        ];
       };
 
       zoxide = {
@@ -237,6 +251,7 @@ in
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/sqlfluff/.sqlfluff";
       "starship.toml".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/starship/starship.toml";
+      "tmux/tmux.conf".text = lib.mkOrder 750 (builtins.readFile ../../dotfiles/tmux/tmux.conf);
       "vale/.vale.ini".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vale/.vale.ini";
       "vim/vimrc".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/vim/vimrc";
       "yamllint/config".source =
