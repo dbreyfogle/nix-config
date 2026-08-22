@@ -238,15 +238,11 @@ in
         zk
       ])
       ++ (with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
-        opencode
+        pi
       ]);
 
     xdg.configFile = {
       "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
-      "opencode/opencode.json".source =
-        config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/opencode/opencode.json";
-      "opencode/tui.json".source =
-        config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/opencode/tui.json";
       "sqlfluff/.sqlfluff".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/sqlfluff/.sqlfluff";
       "starship.toml".source =
