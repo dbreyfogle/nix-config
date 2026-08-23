@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 final: prev: {
-  stable = import inputs.nixpkgs-stable {
+  unstable = import inputs.nixpkgs-unstable {
     system = prev.stdenv.hostPlatform.system;
     config.allowUnfree = prev.config.allowUnfree;
   };
@@ -14,11 +14,5 @@ final: prev: {
         # Enable swipe gestures for page navigation
         [ "--enable-features=" ] [ "--enable-features=TouchpadOverscrollHistoryNavigation," ]
         (oldAttrs.preFixup or "");
-  });
-
-  minikube = prev.minikube.overrideAttrs (oldAttrs: {
-    postInstall = (oldAttrs.postInstall or "") + ''
-      rm -f $out/bin/kubectl
-    '';
   });
 }

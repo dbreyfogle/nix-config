@@ -47,10 +47,11 @@ make switch
   nix-darwin, or Home Manager).
 
 - **overlays/** - Custom overlays for nixpkgs. For example, an overlay is
-  provided to access stable nixpkgs packages via `pkgs.stable.<package-name>`.
+  provided to access unstable nixpkgs packages via
+  `pkgs.unstable.<package-name>`.
 
-- **pkgs/** - Custom Nix packages are defined here. These packages are
-  typically added to overlays for easy reuse throughout the configuration.
+- **pkgs/** - Custom Nix packages are defined here. These packages are typically
+  added to overlays for easy reuse throughout the configuration.
 
 - **scripts/** - Helper scripts for common tasks. For instance, a script is
   included to update the `flake.lock` file, custom packages, and other various
@@ -61,8 +62,7 @@ make switch
 ### Cleaning Up Old Generations
 
 The included modules setup garbage collection and store optimization to run
-periodically. To manually clean up old Nix generations and free disk space,
-run:
+periodically. To manually clean up old Nix generations and free disk space, run:
 
 ```bash
 make clean
@@ -87,8 +87,8 @@ This command updates the following items:
 
 ### Installing Nix
 
-If Nix is not yet installed on the system, the [multi-user
-installation](https://nixos.org/download/) can be executed with:
+If Nix is not yet installed on the system, the
+[multi-user installation](https://nixos.org/download/) can be executed with:
 
 ```bash
 make install_nix
@@ -104,8 +104,8 @@ make bootstrap_darwin
 
 ### Bootstrapping Home Manager
 
-To bootstrap a [standalone
-installation](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone)
+To bootstrap a
+[standalone installation](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone)
 of Home Manager, run:
 
 ```bash

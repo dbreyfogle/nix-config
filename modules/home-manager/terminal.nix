@@ -72,6 +72,7 @@ in
 
       ghostty = {
         enable = true;
+        package = pkgs.unstable.ghostty;
         settings = {
           theme = "Kanagawa Wave";
           font-family = "JetBrainsMonoNL Nerd Font";
@@ -131,6 +132,7 @@ in
 
       neovim = {
         enable = true;
+        package = pkgs.unstable.neovim-unwrapped;
         defaultEditor = true;
         sideloadInitLua = true;
         extraPackages = with pkgs; [
@@ -147,6 +149,7 @@ in
 
       tmux = {
         enable = true;
+        package = pkgs.unstable.tmux;
         sensibleOnTop = false;
         plugins = with pkgs.tmuxPlugins; [
           {

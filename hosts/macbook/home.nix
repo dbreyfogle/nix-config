@@ -1,4 +1,9 @@
-{ config, repodir, ... }:
+{
+  config,
+  lib,
+  repodir,
+  ...
+}:
 
 {
   imports = [ ../../modules/home-manager ];
@@ -10,7 +15,7 @@
   home.stateVersion = "26.05";
 
   programs.ghostty = {
-    package = null;
+    package = lib.mkForce null;
     settings = {
       font-size = 15;
       window-padding-x = "4,0";
