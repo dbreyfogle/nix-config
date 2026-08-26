@@ -135,11 +135,6 @@ in
         package = pkgs.unstable.neovim-unwrapped;
         defaultEditor = true;
         sideloadInitLua = true;
-        extraPackages = with pkgs; [
-          gcc
-          nodejs
-          tree-sitter
-        ];
       };
 
       starship = {
@@ -202,6 +197,7 @@ in
         docker-language-server
         fastfetch
         fd
+        gcc
         git-filter-repo
         go
         golangci-lint
@@ -218,6 +214,7 @@ in
         nerd-fonts.jetbrains-mono
         nixd
         nixfmt
+        nodejs
         opentofu
         postgresql
         prettier
@@ -232,6 +229,7 @@ in
         tldr
         tofu-ls
         tokei
+        tree-sitter
         uv
         vale
         vim
