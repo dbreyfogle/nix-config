@@ -5,6 +5,18 @@ return {
   config = function()
     vim.lsp.enable("bashls")
     vim.lsp.enable("buf_ls")
+    vim.lsp.config("dbt", {
+      cmd = function(dispatchers, config)
+        return vim.lsp.rpc.start(
+          { "dbt", "lsp", "--project-dir", config.root_dir },
+          dispatchers,
+          { cwd = config.root_dir }
+        )
+      end,
+      filetypes = { "sql" },
+      root_markers = { "dbt_project.yml" },
+    })
+    vim.lsp.enable("dbt")
     vim.lsp.enable("docker_language_server")
     vim.lsp.enable("gopls")
     vim.lsp.enable("helm_ls")

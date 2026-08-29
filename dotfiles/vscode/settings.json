@@ -139,8 +139,6 @@
     "*": true
   },
 
-  "github.copilot.nextEditSuggestions.enabled": true,
-
   "direnv.restart.automatic": true,
   "direnv.status.showChangesCount": false,
 
@@ -153,5 +151,7 @@
   "notebook.output.scrolling": true,
 
   "nix.enableLanguageServer": true,
-  "nix.serverPath": "nixd"
+  "nix.serverPath": "nixd",
+
+  "yaml.disableSchemaDetection": ["**/dbt_project.yml", "**/dbt_project.yaml"]
 }

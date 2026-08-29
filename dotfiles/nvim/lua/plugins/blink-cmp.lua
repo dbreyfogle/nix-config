@@ -54,7 +54,7 @@ return {
     sources = {
       per_filetype = {
         markdown = { "lsp" },
-        sql = { "dadbod", "path", "snippets", "buffer" },
+        sql = { "dadbod", "lsp", "path", "snippets", "buffer" },
       },
       providers = {
         dadbod = { module = "vim_dadbod_completion.blink" },
