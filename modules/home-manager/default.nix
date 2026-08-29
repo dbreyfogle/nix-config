@@ -2,12 +2,15 @@
 
 {
   imports = [
+    inputs.nix-index-database.homeModules.default
     ./gnome.nix
     ./nvidia.nix
     ./terminal.nix
   ];
 
   programs.home-manager.enable = true;
+  programs.nix-index-database.comma.enable = true;
+
   news.display = "silent";
 
   nix = {
