@@ -242,6 +242,11 @@ in
         pi
       ]);
 
+    home.file = {
+      ".pi/agent/APPEND_SYSTEM.md".source =
+        config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/pi/APPEND_SYSTEM.md";
+    };
+
     xdg.configFile = {
       "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
       "sqlfluff/.sqlfluff".source =
