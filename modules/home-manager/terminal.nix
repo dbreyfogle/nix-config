@@ -195,6 +195,7 @@ in
         buf
         checkmake
         docker-language-server
+        duckdb
         fastfetch
         fd
         gcc
