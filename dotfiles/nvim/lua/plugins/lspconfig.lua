@@ -15,6 +15,7 @@ return {
       end,
       filetypes = { "sql" },
       root_markers = { "dbt_project.yml" },
+      workspace_required = true,
     })
     vim.lsp.enable("dbt")
     vim.lsp.enable("docker_language_server")
