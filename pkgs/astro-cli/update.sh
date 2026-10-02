@@ -22,7 +22,18 @@ replace_hash() {
   sed -i "/\"$PLATFORM_NAME\"/,/};/ s#hash = \"sha256-[^\"]*\"#hash = \"$HASH\"#" "$NIX_DRV"
 }
 
-ASTRO_VER=$(curl -s "https://api.github.com/repos/astronomer/astro-cli/releases/latest" | sed -n 's/.*"tag_name": *"v\([^"]*\)".*/\1/p')
+ASTRO_VER=$(
+  curl -fsSL -o /dev/null -w '%{url_effective}' \
+    "https://github.com/astronomer/astro-cli/releases/latest" \
+    | sed -n 's#.*/releases/tag/v##p'
+)
+
+if [ -z "$ASTRO_VER" ]; then
+  echo "ERROR: could not determine the latest astro-cli version" >&2
+  exit 1
+fi
+
+echo "Latest astro-cli version: $ASTRO_VER"
 
 sed -i "s/version = \"[^\"]*\"/version = \"$ASTRO_VER\"/" "$NIX_DRV"
 
