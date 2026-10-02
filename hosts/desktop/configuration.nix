@@ -98,6 +98,7 @@ in
     efi.canTouchEfiVariables = true;
     systemd-boot = {
       enable = true;
+      graceful = true; # tolerate newer unstable bootloader (remove once stable catches up)
       windows = {
         "windows" = {
           title = "Windows";

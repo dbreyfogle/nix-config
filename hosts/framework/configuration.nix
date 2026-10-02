@@ -110,7 +110,10 @@ in
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    systemd-boot.enable = true;
+    systemd-boot = {
+      enable = true;
+      graceful = true; # tolerate newer unstable bootloader (remove once stable catches up)
+    };
   };
 
   security.rtkit.enable = true;
