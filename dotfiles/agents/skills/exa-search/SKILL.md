@@ -2,9 +2,9 @@
 description: Call Exa Search directly with cURL or raw HTTP. Use when an agent needs Exa semantic web retrieval from POST /search without an SDK, including ranked results, domain or category filters, freshness-aware result content, highlights or text extraction, structured output, or streaming search responses.
 metadata:
     github-path: skills/exa-search
-    github-ref: refs/heads/main
+    github-ref: refs/tags/v2026.10.19-627da25
     github-repo: https://github.com/exa-labs/agent-skills
-    github-tree-sha: 31d86aa6b4be992a9f6bc966b3f0e3e7b390af2d
+    github-tree-sha: 346b289f038b89274797526b438e3c0b83d71ede
 name: exa-search
 ---
 # Exa Search
@@ -191,7 +191,7 @@ Use `auto` unless latency or reasoning depth is the primary constraint. Use `fas
 
 ## Structured Output
 
-Use `systemPrompt` for behavior and `outputSchema` for shape.
+Use `systemPrompt` for behavior and `outputSchema` for shape. Keep the schema compact: a handful of named fields, shallow nesting, arrays that declare `items`. The example below is about as wide as `/search` wants. If you need more columns, drop the least important ones rather than grow the schema.
 
 ```bash
 curl -sS -X POST "https://api.exa.ai/search" \
