@@ -244,11 +244,11 @@ in
       ]);
 
     home.file = {
+      ".agents/skills".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/agents/skills";
       ".pi/agent/AGENTS.md".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/pi/AGENTS.md";
       ".pi/agent/APPEND_SYSTEM.md".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/pi/APPEND_SYSTEM.md";
-      ".pi/agent/skills".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/pi/skills";
     };
 
     xdg.configFile = {

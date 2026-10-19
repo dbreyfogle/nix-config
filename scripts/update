@@ -28,4 +28,8 @@ XDG_CONFIG_HOME="$REPO_ROOT/dotfiles" \
   nix --extra-experimental-features "nix-command flakes" \
   run nixpkgs#neovim -- --headless "+Lazy! update" +qa
 
+echo "Updating agent skills..."
+nix --extra-experimental-features "nix-command flakes" \
+  run nixpkgs#gh -- skill update --all --dir "$REPO_ROOT/dotfiles/agents/skills"
+
 echo "Update complete!"

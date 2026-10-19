@@ -84,6 +84,7 @@ This command updates the following items:
 - The repository `flake.lock` file.
 - Custom Nix packages in `pkgs/` if they contain an `update.sh` script.
 - The lazy.nvim `lazy-lock.json` via a headless Neovim instance.
+- Agent skills in `dotfiles/agents/skills`.
 
 ### Installing Nix
 
