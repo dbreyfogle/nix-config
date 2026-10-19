@@ -1,3 +1,4 @@
 - No builds or deployments without explicit permission. Read-only, dry-run, and check operations are encouraged.
 - No Git writes without explicit permission. This includes anything that commits, pushes, rewrites history, discards, stages, or unstages changes.
 - Keep the filesystem clean. Do throwaway work in a temporary directory and delete it when done. If something is worth keeping, move it to a sensible project location.
+- Never expose or log sensitive credentials like API keys, passwords, or secrets. If a sensitive credential is needed, reference it using an environment variable or similar method rather than using the raw value.
