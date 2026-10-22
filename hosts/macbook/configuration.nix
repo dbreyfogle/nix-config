@@ -63,7 +63,6 @@ in
     "slack"
     "syncthing-app"
     "tailscale-app"
-    "tidal"
     "virtualbuddy"
     "visual-studio-code"
     "vlc"
