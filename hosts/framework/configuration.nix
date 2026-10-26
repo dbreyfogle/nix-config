@@ -61,6 +61,7 @@ in
   };
 
   services = {
+    displayManager.autoLogin.user = username;
     displayManager.gdm.enable = true;
 
     fwupd.enable = true;
