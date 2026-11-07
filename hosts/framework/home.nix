@@ -5,6 +5,13 @@
 
   myModules.home-manager = {
     gnome.enable = true;
+    herdr = {
+      enable = true;
+      settings = {
+        font_size = 12.5;
+        zoom = 1.2;
+      };
+    };
     terminal.enable = true;
   };
 

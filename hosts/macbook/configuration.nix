@@ -54,6 +54,7 @@ in
     "discord"
     "docker-desktop"
     "ghostty"
+    "herdr-app"
     "nikitabobko/tap/aerospace"
     "obs"
     "portfolioperformance"
