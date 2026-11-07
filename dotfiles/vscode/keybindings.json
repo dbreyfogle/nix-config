@@ -63,12 +63,12 @@
     "when": "terminal.active"
   },
   {
-    "key": "alt+j",
+    "key": "ctrl+alt+j",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "alt+k",
+    "key": "ctrl+alt+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
   },
