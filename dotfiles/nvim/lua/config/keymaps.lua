@@ -8,6 +8,8 @@ vim.keymap.set({ "!" }, "<C-c>", "<Esc>")
 vim.g.mapleader = " "
 
 -- Tab management
+vim.keymap.set({ "n" }, "]t", "<CMD>tabnext<CR>", { desc = "Go to the next tab" })
+vim.keymap.set({ "n" }, "[t", "<CMD>tabprevious<CR>", { desc = "Go to the previous tab" })
 vim.keymap.set({ "n" }, "<Leader>tc", "<CMD>tabclose<CR>", { desc = "Close the current tab" })
 vim.keymap.set({ "n" }, "<Leader>tn", "<CMD>tabnew<CR>", { desc = "Open a new tab" })
 vim.keymap.set({ "n" }, "<Leader>to", "<CMD>tabonly<CR>", { desc = "Close all other tabs" })
