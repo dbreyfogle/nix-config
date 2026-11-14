@@ -10,6 +10,8 @@ noremap! <C-c> <Esc>
 let mapleader=' '
 
 " Tab management
+nnoremap ]t <CMD>tabnext<CR>
+nnoremap [t <CMD>tabprevious<CR>
 nnoremap <Leader>tc <CMD>tabclose<CR>
 nnoremap <Leader>tn <CMD>tabnew<CR>
 nnoremap <Leader>to <CMD>tabonly<CR>

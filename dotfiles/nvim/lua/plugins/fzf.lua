@@ -16,7 +16,6 @@ return {
     { "<Leader>so", "<CMD>FzfLua lsp_live_workspace_symbols<CR>", desc = "Search workspace symbols" },
     { "<Leader>sr", "<CMD>FzfLua resume<CR>", desc = "Resume last search" },
     { "<Leader>ss", "<CMD>FzfLua builtin<CR>", desc = "Search builtin commands" },
-    { "<Leader>st", "<CMD>TodoFzfLua<CR>", desc = "Search todo comments" },
     { "<Leader>sv", "<CMD>FzfLua grep_visual<CR>", mode = "v", desc = "Grep search visual selection" },
     { "<Leader>sw", "<CMD>FzfLua grep_cword<CR>", desc = "Grep search word under cursor" },
     { "<Leader>sW", "<CMD>FzfLua grep_cWORD<CR>", desc = "Grep search WORD under cursor" },
