@@ -2,7 +2,7 @@ return {
   "mfussenegger/nvim-lint",
   event = "VeryLazy",
   init = function()
-    vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "TextChanged" }, {
+    vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "TextChanged", "InsertLeave" }, {
       callback = function()
         if vim.opt_local.modifiable:get() then
           require("lint").try_lint()
@@ -24,8 +24,5 @@ return {
       terraform = { "tofu" },
       yaml = { "yamllint" },
     }
-
-    local golangcilint = require("lint").linters.golangcilint
-    golangcilint.ignore_exitcode = true
   end,
 }

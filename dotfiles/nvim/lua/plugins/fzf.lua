@@ -1,7 +1,7 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  cmd = "FzfLua",
+  lazy = false,
   keys = {
     { "<Leader>sb", "<CMD>FzfLua buffers<CR>", desc = "Search buffers" },
     { "<Leader>sc", "<CMD>FzfLua git_files<CR>", desc = "Search git files" },
@@ -34,24 +34,24 @@ return {
     { "grr", "<CMD>FzfLua lsp_references<CR>", desc = "List references" },
     { "grt", "<CMD>FzfLua lsp_typedefs<CR>", desc = "Go to type definition" },
   },
-  init = function()
+  config = function()
     require("fzf-lua").register_ui_select()
+    require("fzf-lua").setup({
+      keymap = {
+        builtin = {
+          true,
+          ["<C-c>"] = "hide",
+          ["<C-d>"] = "preview-page-down",
+          ["<C-u>"] = "preview-page-up",
+        },
+        fzf = {
+          true,
+          ["ctrl-d"] = "preview-page-down",
+          ["ctrl-u"] = "preview-page-up",
+          ["ctrl-q"] = "select-all+accept",
+        },
+      },
+      winopts = { preview = { horizontal = "right:50%" } },
+    })
   end,
-  opts = {
-    keymap = {
-      builtin = {
-        true,
-        ["<C-c>"] = "hide",
-        ["<C-d>"] = "preview-page-down",
-        ["<C-u>"] = "preview-page-up",
-      },
-      fzf = {
-        true,
-        ["ctrl-d"] = "preview-page-down",
-        ["ctrl-u"] = "preview-page-up",
-        ["ctrl-q"] = "select-all+accept",
-      },
-    },
-    winopts = { preview = { horizontal = "right:50%" } },
-  },
 }
