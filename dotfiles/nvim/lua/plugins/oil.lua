@@ -2,7 +2,6 @@ return {
   "stevearc/oil.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
-  priority = 1000,
   keys = {
     { "-", "<CMD>Oil<CR>", desc = "Oil: Open file browser" },
   },

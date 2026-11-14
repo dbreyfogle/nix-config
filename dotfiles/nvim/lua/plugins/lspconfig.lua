@@ -2,6 +2,16 @@ return {
   "neovim/nvim-lspconfig",
   dependencies = { "b0o/schemastore.nvim" },
   event = "VeryLazy",
+  init = function()
+    -- Assign filetypes by path
+    vim.filetype.add({
+      pattern = {
+        [".*/templates/.*%.ya?ml"] = { "helm", { priority = 10 } },
+        [".*/Chart%.ya?ml"] = { "helm", { priority = 10 } },
+        [".*/values%.ya?ml"] = { "helm", { priority = 10 } },
+      },
+    })
+  end,
   config = function()
     vim.lsp.enable("bashls")
     vim.lsp.enable("buf_ls")
@@ -82,14 +92,5 @@ return {
     })
     vim.lsp.enable("yamlls")
     vim.lsp.enable("zk")
-
-    -- Assign filetypes by path
-    vim.filetype.add({
-      pattern = {
-        [".*/templates/.*%.ya?ml"] = { "helm", { priority = 10 } },
-        [".*/Chart%.ya?ml"] = { "helm", { priority = 10 } },
-        [".*/values%.ya?ml"] = { "helm", { priority = 10 } },
-      },
-    })
   end,
 }

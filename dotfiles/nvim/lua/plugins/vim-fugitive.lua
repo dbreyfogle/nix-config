@@ -1,6 +1,6 @@
 return {
   "tpope/vim-fugitive",
-  event = "VeryLazy",
+  cmd = { "G", "Git" },
   keys = {
     { "<Leader>gd", "<CMD>Gdiffsplit!<CR>", desc = "Git: Diff for the current buffer" },
     { "<Leader>gl", "<CMD>tab Git log --oneline --decorate -10000<CR>", desc = "Git: Log" },
