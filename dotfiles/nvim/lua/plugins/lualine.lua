@@ -11,7 +11,6 @@ return {
           "fugitiveblame",
           "help",
           "kulala_ui",
-          "snacks_dashboard",
           "undotree",
         },
       },

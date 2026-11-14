@@ -21,3 +21,6 @@ require("lazy").setup({
   install = { colorscheme = { "kanagawa" } },
   rocks = { enabled = false },
 })
+
+-- Keymap
+vim.keymap.set({ "n" }, "<Leader>L", "<CMD>Lazy<CR>", { desc = "Open lazy.nvim UI" })
