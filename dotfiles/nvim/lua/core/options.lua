@@ -1,3 +1,9 @@
+-- Cache compiled Lua modules to speed up startup
+vim.loader.enable()
+
+-- Trim packpath to keep :packadd fast
+vim.opt.packpath = { vim.fn.stdpath("config"), vim.fn.stdpath("data") .. "/site", vim.env.VIMRUNTIME }
+
 -- Display line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
