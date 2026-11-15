@@ -2,9 +2,9 @@
 description: Call Exa Search directly with cURL or raw HTTP. Use when an agent needs Exa semantic web retrieval from POST /search without an SDK, including ranked results, domain or category filters, freshness-aware result content, highlights or text extraction, structured output, or streaming search responses.
 metadata:
     github-path: skills/exa-search
-    github-ref: refs/tags/v2026.10.19-627da25
+    github-ref: refs/tags/v2026.11.06-a0c2df8
     github-repo: https://github.com/exa-labs/agent-skills
-    github-tree-sha: 346b289f038b89274797526b438e3c0b83d71ede
+    github-tree-sha: 05c1ad5f7a5bed270adcbcfb8704ab647ad2e00a
 name: exa-search
 ---
 # Exa Search
@@ -99,7 +99,7 @@ Use this endpoint when the agent needs search results. If the agent already has 
 | Parameter | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | `query` | string | Yes | - | Natural-language search query. Long, semantically rich descriptions work well. |
-| `type` | string | No | `auto` | Search method: `auto`, `fast`, `instant`, `deep-lite`, `deep`, or `deep-reasoning`. |
+| `type` | string | No | `auto` | Search method: `auto`, `lite`, `deep-lite`, `deep`, or `deep-reasoning`. |
 | `numResults` | integer | No | `10` | Number of results to return. Use small values for agent loops; maximum is 100. |
 | `category` | string | No | - | Specialized result type: `company`, `people`, `research paper`, `news`, `personal site`, or `financial report`. |
 | `includeDomains` | string[] | No | - | Only return results from these domains, paths, or wildcard patterns. Max 1200. |
@@ -158,25 +158,26 @@ Prefer `contents.highlights: true` for the highest-quality default. Only use obj
 
 ## Search Types
 
-Search `type` controls the retrieval and synthesis mode. Pick the mode for the workflow, not just the output format. `outputSchema` can be used with any search type; use deeper modes when the search process itself needs more planning, synthesis, or reasoning.
+Search `type` controls the retrieval and synthesis mode. Pick the mode for the workflow, not just the output format. Use `auto` or a deep variant for `outputSchema`, not `lite`. Use deeper modes when the search process itself needs more planning, synthesis, or reasoning.
 
 | Type | Best for | Tradeoff |
 | --- | --- | --- |
 | `auto` | General default search and most new integrations | Balances speed and quality without requiring the caller to tune retrieval strategy. |
-| `fast` | Low-latency agent loops and product paths | Faster than `auto`; use when responsiveness matters more than maximum reasoning depth. |
-| `instant` | Real-time UI, chat, voice, and autocomplete-style paths | Lowest latency path; use for quick retrieval rather than deep synthesis. |
+| `lite` | Low-latency, low-cost chat, voice, autocomplete, and agent loops | Cached retrieval with a reduced parameter set |
 | `deep-lite` | Lightweight research or synthesis | Adds more planning and synthesis than `auto` while staying lighter than full `deep`. |
 | `deep` | Multi-step research, comparisons, and synthesis-heavy retrieval | Higher latency; better when the query needs exploration across several sources. |
 | `deep-reasoning` | Hard research tasks with high ambiguity or complex tradeoffs | Highest latency and reasoning depth. |
 
-Use `auto` unless latency or reasoning depth is the primary constraint. Use `fast` or `instant` for time-sensitive calls. Use `deep`, `deep-lite`, or `deep-reasoning` when the query needs multi-step source discovery, comparison, or synthesis.
+With `type: "lite"`, supported parameters are `query` (a single string), `objective`, `userIdentifier`, `metadata`, `category`, `numResults`, `contents.highlights`, `contents.text`, `contents.snapshotAsOf`, `userLocation`, `includeDomains`, `excludeDomains`, `startPublishedDate`, `endPublishedDate`, `moderation`, and `compliance`. Other documented search parameters are rejected, including `outputSchema`, `systemPrompt`, `stream`, and freshness options such as `contents.maxAgeHours`. Lite serves cached content without fetching pages at query time.
+
+Use `auto` unless latency or reasoning depth is the primary constraint. Use `lite` for time-sensitive or cost-sensitive calls. Use `deep`, `deep-lite`, or `deep-reasoning` when the query needs multi-step source discovery, comparison, or synthesis.
 
 ### Mode-only examples
 
 ```json
 {
   "query": "recent product launches from major AI chip companies",
-  "type": "fast",
+  "type": "lite",
   "numResults": 5
 }
 ```
@@ -269,7 +270,6 @@ Treat streaming as SSE rather than JSON. Each `data:` frame contains an OpenAI-c
 | `results[].author` | string or null | Author when available. |
 | `results[].text` | string | Returned when `contents.text` is requested. |
 | `results[].highlights` | string[] | Returned when `contents.highlights` is requested. |
-| `results[].highlightScores` | number[] | Similarity scores for highlights. |
 | `results[].summary` | string | Returned when `contents.summary` is requested. |
 | `results[].subpages` | array | Nested result objects from subpage crawling. |
 | `results[].extras.links` | string[] | Extracted links when requested. |
