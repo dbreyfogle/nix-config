@@ -2,9 +2,9 @@
 description: Call Exa Contents directly with cURL or raw HTTP. Use when an agent already has URLs and needs POST /contents without an SDK for extracted text, highlights, summaries, links, image links, subpages, freshness-controlled crawling, or per-URL status handling.
 metadata:
     github-path: skills/exa-contents
-    github-ref: refs/heads/main
+    github-ref: refs/tags/v2026.11.06-a0c2df8
     github-repo: https://github.com/exa-labs/agent-skills
-    github-tree-sha: 3206fd0db4675af34e864f24b0abf20b58881407
+    github-tree-sha: 35250a234db5eeb239c904924835bc53b83017d5
 name: exa-contents
 ---
 # Exa Contents
@@ -172,7 +172,6 @@ curl -sS -X POST "https://api.exa.ai/contents" \
 | `results[].author` | string or null | Author when available. |
 | `results[].text` | string | Returned when `text` is requested. |
 | `results[].highlights` | string[] | Returned when `highlights` is requested. |
-| `results[].highlightScores` | number[] | Similarity scores for highlights. |
 | `results[].summary` | string | Returned when `summary` is requested. |
 | `results[].subpages` | array | Nested result objects from subpage crawling. |
 | `results[].extras.links` | string[] | Extracted links when requested. |
