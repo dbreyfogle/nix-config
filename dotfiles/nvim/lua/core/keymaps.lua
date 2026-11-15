@@ -32,3 +32,24 @@ vim.keymap.set({ "n" }, "<C-A-j>", ":m .+1<CR>==", { desc = "Move line down" })
 vim.keymap.set({ "n" }, "<C-A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 vim.keymap.set({ "v" }, "<C-A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vim.keymap.set({ "v" }, "<C-A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
+
+-- Plugin management
+vim.keymap.set("n", "<Leader>lu", function()
+  vim.pack.update(nil, { force = true })
+end, { desc = "Plugins: Update" })
+
+vim.keymap.set("n", "<Leader>lr", function()
+  vim.pack.update(nil, { target = "lockfile", force = true })
+end, { desc = "Plugins: Restore" })
+
+vim.keymap.set("n", "<Leader>lx", function()
+  vim.pack.del(vim
+    .iter(vim.pack.get())
+    :filter(function(x)
+      return not x.active
+    end)
+    :map(function(x)
+      return x.spec.name
+    end)
+    :totable())
+end, { desc = "Plugins: Clean" })

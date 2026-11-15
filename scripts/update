@@ -23,10 +23,10 @@ for pkg in pkgs/*; do
   fi
 done
 
-echo "Updating lazy-lock.json..."
+echo "Updating nvim-pack-lock.json..."
 XDG_CONFIG_HOME="$REPO_ROOT/dotfiles" \
   nix --extra-experimental-features "nix-command flakes" \
-  run nixpkgs#neovim -- --headless "+Lazy! update" +qa
+  run nixpkgs#neovim -- --headless "+lua vim.pack.update(nil, { force = true })" +qa
 
 echo "Updating agent skills..."
 nix --extra-experimental-features "nix-command flakes" \

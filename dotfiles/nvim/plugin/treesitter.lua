@@ -1,0 +1,54 @@
+vim.pack.add({
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+})
+
+local ensure_installed = {
+  "html",
+  "markdown",
+  "markdown_inline",
+}
+local installed = require("nvim-treesitter").get_installed()
+local to_install = {}
+for _, lang in ipairs(ensure_installed) do
+  if not vim.tbl_contains(installed, lang) then
+    table.insert(to_install, lang)
+  end
+end
+if #to_install > 0 then
+  require("nvim-treesitter").install(to_install):await()
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    local function ts_setup(bufnr)
+      if vim.api.nvim_get_current_buf() ~= bufnr then
+        return
+      end
+      vim.treesitter.start()
+      vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      vim.wo.foldmethod = "expr"
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+
+    -- Auto install missing parsers
+    local lang = vim.bo[args.buf].filetype
+    if vim.tbl_contains(require("nvim-treesitter").get_installed(), lang) then
+      ts_setup(args.buf)
+    else
+      if vim.tbl_contains(require("nvim-treesitter").get_available(), lang) then
+        require("nvim-treesitter").install({ lang }):await(function()
+          ts_setup(args.buf)
+        end)
+      end
+    end
+  end,
+})
+
+-- Keep parsers in sync when the plugin itself is updated
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    if ev.data.spec.name == "nvim-treesitter" and ev.data.kind == "update" then
+      vim.cmd("TSUpdate")
+    end
+  end,
+})
