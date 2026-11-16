@@ -5,6 +5,7 @@ vim.pack.add({
 
 vim.lsp.enable("bashls")
 vim.lsp.enable("buf_ls")
+vim.lsp.enable("cssls")
 vim.lsp.config("dbt", {
   cmd = function(dispatchers, config)
     return vim.lsp.rpc.start({ "dbt", "lsp", "--project-dir", config.root_dir }, dispatchers, { cwd = config.root_dir })
@@ -15,8 +16,10 @@ vim.lsp.config("dbt", {
 })
 vim.lsp.enable("dbt")
 vim.lsp.enable("docker_language_server")
+vim.lsp.enable("eslint")
 vim.lsp.enable("gopls")
 vim.lsp.enable("helm_ls")
+vim.lsp.enable("html")
 vim.lsp.config("jsonls", {
   settings = {
     json = {

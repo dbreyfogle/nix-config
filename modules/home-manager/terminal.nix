@@ -235,7 +235,7 @@ in
         uv
         vale
         vim
-        vscode-json-languageserver
+        vscode-langservers-extracted
         yaml-language-server
         yamllint
         zk
