@@ -4,7 +4,6 @@
   imports = [
     inputs.nix-index-database.homeModules.default
     ./gnome.nix
-    ./herdr.nix
     ./nvidia.nix
     ./terminal.nix
   ];

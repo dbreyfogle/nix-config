@@ -9,7 +9,6 @@
   imports = [ ../../modules/home-manager ];
 
   myModules.home-manager = {
-    herdr.enable = true;
     terminal.enable = true;
   };
 

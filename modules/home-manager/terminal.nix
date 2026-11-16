@@ -206,6 +206,7 @@ in
         gotools
         hadolint
         helm-ls
+        unstable.herdr-core
         jq
         kubectl
         kubernetes-helm
@@ -239,12 +240,19 @@ in
         yamllint
         zk
       ])
+      ++ lib.optionals pkgs.stdenv.isLinux (
+        with pkgs;
+        [
+          unstable.herdr-desktop
+        ]
+      )
       ++ (with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
         pi
       ]);
 
     home.file = {
       ".agents/skills".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/agents/skills";
+      ".local/bin/herdr-core".source = lib.getExe' pkgs.unstable.herdr-core "herdr-core";
       ".pi/agent/AGENTS.md".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/pi/AGENTS.md";
       ".pi/agent/APPEND_SYSTEM.md".source =
@@ -252,6 +260,8 @@ in
     };
 
     xdg.configFile = {
+      "herdr-app/themes/kanagawa.json".source =
+        config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/herdr/kanagawa.json";
       "nvim".source = config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/nvim";
       "sqlfluff/.sqlfluff".source =
         config.lib.file.mkOutOfStoreSymlink "${repodir}/dotfiles/sqlfluff/.sqlfluff";
